@@ -47,16 +47,16 @@ const Navigation = ({ transparent = false }: { transparent?: boolean }) => {
     { label: "Surélévation", path: "/extension/surelevation" },
   ];
 
-  const menuBgClass =
-    "fixed inset-0 z-50 bg-primary/95 backdrop-blur-sm text-white p-6 animate-fadeIn overflow-y-auto overscroll-contain";
 
   return (
-    <nav
-      className={
-        transparent
-          ? "absolute top-0 z-40 w-full"
-          : "sticky top-0 z-40 w-full border-b border-border/40 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60"
-      }
+<nav
+  className={`top-0 z-40 w-full ${
+    transparent
+      ? "absolute bg-transparent"
+      : "sticky border-b border-border/40 bg-background/95 backdrop-blur shadow-md supports-[backdrop-filter]:bg-background/60"
+  }`}
+>
+
     >
       <div className="container mx-auto px-4">
         <div className="flex h-20 items-center justify-between">
@@ -205,8 +205,9 @@ const Navigation = ({ transparent = false }: { transparent?: boolean }) => {
       </div>
 
       {/* ✅ Mobile Fullscreen Menu */}
-      {mobileMenuOpen && (
-        <div className={menuBgClass}>
+{mobileMenuOpen && (
+  <div className="fixed inset-0 z-[9999] bg-primary/95 backdrop-blur-sm text-white p-6 animate-fadeIn overflow-y-auto overscroll-contain">
+
           <div className="flex justify-between items-center mb-8">
             <h2 className="text-2xl font-heading">Menu</h2>
             <button onClick={() => setMobileMenuOpen(false)}>
