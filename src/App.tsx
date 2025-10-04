@@ -2,7 +2,7 @@ import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
 import Navigation from "./components/Navigation";
 import Footer from "./components/Footer";
 import IntroAnimation from "./components/IntroAnimation";
@@ -29,6 +29,49 @@ import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
 
+const AppContent = () => {
+  const location = useLocation();
+  const isHomePage = location.pathname === "/";
+
+  return (
+    <>
+      {!isHomePage && <Navigation />}
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/a-propos" element={<About />} />
+        <Route path="/contact" element={<Contact />} />
+        <Route path="/avis" element={<Testimonials />} />
+        <Route path="/realisations" element={<Realisations />} />
+        
+        {/* Structure */}
+        <Route path="/structure/charpente" element={<Charpente />} />
+        <Route path="/structure/ossature-bois" element={<OssatureBois />} />
+        <Route path="/structure/pergola" element={<Pergola />} />
+        <Route path="/structure/terrasses" element={<Terrasses />} />
+        <Route path="/structure/carport" element={<Carport />} />
+        
+        {/* Menuiserie */}
+        <Route path="/menuiserie/interieur" element={<MenuiserieInterieur />} />
+        <Route path="/menuiserie/exterieur" element={<MenuiserieExterieur />} />
+        <Route path="/menuiserie/escaliers" element={<Escaliers />} />
+        
+        {/* Agencement */}
+        <Route path="/agencement/sols" element={<Sols />} />
+        <Route path="/agencement/dressing" element={<Dressing />} />
+        <Route path="/agencement/cuisines" element={<Cuisines />} />
+        <Route path="/agencement/mobilier" element={<MobilierSurMesure />} />
+        
+        {/* Extension */}
+        <Route path="/extension/ossature-bois" element={<ExtensionOssatureBois />} />
+        <Route path="/extension/surelevation" element={<Surelevation />} />
+        
+        <Route path="*" element={<NotFound />} />
+      </Routes>
+      <Footer />
+    </>
+  );
+};
+
 const App = () => (
   <QueryClientProvider client={queryClient}>
     <TooltipProvider>
@@ -36,39 +79,7 @@ const App = () => (
       <Sonner />
       <IntroAnimation />
       <BrowserRouter>
-        <Navigation />
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/a-propos" element={<About />} />
-          <Route path="/contact" element={<Contact />} />
-          <Route path="/avis" element={<Testimonials />} />
-          <Route path="/realisations" element={<Realisations />} />
-          
-          {/* Structure */}
-          <Route path="/structure/charpente" element={<Charpente />} />
-          <Route path="/structure/ossature-bois" element={<OssatureBois />} />
-          <Route path="/structure/pergola" element={<Pergola />} />
-          <Route path="/structure/terrasses" element={<Terrasses />} />
-          <Route path="/structure/carport" element={<Carport />} />
-          
-          {/* Menuiserie */}
-          <Route path="/menuiserie/interieur" element={<MenuiserieInterieur />} />
-          <Route path="/menuiserie/exterieur" element={<MenuiserieExterieur />} />
-          <Route path="/menuiserie/escaliers" element={<Escaliers />} />
-          
-          {/* Agencement */}
-          <Route path="/agencement/sols" element={<Sols />} />
-          <Route path="/agencement/dressing" element={<Dressing />} />
-          <Route path="/agencement/cuisines" element={<Cuisines />} />
-          <Route path="/agencement/mobilier" element={<MobilierSurMesure />} />
-          
-          {/* Extension */}
-          <Route path="/extension/ossature-bois" element={<ExtensionOssatureBois />} />
-          <Route path="/extension/surelevation" element={<Surelevation />} />
-          
-          <Route path="*" element={<NotFound />} />
-        </Routes>
-        <Footer />
+        <AppContent />
       </BrowserRouter>
     </TooltipProvider>
   </QueryClientProvider>

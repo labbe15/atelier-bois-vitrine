@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { CheckCircle2, Clock, ThumbsUp, MapPin } from "lucide-react";
+import Navigation from "@/components/Navigation";
 import heroImage from "@/assets/hero-wood.jpg";
 import charpenteImage from "@/assets/charpente.jpg";
 import menuiserieImage from "@/assets/menuiserie.jpg";
@@ -62,16 +63,17 @@ const Home = () => {
   ];
 
   return (
-    <div className="min-h-screen">
-      {/* Hero Section */}
+    <>
+      {/* Hero Section with integrated transparent navigation */}
       <section 
-        className="relative h-[70vh] min-h-[500px] flex items-center justify-center text-center"
+        className="relative h-[80vh] min-h-[600px] flex items-center justify-center text-center"
         style={{
           backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.25)), url(${heroImage})`,
           backgroundSize: "cover",
           backgroundPosition: "center",
         }}
       >
+        <Navigation transparent />
         <div className="container mx-auto px-4 animate-slide-up">
           <h1 className="text-6xl md:text-8xl lg:text-9xl font-heading mb-4 text-white" style={{ textShadow: '2px 2px 4px rgba(0,0,0,0.3)' }}>
             l'atelier du volcan
@@ -191,7 +193,7 @@ const Home = () => {
           </Button>
         </div>
       </section>
-    </div>
+    </>
   );
 };
 

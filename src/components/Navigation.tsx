@@ -9,7 +9,7 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 
-const Navigation = () => {
+const Navigation = ({ transparent = false }: { transparent?: boolean }) => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   const structureItems = [
@@ -39,23 +39,23 @@ const Navigation = () => {
   ];
 
   return (
-    <nav className="sticky top-0 z-40 w-full border-b border-border/40 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
+    <nav className={transparent ? "absolute top-0 z-40 w-full" : "sticky top-0 z-40 w-full border-b border-border/40 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60"}>
       <div className="container mx-auto px-4">
         <div className="flex h-20 items-center justify-between">
           {/* Logo */}
           <Link to="/" className="flex items-center space-x-2">
-            <span className="text-3xl font-heading text-primary">L'Atelier du Volcan</span>
+            <span className={`text-2xl font-heading ${transparent ? 'text-white' : 'text-primary'}`}>L'Atelier du Volcan</span>
           </Link>
 
           {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center space-x-6">
-            <Link to="/" className="text-sm font-medium hover:text-primary transition-colors">
+          <div className="hidden lg:flex items-center space-x-6">
+            <Link to="/" className={`text-sm font-medium transition-colors ${transparent ? 'text-white hover:text-white/80' : 'hover:text-primary'}`}>
               Accueil
             </Link>
 
             <DropdownMenu>
-              <DropdownMenuTrigger className="flex items-center text-sm font-medium hover:text-primary transition-colors">
-                Structure <ChevronDown className="ml-1 h-4 w-4" />
+              <DropdownMenuTrigger className={`flex items-center text-sm font-medium transition-colors ${transparent ? 'text-white hover:text-white/80' : 'hover:text-primary'}`}>
+                Charpente <ChevronDown className="ml-1 h-4 w-4" />
               </DropdownMenuTrigger>
               <DropdownMenuContent>
                 {structureItems.map((item) => (
@@ -67,7 +67,7 @@ const Navigation = () => {
             </DropdownMenu>
 
             <DropdownMenu>
-              <DropdownMenuTrigger className="flex items-center text-sm font-medium hover:text-primary transition-colors">
+              <DropdownMenuTrigger className={`flex items-center text-sm font-medium transition-colors ${transparent ? 'text-white hover:text-white/80' : 'hover:text-primary'}`}>
                 Menuiserie <ChevronDown className="ml-1 h-4 w-4" />
               </DropdownMenuTrigger>
               <DropdownMenuContent>
@@ -80,7 +80,7 @@ const Navigation = () => {
             </DropdownMenu>
 
             <DropdownMenu>
-              <DropdownMenuTrigger className="flex items-center text-sm font-medium hover:text-primary transition-colors">
+              <DropdownMenuTrigger className={`flex items-center text-sm font-medium transition-colors ${transparent ? 'text-white hover:text-white/80' : 'hover:text-primary'}`}>
                 Agencement <ChevronDown className="ml-1 h-4 w-4" />
               </DropdownMenuTrigger>
               <DropdownMenuContent>
@@ -93,8 +93,8 @@ const Navigation = () => {
             </DropdownMenu>
 
             <DropdownMenu>
-              <DropdownMenuTrigger className="flex items-center text-sm font-medium hover:text-primary transition-colors">
-                Extension Bois <ChevronDown className="ml-1 h-4 w-4" />
+              <DropdownMenuTrigger className={`flex items-center text-sm font-medium transition-colors ${transparent ? 'text-white hover:text-white/80' : 'hover:text-primary'}`}>
+                Couverture <ChevronDown className="ml-1 h-4 w-4" />
               </DropdownMenuTrigger>
               <DropdownMenuContent>
                 {extensionItems.map((item) => (
@@ -105,32 +105,40 @@ const Navigation = () => {
               </DropdownMenuContent>
             </DropdownMenu>
 
-            <Link to="/realisations" className="text-sm font-medium hover:text-primary transition-colors">
-              Réalisations
+            <Link to="/extension/ossature-bois" className={`text-sm font-medium transition-colors ${transparent ? 'text-white hover:text-white/80' : 'hover:text-primary'}`}>
+              Extension Bois
             </Link>
-            <Link to="/a-propos" className="text-sm font-medium hover:text-primary transition-colors">
-              À propos
+            <Link to="/contact" className={`text-sm font-medium transition-colors ${transparent ? 'text-white hover:text-white/80' : 'hover:text-primary'}`}>
+              Contact
             </Link>
-            <Link to="/avis" className="text-sm font-medium hover:text-primary transition-colors">
-              Avis
-            </Link>
-            <Button asChild>
-              <Link to="/contact">Contact</Link>
-            </Button>
           </div>
+
+          {/* Address on the right (only on transparent) */}
+          {transparent && (
+            <div className="hidden lg:flex flex-col items-end text-white text-sm">
+              <div className="flex items-center gap-1">
+                <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                </svg>
+                <span>Les 4 routes d'Albussac</span>
+              </div>
+              <span>15130 Sansac de Marmiesse</span>
+            </div>
+          )}
 
           {/* Mobile Menu Button */}
           <button
-            className="md:hidden"
+            className="lg:hidden"
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
           >
-            {mobileMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+            {mobileMenuOpen ? <X className={`h-6 w-6 ${transparent ? 'text-white' : ''}`} /> : <Menu className={`h-6 w-6 ${transparent ? 'text-white' : ''}`} />}
           </button>
         </div>
 
         {/* Mobile Menu */}
         {mobileMenuOpen && (
-          <div className="md:hidden py-4 space-y-3">
+          <div className={`lg:hidden py-4 space-y-3 ${transparent ? 'bg-foreground/95 backdrop-blur' : ''}`}>
             <Link 
               to="/" 
               className="block py-2 text-sm font-medium hover:text-primary"
