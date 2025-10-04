@@ -18,11 +18,7 @@ const Navigation = () => {
 
   // ✅ Bloque le scroll de la page quand le menu est ouvert
   useEffect(() => {
-    if (mobileMenuOpen) {
-      document.body.style.overflow = "hidden";
-    } else {
-      document.body.style.overflow = "";
-    }
+    document.body.style.overflow = mobileMenuOpen ? "hidden" : "";
   }, [mobileMenuOpen]);
 
   // ✅ Données des menus
