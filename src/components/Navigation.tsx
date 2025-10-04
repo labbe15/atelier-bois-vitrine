@@ -204,7 +204,7 @@ const Navigation = () => {
 
       {/* ✅ Menu Mobile Fullscreen */}
       {mobileMenuOpen && (
-        <div className="fixed inset-0 z-[9999] bg-primary/95 backdrop-blur-sm text-white p-6 animate-fadeIn overflow-y-auto overscroll-contain">
+        <div className="bg-primary/95 backdrop-blur-sm text-white p-6 animate-fadeIn overflow-y-auto overscroll-contain fixed inset-0 z-[9999]">
           <div className="flex justify-between items-center mb-8">
             <h2 className="text-2xl font-heading">Menu</h2>
             <button onClick={() => setMobileMenuOpen(false)}>
