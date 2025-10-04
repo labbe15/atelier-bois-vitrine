@@ -48,14 +48,14 @@ const Navigation = () => {
     { label: "Surélévation", path: "/extension/surelevation" },
   ];
 
+  const navClasses = `top-0 z-40 w-full transition-all duration-300 ${
+    transparent
+      ? "absolute bg-transparent"
+      : "sticky border-b border-border/40 bg-background/95 backdrop-blur shadow-md supports-[backdrop-filter]:bg-background/60"
+  }`;
+
   return (
-    <nav
-      className={`top-0 z-40 w-full transition-all duration-300 ${
-        transparent
-          ? "absolute bg-transparent"
-          : "sticky border-b border-border/40 bg-background/95 backdrop-blur shadow-md supports-[backdrop-filter]:bg-background/60"
-      }`}
-    >
+    <nav className={navClasses}>
       <div className="container mx-auto px-4">
         <div className="flex h-20 items-center justify-between">
           {/* Logo */}
