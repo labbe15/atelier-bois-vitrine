@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { Menu, X, ChevronDown } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import {
@@ -9,8 +9,12 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 
-const Navigation = ({ transparent = false }: { transparent?: boolean }) => {
+const Navigation = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const location = useLocation();
+
+  // ✅ Header transparent uniquement sur la page d'accueil
+  const transparent = location.pathname === "/";
 
   // ✅ Bloque le scroll de la page quand le menu est ouvert
   useEffect(() => {
@@ -21,6 +25,7 @@ const Navigation = ({ transparent = false }: { transparent?: boolean }) => {
     }
   }, [mobileMenuOpen]);
 
+  // ✅ Données des menus
   const structureItems = [
     { label: "Charpente", path: "/structure/charpente" },
     { label: "Ossature bois", path: "/structure/ossature-bois" },
@@ -47,16 +52,13 @@ const Navigation = ({ transparent = false }: { transparent?: boolean }) => {
     { label: "Surélévation", path: "/extension/surelevation" },
   ];
 
-
   return (
-<nav
-  className={`top-0 z-40 w-full ${
-    transparent
-      ? "absolute bg-transparent"
-      : "sticky border-b border-border/40 bg-background/95 backdrop-blur shadow-md supports-[backdrop-filter]:bg-background/60"
-  }`}
->
-
+    <nav
+      className={`top-0 z-40 w-full transition-all duration-300 ${
+        transparent
+          ? "absolute bg-transparent"
+          : "sticky border-b border-border/40 bg-background/95 backdrop-blur shadow-md supports-[backdrop-filter]:bg-background/60"
+      }`}
     >
       <div className="container mx-auto px-4">
         <div className="flex h-20 items-center justify-between">
@@ -204,10 +206,9 @@ const Navigation = ({ transparent = false }: { transparent?: boolean }) => {
         </div>
       </div>
 
-      {/* ✅ Mobile Fullscreen Menu */}
-{mobileMenuOpen && (
-  <div className="fixed inset-0 z-[9999] bg-primary/95 backdrop-blur-sm text-white p-6 animate-fadeIn overflow-y-auto overscroll-contain">
-
+      {/* ✅ Menu Mobile Fullscreen */}
+      {mobileMenuOpen && (
+        <div className="fixed inset-0 z-[9999] bg-primary/95 backdrop-blur-sm text-white p-6 animate-fadeIn overflow-y-auto overscroll-contain">
           <div className="flex justify-between items-center mb-8">
             <h2 className="text-2xl font-heading">Menu</h2>
             <button onClick={() => setMobileMenuOpen(false)}>
@@ -276,10 +277,7 @@ const Navigation = ({ transparent = false }: { transparent?: boolean }) => {
               ))}
             </div>
 
-            <Link
-              to="/realisations"
-              onClick={() => setMobileMenuOpen(false)}
-            >
+            <Link to="/realisations" onClick={() => setMobileMenuOpen(false)}>
               Réalisations
             </Link>
             <Link to="/a-propos" onClick={() => setMobileMenuOpen(false)}>
@@ -288,6 +286,7 @@ const Navigation = ({ transparent = false }: { transparent?: boolean }) => {
             <Link to="/avis" onClick={() => setMobileMenuOpen(false)}>
               Avis
             </Link>
+
             <Button
               asChild
               className="w-full mt-6 bg-white text-primary hover:bg-white/90"
@@ -300,6 +299,10 @@ const Navigation = ({ transparent = false }: { transparent?: boolean }) => {
       )}
     </nav>
   );
+};
+
+export default Navigation;
+
 };
 
 export default Navigation;
