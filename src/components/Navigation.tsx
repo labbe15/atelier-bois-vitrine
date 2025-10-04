@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { Menu, X, ChevronDown } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -11,6 +11,14 @@ import {
 
 const Navigation = ({ transparent = false }: { transparent?: boolean }) => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  useEffect(() => {
+  if (mobileMenuOpen) {
+    document.body.style.overflow = "hidden"; // bloque le scroll de la page
+  } else {
+    document.body.style.overflow = ""; // réactive le scroll
+  }
+}, [mobileMenuOpen]);
+
 
   const structureItems = [
     { label: "Charpente", path: "/structure/charpente" },
