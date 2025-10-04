@@ -6,21 +6,11 @@ const IntroAnimation = () => {
   const [hasPlayed, setHasPlayed] = useState(false);
 
   useEffect(() => {
-    // Check if intro already played in this session
-    const played = sessionStorage.getItem("introPlayed");
-    
-    if (played) {
-      setIsVisible(false);
-      setHasPlayed(true);
-      return;
-    }
-
     // Play animation
     const timer = setTimeout(() => {
       setIsVisible(false);
       setHasPlayed(true);
-      sessionStorage.setItem("introPlayed", "true");
-    }, 3000); // 3 seconds total
+    }, 3500); // 3.5 seconds total
 
     return () => clearTimeout(timer);
   }, []);

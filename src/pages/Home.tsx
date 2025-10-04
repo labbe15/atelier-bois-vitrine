@@ -65,24 +65,40 @@ const Home = () => {
     <div className="min-h-screen">
       {/* Hero Section */}
       <section 
-        className="relative h-[600px] flex items-center justify-center text-center text-primary-foreground"
+        className="relative h-[70vh] min-h-[500px] flex items-center justify-center text-center"
         style={{
-          backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url(${heroImage})`,
+          backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.25)), url(${heroImage})`,
           backgroundSize: "cover",
           backgroundPosition: "center",
         }}
       >
         <div className="container mx-auto px-4 animate-slide-up">
-          <h1 className="text-5xl md:text-7xl font-heading mb-6 text-white">
-            Création & rénovation sur mesure
+          <h1 className="text-6xl md:text-8xl lg:text-9xl font-heading mb-4 text-white" style={{ textShadow: '2px 2px 4px rgba(0,0,0,0.3)' }}>
+            l'atelier du volcan
           </h1>
-          <p className="text-xl md:text-2xl mb-8 max-w-3xl mx-auto text-white/90">
-            Structure, menuiserie, agencement et extensions bois.<br />
-            Finitions durables, conseils transparents.
+          <p className="text-lg md:text-xl lg:text-2xl mb-8 tracking-widest text-white uppercase font-body font-light">
+            Création & rénovation sur-mesure
           </p>
-          <Button size="lg" asChild className="text-lg px-8 py-6">
-            <Link to="/contact">Contactez-nous</Link>
+          <Button 
+            size="lg" 
+            asChild 
+            className="text-lg px-10 py-7 rounded-full bg-white text-foreground hover:bg-white/90 shadow-lg font-body font-medium"
+          >
+            <Link to="/contact">Contactez nous</Link>
           </Button>
+        </div>
+      </section>
+
+      {/* Green Banner Section */}
+      <section className="py-16 bg-primary text-primary-foreground">
+        <div className="container mx-auto px-4 text-center">
+          <h2 className="text-3xl md:text-4xl font-heading mb-6 italic">
+            « Deux artisans, une même passion : le bois »
+          </h2>
+          <p className="text-base md:text-lg max-w-4xl mx-auto leading-relaxed font-body">
+            Forts de nos compétences dans le domaine, nous avons choisi de mettre notre savoir-faire au service de vos envies. 
+            Implantés sur la commune de Sansac de Marmiesse, notre atelier à trouvé sa place dans l'ancienne boîte de nuit du Volcan.
+          </p>
         </div>
       </section>
 
