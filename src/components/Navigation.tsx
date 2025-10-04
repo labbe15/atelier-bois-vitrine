@@ -55,152 +55,154 @@ const Navigation = () => {
   }`;
 
   return (
-    <nav className={navClasses}>
-      <div className="container mx-auto px-4">
-        <div className="flex h-20 items-center justify-between">
-          {/* Logo */}
-          <Link to="/" className="flex items-center space-x-2">
-            <span
-              className={`text-2xl font-heading ${
-                transparent ? "text-white" : "text-primary"
-              }`}
-            >
-              L'Atelier du Volcan
-            </span>
-          </Link>
-
-          {/* Desktop Navigation */}
-          <div className="hidden lg:flex items-center space-x-6">
-            <Link
-              to="/"
-              className={`text-sm font-medium transition-colors ${
-                transparent
-                  ? "text-white hover:text-white/80"
-                  : "hover:text-primary"
-              }`}
-            >
-              Accueil
+    <>
+      <nav className={navClasses}>
+        <div className="container mx-auto px-4">
+          <div className="flex h-20 items-center justify-between">
+            {/* Logo */}
+            <Link to="/" className="flex items-center space-x-2">
+              <span
+                className={`text-2xl font-heading ${
+                  transparent ? "text-white" : "text-primary"
+                }`}
+              >
+                L'Atelier du Volcan
+              </span>
             </Link>
 
-            <DropdownMenu>
-              <DropdownMenuTrigger
-                className={`flex items-center text-sm font-medium transition-colors ${
+            {/* Desktop Navigation */}
+            <div className="hidden lg:flex items-center space-x-6">
+              <Link
+                to="/"
+                className={`text-sm font-medium transition-colors ${
                   transparent
                     ? "text-white hover:text-white/80"
                     : "hover:text-primary"
                 }`}
               >
-                Structure <ChevronDown className="ml-1 h-4 w-4" />
-              </DropdownMenuTrigger>
-              <DropdownMenuContent>
-                {structureItems.map((item) => (
-                  <DropdownMenuItem key={item.path} asChild>
-                    <Link to={item.path}>{item.label}</Link>
-                  </DropdownMenuItem>
-                ))}
-              </DropdownMenuContent>
-            </DropdownMenu>
+                Accueil
+              </Link>
 
-            <DropdownMenu>
-              <DropdownMenuTrigger
-                className={`flex items-center text-sm font-medium transition-colors ${
+              <DropdownMenu>
+                <DropdownMenuTrigger
+                  className={`flex items-center text-sm font-medium transition-colors ${
+                    transparent
+                      ? "text-white hover:text-white/80"
+                      : "hover:text-primary"
+                  }`}
+                >
+                  Structure <ChevronDown className="ml-1 h-4 w-4" />
+                </DropdownMenuTrigger>
+                <DropdownMenuContent>
+                  {structureItems.map((item) => (
+                    <DropdownMenuItem key={item.path} asChild>
+                      <Link to={item.path}>{item.label}</Link>
+                    </DropdownMenuItem>
+                  ))}
+                </DropdownMenuContent>
+              </DropdownMenu>
+
+              <DropdownMenu>
+                <DropdownMenuTrigger
+                  className={`flex items-center text-sm font-medium transition-colors ${
+                    transparent
+                      ? "text-white hover:text-white/80"
+                      : "hover:text-primary"
+                  }`}
+                >
+                  Menuiserie <ChevronDown className="ml-1 h-4 w-4" />
+                </DropdownMenuTrigger>
+                <DropdownMenuContent>
+                  {menuiserieItems.map((item) => (
+                    <DropdownMenuItem key={item.path} asChild>
+                      <Link to={item.path}>{item.label}</Link>
+                    </DropdownMenuItem>
+                  ))}
+                </DropdownMenuContent>
+              </DropdownMenu>
+
+              <DropdownMenu>
+                <DropdownMenuTrigger
+                  className={`flex items-center text-sm font-medium transition-colors ${
+                    transparent
+                      ? "text-white hover:text-white/80"
+                      : "hover:text-primary"
+                  }`}
+                >
+                  Agencement <ChevronDown className="ml-1 h-4 w-4" />
+                </DropdownMenuTrigger>
+                <DropdownMenuContent>
+                  {agencementItems.map((item) => (
+                    <DropdownMenuItem key={item.path} asChild>
+                      <Link to={item.path}>{item.label}</Link>
+                    </DropdownMenuItem>
+                  ))}
+                </DropdownMenuContent>
+              </DropdownMenu>
+
+              <DropdownMenu>
+                <DropdownMenuTrigger
+                  className={`flex items-center text-sm font-medium transition-colors ${
+                    transparent
+                      ? "text-white hover:text-white/80"
+                      : "hover:text-primary"
+                  }`}
+                >
+                  Extension Bois <ChevronDown className="ml-1 h-4 w-4" />
+                </DropdownMenuTrigger>
+                <DropdownMenuContent>
+                  {extensionItems.map((item) => (
+                    <DropdownMenuItem key={item.path} asChild>
+                      <Link to={item.path}>{item.label}</Link>
+                    </DropdownMenuItem>
+                  ))}
+                </DropdownMenuContent>
+              </DropdownMenu>
+
+              <Link
+                to="/realisations"
+                className={`text-sm font-medium transition-colors ${
                   transparent
                     ? "text-white hover:text-white/80"
                     : "hover:text-primary"
                 }`}
               >
-                Menuiserie <ChevronDown className="ml-1 h-4 w-4" />
-              </DropdownMenuTrigger>
-              <DropdownMenuContent>
-                {menuiserieItems.map((item) => (
-                  <DropdownMenuItem key={item.path} asChild>
-                    <Link to={item.path}>{item.label}</Link>
-                  </DropdownMenuItem>
-                ))}
-              </DropdownMenuContent>
-            </DropdownMenu>
-
-            <DropdownMenu>
-              <DropdownMenuTrigger
-                className={`flex items-center text-sm font-medium transition-colors ${
+                Réalisations
+              </Link>
+              <Link
+                to="/contact"
+                className={`text-sm font-medium transition-colors ${
                   transparent
                     ? "text-white hover:text-white/80"
                     : "hover:text-primary"
                 }`}
               >
-                Agencement <ChevronDown className="ml-1 h-4 w-4" />
-              </DropdownMenuTrigger>
-              <DropdownMenuContent>
-                {agencementItems.map((item) => (
-                  <DropdownMenuItem key={item.path} asChild>
-                    <Link to={item.path}>{item.label}</Link>
-                  </DropdownMenuItem>
-                ))}
-              </DropdownMenuContent>
-            </DropdownMenu>
+                Contact
+              </Link>
+            </div>
 
-            <DropdownMenu>
-              <DropdownMenuTrigger
-                className={`flex items-center text-sm font-medium transition-colors ${
-                  transparent
-                    ? "text-white hover:text-white/80"
-                    : "hover:text-primary"
-                }`}
-              >
-                Extension Bois <ChevronDown className="ml-1 h-4 w-4" />
-              </DropdownMenuTrigger>
-              <DropdownMenuContent>
-                {extensionItems.map((item) => (
-                  <DropdownMenuItem key={item.path} asChild>
-                    <Link to={item.path}>{item.label}</Link>
-                  </DropdownMenuItem>
-                ))}
-              </DropdownMenuContent>
-            </DropdownMenu>
-
-            <Link
-              to="/realisations"
-              className={`text-sm font-medium transition-colors ${
-                transparent
-                  ? "text-white hover:text-white/80"
-                  : "hover:text-primary"
-              }`}
+            {/* Mobile Menu Button */}
+            <button
+              className="lg:hidden"
+              onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
             >
-              Réalisations
-            </Link>
-            <Link
-              to="/contact"
-              className={`text-sm font-medium transition-colors ${
-                transparent
-                  ? "text-white hover:text-white/80"
-                  : "hover:text-primary"
-              }`}
-            >
-              Contact
-            </Link>
+              {mobileMenuOpen ? (
+                <X
+                  className={`h-7 w-7 ${
+                    transparent ? "text-white" : "text-primary"
+                  }`}
+                />
+              ) : (
+                <Menu
+                  className={`h-7 w-7 ${
+                    transparent ? "text-white" : "text-primary"
+                  }`}
+                />
+              )}
+            </button>
           </div>
-
-          {/* Mobile Menu Button */}
-          <button
-            className="lg:hidden"
-            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-          >
-            {mobileMenuOpen ? (
-              <X
-                className={`h-7 w-7 ${
-                  transparent ? "text-white" : "text-primary"
-                }`}
-              />
-            ) : (
-              <Menu
-                className={`h-7 w-7 ${
-                  transparent ? "text-white" : "text-primary"
-                }`}
-              />
-            )}
-          </button>
         </div>
-      </div>
+      </nav>
 
       {/* ✅ Menu Mobile Fullscreen */}
       {mobileMenuOpen && (
@@ -260,7 +262,9 @@ const Navigation = () => {
             </div>
 
             <div>
-              <h3 className="text-sm uppercase text-white/70">Extension Bois</h3>
+              <h3 className="text-sm uppercase text-white/70">
+                Extension Bois
+              </h3>
               {extensionItems.map((i) => (
                 <Link
                   key={i.path}
@@ -293,7 +297,7 @@ const Navigation = () => {
           </nav>
         </div>
       )}
-    </nav>
+    </>
   );
 };
 
