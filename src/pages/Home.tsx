@@ -73,7 +73,7 @@ const Home = () => {
           backgroundPosition: "center",
         }}
       >
-        <Navigation transparent />
+        <Navigation />
         <div className="container mx-auto px-4 animate-slide-up">
           <h1 className="text-6xl md:text-8xl lg:text-9xl font-heading mb-4 text-white" style={{ textShadow: '2px 2px 4px rgba(0,0,0,0.3)' }}>
             l'atelier du volcan
