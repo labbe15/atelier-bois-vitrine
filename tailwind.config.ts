@@ -13,16 +13,16 @@ export default {
       },
     },
     extend: {
-      colors: {
-        border: "hsl(var(--border))",
-        input: "hsl(var(--input))",
-        ring: "hsl(var(--ring))",
-        background: "hsl(var(--background))",
-        foreground: "hsl(var(--foreground))",
-        primary: {
-          DEFAULT: "hsl(var(--primary))",
-          foreground: "hsl(var(--primary-foreground))",
-        },
+colors: {
+  brand: "#6FA276",     // 🌿 Vert principal (L'Atelier)
+  wood: "#A67C52",      // 🪵 Brun bois clair
+  light: "#F7F4EF",     // ☁️ Fond beige naturel
+  dark: "#1E1E1E",      // ⚫ Texte / titres
+  soft: "#FAFAFA",      // 🤍 Blanc cassé
+  accent: "#83B48B",    // 🌱 Vert clair hover
+  neutral: "#DED9D2",   // 🪶 Gris perle neutre
+},
+
         secondary: {
           DEFAULT: "hsl(var(--secondary))",
           foreground: "hsl(var(--secondary-foreground))",
