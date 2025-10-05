@@ -198,16 +198,16 @@ const Contact = () => {
             {/* Google Maps */}
             <Card>
               <CardContent className="p-0">
-                <iframe
-                  src="<iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d706.4717973462698!2d2.327728407140637!3d44.90529075471257!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sfr!2sfr!4v1759667231353!5m2!1sfr!2sfr" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>"
-                  width="100%"
-                  height="300"
-                  style={{ border: 0 }}
-                  allowFullScreen
-                  loading="lazy"
-                  referrerPolicy="no-referrer-when-downgrade"
-                  title="Localisation L'Atelier du Volcan"
-                  className="rounded-lg"
+<iframe
+  src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d706.4717973462698!2d2.327728407140637!3d44.90529075471257!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sfr!2sfr!4v1759667231353!5m2!1sfr!2sfr"
+  width="100%"
+  height="300"
+  style={{ border: 0 }}
+  allowFullScreen
+  loading="lazy"
+  referrerPolicy="no-referrer-when-downgrade"
+  title="Localisation L'Atelier du Volcan"
+  className="rounded-lg"
                 />
               </CardContent>
             </Card>
