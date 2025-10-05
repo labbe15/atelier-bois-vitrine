@@ -6,10 +6,18 @@ import menuiserieImage from "@/assets/menuiserie.jpg";
 import agencementImage from "@/assets/agencement.jpg";
 import extensionImage from "@/assets/extension.jpg";
 
-const Realisations = () => {
-  const [selectedProject, setSelectedProject] = useState<any>(null);
+interface ProjectType {
+  title: string;
+  category: string;
+  location: string;
+  description: string;
+  image: string;
+}
 
-  const projects = [
+const Realisations = () => {
+  const [selectedProject, setSelectedProject] = useState<ProjectType | null>(null);
+
+  const projects: ProjectType[] = [
     {
       title: "Charpente traditionnelle",
       category: "Structure",

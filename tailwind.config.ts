@@ -1,4 +1,5 @@
 import type { Config } from "tailwindcss";
+import tailwindcssAnimate from "tailwindcss-animate";
 
 export default {
   darkMode: ["class"],
@@ -13,16 +14,14 @@ export default {
       },
     },
     extend: {
-colors: {
-  brand: "#6FA276",     // 🌿 Vert principal (L'Atelier)
-  wood: "#A67C52",      // 🪵 Brun bois clair
-  light: "#F7F4EF",     // ☁️ Fond beige naturel
-  dark: "#1E1E1E",      // ⚫ Texte / titres
-  soft: "#FAFAFA",      // 🤍 Blanc cassé
-  accent: "#83B48B",    // 🌱 Vert clair hover
-  neutral: "#DED9D2",   // 🪶 Gris perle neutre
-},
-
+      colors: {
+        brand: "#6FA276",     // 🌿 Vert principal (L'Atelier)
+        wood: "#A67C52",      // 🪵 Brun bois clair
+        light: "#F7F4EF",     // ☁️ Fond beige naturel
+        dark: "#1E1E1E",      // ⚫ Texte / titres
+        soft: "#FAFAFA",      // 🤍 Blanc cassé
+        "accent-hover": "#83B48B",    // 🌱 Vert clair hover
+        neutral: "#DED9D2",   // 🪶 Gris perle neutre
         secondary: {
           DEFAULT: "hsl(var(--secondary))",
           foreground: "hsl(var(--secondary-foreground))",
@@ -95,5 +94,5 @@ colors: {
       },
     },
   },
-  plugins: [require("tailwindcss-animate")],
+  plugins: [tailwindcssAnimate],
 } satisfies Config;
