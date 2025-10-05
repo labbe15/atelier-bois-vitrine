@@ -199,7 +199,7 @@ const Contact = () => {
             <Card>
               <CardContent className="p-0">
                 <iframe
-                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2826.0!2d2.5!3d45.0!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNDXCsDAwJzAwLjAiTiAywrAzMCcwMC4wIkU!5e0!3m2!1sfr!2sfr!4v1234567890"
+                  src="<iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d706.4717973462698!2d2.327728407140637!3d44.90529075471257!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sfr!2sfr!4v1759667231353!5m2!1sfr!2sfr" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>"
                   width="100%"
                   height="300"
                   style={{ border: 0 }}
