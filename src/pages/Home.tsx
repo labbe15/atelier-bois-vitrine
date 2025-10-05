@@ -93,33 +93,33 @@ const Home = () => {
 
       {/* Wave Banner Section with Background Image */}
       <section 
-        className="relative py-20 overflow-hidden"
+        className="relative py-32 overflow-hidden"
         style={{
           backgroundImage: `url(${charpenteImage})`,
           backgroundSize: "cover",
           backgroundPosition: "center",
         }}
       >
-        {/* Wave SVG Overlay */}
-        <div className="absolute inset-0 bg-primary/85"></div>
+        {/* Light overlay for readability */}
+        <div className="absolute inset-0 bg-black/10"></div>
         
-        {/* Content */}
-        <div className="relative z-10 container mx-auto px-4 text-center text-white">
-          <h2 className="text-3xl md:text-4xl font-heading mb-6 italic drop-shadow-lg">
+        {/* Bottom Wave - Green with transparency */}
+        <div className="absolute bottom-0 left-0 w-full overflow-hidden leading-none">
+          <svg className="relative block w-full h-32 md:h-40" viewBox="0 0 1200 120" preserveAspectRatio="none">
+            <path d="M0,0 C150,80 350,80 600,60 C850,40 1050,40 1200,80 L1200,120 L0,120 Z" 
+                  className="fill-primary opacity-85"></path>
+          </svg>
+        </div>
+        
+        {/* Content - positioned above the wave */}
+        <div className="relative z-10 container mx-auto px-4 text-center pb-20">
+          <h2 className="text-3xl md:text-4xl font-heading mb-6 italic drop-shadow-lg text-foreground">
             « Deux artisans, une même passion : le bois »
           </h2>
-          <p className="text-base md:text-lg max-w-4xl mx-auto leading-relaxed font-body drop-shadow">
+          <p className="text-base md:text-lg max-w-4xl mx-auto leading-relaxed font-body drop-shadow text-foreground">
             Forts de nos compétences dans le domaine, nous avons choisi de mettre notre savoir-faire au service de vos envies. 
             Implantés sur la commune de Sansac de Marmiesse, notre atelier à trouvé sa place dans l'ancienne boîte de nuit du Volcan.
           </p>
-        </div>
-        
-        {/* Bottom Wave */}
-        <div className="absolute bottom-0 left-0 w-full overflow-hidden leading-none">
-          <svg className="relative block w-full h-16" viewBox="0 0 1200 120" preserveAspectRatio="none">
-            <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z" 
-                  className="fill-background"></path>
-          </svg>
         </div>
       </section>
 
