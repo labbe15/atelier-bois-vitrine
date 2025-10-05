@@ -66,7 +66,7 @@ const Home = () => {
     <>
       {/* Hero Section with integrated transparent navigation */}
       <section 
-        className="relative h-[80vh] min-h-[600px] flex items-center justify-center text-center"
+        className="relative h-[80vh] min-h-[600px] flex items-center justify-center text-center overflow-hidden"
         style={{
           backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.25)), url(${heroImage})`,
           backgroundSize: "cover",
@@ -74,7 +74,7 @@ const Home = () => {
         }}
       >
         <Navigation />
-        <div className="container mx-auto px-4 animate-slide-up">
+        <div className="container mx-auto px-4 animate-slide-up z-10">
           <h1 className="text-6xl md:text-8xl lg:text-9xl font-heading mb-4 text-white" style={{ textShadow: '2px 2px 4px rgba(0,0,0,0.3)' }}>
             l'atelier du volcan
           </h1>
@@ -89,37 +89,24 @@ const Home = () => {
             <Link to="/contact">Contactez nous</Link>
           </Button>
         </div>
-      </section>
-
-      {/* Wave Banner Section with Background Image */}
-      <section 
-        className="relative py-32 overflow-hidden"
-        style={{
-          backgroundImage: `url(${charpenteImage})`,
-          backgroundSize: "cover",
-          backgroundPosition: "center",
-        }}
-      >
-        {/* Light overlay for readability */}
-        <div className="absolute inset-0 bg-black/10"></div>
         
         {/* Bottom Wave - Green with transparency */}
         <div className="absolute bottom-0 left-0 w-full overflow-hidden leading-none">
-          <svg className="relative block w-full h-32 md:h-40" viewBox="0 0 1200 120" preserveAspectRatio="none">
+          <svg className="relative block w-full h-32 md:h-48" viewBox="0 0 1200 120" preserveAspectRatio="none">
             <path d="M0,0 C150,80 350,80 600,60 C850,40 1050,40 1200,80 L1200,120 L0,120 Z" 
-                  className="fill-primary opacity-85"></path>
+                  className="fill-primary opacity-90"></path>
           </svg>
-        </div>
-        
-        {/* Content - positioned above the wave */}
-        <div className="relative z-10 container mx-auto px-4 text-center pb-20">
-          <h2 className="text-3xl md:text-4xl font-heading mb-6 italic drop-shadow-lg text-foreground">
-            « Deux artisans, une même passion : le bois »
-          </h2>
-          <p className="text-base md:text-lg max-w-4xl mx-auto leading-relaxed font-body drop-shadow text-foreground">
-            Forts de nos compétences dans le domaine, nous avons choisi de mettre notre savoir-faire au service de vos envies. 
-            Implantés sur la commune de Sansac de Marmiesse, notre atelier à trouvé sa place dans l'ancienne boîte de nuit du Volcan.
-          </p>
+          
+          {/* Text inside the wave */}
+          <div className="absolute bottom-4 left-0 right-0 text-center text-white px-4 pb-8">
+            <h2 className="text-2xl md:text-3xl font-heading mb-3 italic drop-shadow-lg">
+              « Deux artisans, une même passion : le bois »
+            </h2>
+            <p className="text-sm md:text-base max-w-3xl mx-auto leading-relaxed font-body drop-shadow">
+              Forts de nos compétences dans le domaine, nous avons choisi de mettre notre savoir-faire au service de vos envies. 
+              Implantés sur la commune de Sansac de Marmiesse, notre atelier à trouvé sa place dans l'ancienne boîte de nuit du Volcan.
+            </p>
+          </div>
         </div>
       </section>
 
