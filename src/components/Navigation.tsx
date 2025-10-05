@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useMemo } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Menu, X, ChevronDown } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -9,61 +9,122 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 
-const Navigation = () => {
-  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const location = useLocation();
-
-  // ✅ Header transparent uniquement sur la page d'accueil
-  const transparent = location.pathname === "/";
-
-  // ✅ Bloque le scroll de la page quand le menu est ouvert
-  useEffect(() => {
-    document.body.style.overflow = mobileMenuOpen ? "hidden" : "";
-  }, [mobileMenuOpen]);
-
-  // ✅ Données des menus
-  const structureItems = [
+// 🎯 Configuration centralisée des menus
+const MENU_CONFIG = {
+  structure: [
     { label: "Charpente", path: "/structure/charpente" },
     { label: "Ossature bois", path: "/structure/ossature-bois" },
     { label: "Pergola", path: "/structure/pergola" },
     { label: "Terrasses", path: "/structure/terrasses" },
     { label: "Carport", path: "/structure/carport" },
-  ];
-
-  const menuiserieItems = [
+  ],
+  menuiserie: [
     { label: "Intérieur", path: "/menuiserie/interieur" },
     { label: "Extérieur", path: "/menuiserie/exterieur" },
     { label: "Escaliers", path: "/menuiserie/escaliers" },
-  ];
-
-  const agencementItems = [
+  ],
+  agencement: [
     { label: "Sols", path: "/agencement/sols" },
     { label: "Dressing", path: "/agencement/dressing" },
     { label: "Cuisines", path: "/agencement/cuisines" },
     { label: "Mobilier sur mesure", path: "/agencement/mobilier" },
-  ];
-
-  const extensionItems = [
+  ],
+  extension: [
     { label: "Extension ossature bois", path: "/extension/ossature-bois" },
     { label: "Surélévation", path: "/extension/surelevation" },
-  ];
+  ],
+} as const;
 
-  const navClasses = `top-0 z-40 w-full transition-all duration-300 ${
-    transparent
-      ? "absolute bg-transparent"
-      : "sticky border-b border-border/40 bg-background/95 backdrop-blur shadow-md supports-[backdrop-filter]:bg-background/60"
-  }`;
+const Navigation = () => {
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const location = useLocation();
+
+  // ✅ Header transparent uniquement sur la page d'accueil
+  const isHomePage = location.pathname === "/";
+
+  // ✅ Bloque le scroll de la page quand le menu est ouvert
+  useEffect(() => {
+    document.body.style.overflow = mobileMenuOpen ? "hidden" : "";
+    return () => {
+      document.body.style.overflow = "";
+    };
+  }, [mobileMenuOpen]);
+
+  // 🔥 FIX: Scroll en haut à chaque changement de page
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: "instant" });
+    setMobileMenuOpen(false); // Ferme aussi le menu mobile
+  }, [location.pathname]);
+
+  // 📱 Ferme le menu mobile
+  const closeMobileMenu = () => setMobileMenuOpen(false);
+
+  // 🎨 Classes CSS optimisées avec useMemo
+  const navClasses = useMemo(
+    () =>
+      `top-0 z-40 w-full transition-all duration-500 ease-in-out ${
+        isHomePage
+          ? "absolute bg-transparent"
+          : "sticky border-b border-border/40 bg-background/95 backdrop-blur-md shadow-sm supports-[backdrop-filter]:bg-background/60"
+      }`,
+    [isHomePage]
+  );
+
+  const linkClasses = (isActive = false) =>
+    `text-sm font-medium transition-all duration-200 relative ${
+      isHomePage
+        ? "text-white hover:text-white/80"
+        : isActive
+        ? "text-primary"
+        : "text-foreground/80 hover:text-primary"
+    } ${isActive ? "after:absolute after:bottom-0 after:left-0 after:w-full after:h-0.5 after:bg-primary" : ""}`;
+
+  // 🎯 Composant DropdownMenu réutilisable
+  const NavDropdown = ({
+    label,
+    items,
+  }: {
+    label: string;
+    items: readonly { label: string; path: string }[];
+  }) => (
+    <DropdownMenu>
+      <DropdownMenuTrigger
+        className={`flex items-center gap-1 text-sm font-medium transition-all duration-200 ${
+          isHomePage
+            ? "text-white hover:text-white/80"
+            : "text-foreground/80 hover:text-primary"
+        }`}
+      >
+        {label} <ChevronDown className="h-4 w-4 transition-transform duration-200" />
+      </DropdownMenuTrigger>
+      <DropdownMenuContent className="min-w-[200px]">
+        {items.map((item) => (
+          <DropdownMenuItem key={item.path} asChild>
+            <Link
+              to={item.path}
+              className="cursor-pointer hover:bg-accent transition-colors"
+            >
+              {item.label}
+            </Link>
+          </DropdownMenuItem>
+        ))}
+      </DropdownMenuContent>
+    </DropdownMenu>
+  );
 
   return (
     <>
       <nav className={navClasses}>
         <div className="container mx-auto px-4">
           <div className="flex h-20 items-center justify-between">
-            {/* Logo */}
-            <Link to="/" className="flex items-center space-x-2">
+            {/* Logo avec animation hover */}
+            <Link
+              to="/"
+              className="flex items-center space-x-2 group transition-transform duration-200 hover:scale-105"
+            >
               <span
-                className={`text-2xl font-heading ${
-                  transparent ? "text-white" : "text-primary"
+                className={`text-2xl font-heading transition-colors ${
+                  isHomePage ? "text-white" : "text-primary"
                 }`}
               >
                 L'Atelier du Volcan
@@ -71,131 +132,50 @@ const Navigation = () => {
             </Link>
 
             {/* Desktop Navigation */}
-            <div className="hidden lg:flex items-center space-x-6">
+            <div className="hidden lg:flex items-center gap-8">
               <Link
                 to="/"
-                className={`text-sm font-medium transition-colors ${
-                  transparent
-                    ? "text-white hover:text-white/80"
-                    : "hover:text-primary"
-                }`}
+                className={linkClasses(location.pathname === "/")}
               >
                 Accueil
               </Link>
 
-              <DropdownMenu>
-                <DropdownMenuTrigger
-                  className={`flex items-center text-sm font-medium transition-colors ${
-                    transparent
-                      ? "text-white hover:text-white/80"
-                      : "hover:text-primary"
-                  }`}
-                >
-                  Structure <ChevronDown className="ml-1 h-4 w-4" />
-                </DropdownMenuTrigger>
-                <DropdownMenuContent>
-                  {structureItems.map((item) => (
-                    <DropdownMenuItem key={item.path} asChild>
-                      <Link to={item.path}>{item.label}</Link>
-                    </DropdownMenuItem>
-                  ))}
-                </DropdownMenuContent>
-              </DropdownMenu>
-
-              <DropdownMenu>
-                <DropdownMenuTrigger
-                  className={`flex items-center text-sm font-medium transition-colors ${
-                    transparent
-                      ? "text-white hover:text-white/80"
-                      : "hover:text-primary"
-                  }`}
-                >
-                  Menuiserie <ChevronDown className="ml-1 h-4 w-4" />
-                </DropdownMenuTrigger>
-                <DropdownMenuContent>
-                  {menuiserieItems.map((item) => (
-                    <DropdownMenuItem key={item.path} asChild>
-                      <Link to={item.path}>{item.label}</Link>
-                    </DropdownMenuItem>
-                  ))}
-                </DropdownMenuContent>
-              </DropdownMenu>
-
-              <DropdownMenu>
-                <DropdownMenuTrigger
-                  className={`flex items-center text-sm font-medium transition-colors ${
-                    transparent
-                      ? "text-white hover:text-white/80"
-                      : "hover:text-primary"
-                  }`}
-                >
-                  Agencement <ChevronDown className="ml-1 h-4 w-4" />
-                </DropdownMenuTrigger>
-                <DropdownMenuContent>
-                  {agencementItems.map((item) => (
-                    <DropdownMenuItem key={item.path} asChild>
-                      <Link to={item.path}>{item.label}</Link>
-                    </DropdownMenuItem>
-                  ))}
-                </DropdownMenuContent>
-              </DropdownMenu>
-
-              <DropdownMenu>
-                <DropdownMenuTrigger
-                  className={`flex items-center text-sm font-medium transition-colors ${
-                    transparent
-                      ? "text-white hover:text-white/80"
-                      : "hover:text-primary"
-                  }`}
-                >
-                  Extension Bois <ChevronDown className="ml-1 h-4 w-4" />
-                </DropdownMenuTrigger>
-                <DropdownMenuContent>
-                  {extensionItems.map((item) => (
-                    <DropdownMenuItem key={item.path} asChild>
-                      <Link to={item.path}>{item.label}</Link>
-                    </DropdownMenuItem>
-                  ))}
-                </DropdownMenuContent>
-              </DropdownMenu>
+              <NavDropdown label="Structure" items={MENU_CONFIG.structure} />
+              <NavDropdown label="Menuiserie" items={MENU_CONFIG.menuiserie} />
+              <NavDropdown label="Agencement" items={MENU_CONFIG.agencement} />
+              <NavDropdown label="Extension Bois" items={MENU_CONFIG.extension} />
 
               <Link
                 to="/realisations"
-                className={`text-sm font-medium transition-colors ${
-                  transparent
-                    ? "text-white hover:text-white/80"
-                    : "hover:text-primary"
-                }`}
+                className={linkClasses(location.pathname === "/realisations")}
               >
                 Réalisations
               </Link>
               <Link
                 to="/contact"
-                className={`text-sm font-medium transition-colors ${
-                  transparent
-                    ? "text-white hover:text-white/80"
-                    : "hover:text-primary"
-                }`}
+                className={linkClasses(location.pathname === "/contact")}
               >
                 Contact
               </Link>
             </div>
 
-            {/* Mobile Menu Button */}
+            {/* Mobile Menu Button avec animation */}
             <button
-              className="lg:hidden"
+              className="lg:hidden transition-transform duration-200 active:scale-90"
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+              aria-label="Toggle menu"
+              aria-expanded={mobileMenuOpen}
             >
               {mobileMenuOpen ? (
                 <X
-                  className={`h-7 w-7 ${
-                    transparent ? "text-white" : "text-primary"
+                  className={`h-7 w-7 transition-colors ${
+                    isHomePage ? "text-white" : "text-primary"
                   }`}
                 />
               ) : (
                 <Menu
-                  className={`h-7 w-7 ${
-                    transparent ? "text-white" : "text-primary"
+                  className={`h-7 w-7 transition-colors ${
+                    isHomePage ? "text-white" : "text-primary"
                   }`}
                 />
               )}
@@ -204,97 +184,94 @@ const Navigation = () => {
         </div>
       </nav>
 
-      {/* ✅ Menu Mobile Fullscreen */}
+      {/* 🎨 Menu Mobile Fullscreen avec animations améliorées */}
       {mobileMenuOpen && (
-        <div className="bg-primary/95 backdrop-blur-sm text-white p-6 animate-fadeIn overflow-y-auto overscroll-contain fixed inset-0 z-[9999]">
-          <div className="flex justify-between items-center mb-8">
-            <h2 className="text-2xl font-heading">Menu</h2>
-            <button onClick={() => setMobileMenuOpen(false)}>
-              <X className="h-7 w-7" />
-            </button>
+        <div className="fixed inset-0 z-[9999] bg-primary/95 backdrop-blur-md text-white animate-in fade-in duration-300">
+          <div className="h-full overflow-y-auto overscroll-contain">
+            <div className="container mx-auto p-6">
+              {/* Header du menu */}
+              <div className="flex justify-between items-center mb-8 animate-in slide-in-from-top duration-300">
+                <h2 className="text-2xl font-heading">Menu</h2>
+                <button
+                  onClick={closeMobileMenu}
+                  className="transition-transform duration-200 active:scale-90"
+                  aria-label="Fermer le menu"
+                >
+                  <X className="h-7 w-7" />
+                </button>
+              </div>
+
+              {/* Navigation mobile */}
+              <nav className="flex flex-col gap-6 text-lg animate-in slide-in-from-bottom duration-500">
+                <Link
+                  to="/"
+                  onClick={closeMobileMenu}
+                  className="hover:translate-x-2 transition-transform duration-200"
+                >
+                  Accueil
+                </Link>
+
+                {/* Sections avec sous-menus */}
+                {Object.entries(MENU_CONFIG).map(([key, items]) => (
+                  <div key={key} className="space-y-2">
+                    <h3 className="text-sm uppercase text-white/70 font-semibold tracking-wider">
+                      {key === "structure"
+                        ? "Structure"
+                        : key === "menuiserie"
+                        ? "Menuiserie"
+                        : key === "agencement"
+                        ? "Agencement"
+                        : "Extension Bois"}
+                    </h3>
+                    <div className="flex flex-col gap-2">
+                      {items.map((item) => (
+                        <Link
+                          key={item.path}
+                          to={item.path}
+                          onClick={closeMobileMenu}
+                          className="pl-4 hover:translate-x-2 hover:text-white/90 transition-all duration-200 border-l-2 border-white/20 hover:border-white"
+                        >
+                          {item.label}
+                        </Link>
+                      ))}
+                    </div>
+                  </div>
+                ))}
+
+                <Link
+                  to="/realisations"
+                  onClick={closeMobileMenu}
+                  className="hover:translate-x-2 transition-transform duration-200 mt-4"
+                >
+                  Réalisations
+                </Link>
+                <Link
+                  to="/a-propos"
+                  onClick={closeMobileMenu}
+                  className="hover:translate-x-2 transition-transform duration-200"
+                >
+                  À propos
+                </Link>
+                <Link
+                  to="/avis"
+                  onClick={closeMobileMenu}
+                  className="hover:translate-x-2 transition-transform duration-200"
+                >
+                  Avis
+                </Link>
+
+                <Button
+                  asChild
+                  className="w-full mt-6 bg-white text-primary hover:bg-white/90 hover:scale-105 transition-all duration-200 shadow-lg"
+                  size="lg"
+                >
+                  <Link to="/contact" onClick={closeMobileMenu}>
+                    Contactez-nous
+                  </Link>
+                </Button>
+              </nav>
+            </div>
           </div>
-
-          <nav className="flex flex-col gap-5 text-lg">
-            <Link to="/" onClick={() => setMobileMenuOpen(false)}>
-              Accueil
-            </Link>
-
-            <div>
-              <h3 className="text-sm uppercase text-white/70">Structure</h3>
-              {structureItems.map((i) => (
-                <Link
-                  key={i.path}
-                  to={i.path}
-                  onClick={() => setMobileMenuOpen(false)}
-                  className="block pl-4 hover:text-white/80"
-                >
-                  {i.label}
-                </Link>
-              ))}
-            </div>
-
-            <div>
-              <h3 className="text-sm uppercase text-white/70">Menuiserie</h3>
-              {menuiserieItems.map((i) => (
-                <Link
-                  key={i.path}
-                  to={i.path}
-                  onClick={() => setMobileMenuOpen(false)}
-                  className="block pl-4 hover:text-white/80"
-                >
-                  {i.label}
-                </Link>
-              ))}
-            </div>
-
-            <div>
-              <h3 className="text-sm uppercase text-white/70">Agencement</h3>
-              {agencementItems.map((i) => (
-                <Link
-                  key={i.path}
-                  to={i.path}
-                  onClick={() => setMobileMenuOpen(false)}
-                  className="block pl-4 hover:text-white/80"
-                >
-                  {i.label}
-                </Link>
-              ))}
-            </div>
-
-            <div>
-              <h3 className="text-sm uppercase text-white/70">
-                Extension Bois
-              </h3>
-              {extensionItems.map((i) => (
-                <Link
-                  key={i.path}
-                  to={i.path}
-                  onClick={() => setMobileMenuOpen(false)}
-                  className="block pl-4 hover:text-white/80"
-                >
-                  {i.label}
-                </Link>
-              ))}
-            </div>
-
-            <Link to="/realisations" onClick={() => setMobileMenuOpen(false)}>
-              Réalisations
-            </Link>
-            <Link to="/a-propos" onClick={() => setMobileMenuOpen(false)}>
-              À propos
-            </Link>
-            <Link to="/avis" onClick={() => setMobileMenuOpen(false)}>
-              Avis
-            </Link>
-
-            <Button
-              asChild
-              className="w-full mt-6 bg-white text-primary hover:bg-white/90"
-              onClick={() => setMobileMenuOpen(false)}
-            >
-              <Link to="/contact">Contact</Link>
-            </Button>
-          </nav>
         </div>
       )}
     </>
