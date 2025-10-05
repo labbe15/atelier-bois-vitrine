@@ -1,99 +1,105 @@
-import type { Config } from "tailwindcss";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
-export default {
-  darkMode: ["class"],
-  content: ["./pages/**/*.{ts,tsx}", "./components/**/*.{ts,tsx}", "./app/**/*.{ts,tsx}", "./src/**/*.{ts,tsx}"],
-  prefix: "",
-  theme: {
-    container: {
-      center: true,
-      padding: "2rem",
-      screens: {
-        "2xl": "1400px",
-      },
-    },
-    extend: {
-colors: {
-  brand: "#6FA276",     // 🌿 Vert principal (L'Atelier)
-  wood: "#A67C52",      // 🪵 Brun bois clair
-  light: "#F7F4EF",     // ☁️ Fond beige naturel
-  dark: "#1E1E1E",      // ⚫ Texte / titres
-  soft: "#FAFAFA",      // 🤍 Blanc cassé
-  accent: "#83B48B",    // 🌱 Vert clair hover
-  neutral: "#DED9D2",   // 🪶 Gris perle neutre
-},
+/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
+All colors MUST be HSL.
+*/
 
-        secondary: {
-          DEFAULT: "hsl(var(--secondary))",
-          foreground: "hsl(var(--secondary-foreground))",
-        },
-        destructive: {
-          DEFAULT: "hsl(var(--destructive))",
-          foreground: "hsl(var(--destructive-foreground))",
-        },
-        muted: {
-          DEFAULT: "hsl(var(--muted))",
-          foreground: "hsl(var(--muted-foreground))",
-        },
-        accent: {
-          DEFAULT: "hsl(var(--accent))",
-          foreground: "hsl(var(--accent-foreground))",
-        },
-        popover: {
-          DEFAULT: "hsl(var(--popover))",
-          foreground: "hsl(var(--popover-foreground))",
-        },
-        card: {
-          DEFAULT: "hsl(var(--card))",
-          foreground: "hsl(var(--card-foreground))",
-        },
-      },
-      fontFamily: {
-        heading: ['Dancing Script', 'cursive'],
-        body: ['Inter', 'sans-serif'],
-      },
-      borderRadius: {
-        lg: "var(--radius)",
-        md: "calc(var(--radius) - 2px)",
-        sm: "calc(var(--radius) - 4px)",
-      },
-      keyframes: {
-        "accordion-down": {
-          from: { height: "0" },
-          to: { height: "var(--radix-accordion-content-height)" },
-        },
-        "accordion-up": {
-          from: { height: "var(--radix-accordion-content-height)" },
-          to: { height: "0" },
-        },
-        "fade-in": {
-          "0%": { opacity: "0", transform: "scale(0.95)" },
-          "100%": { opacity: "1", transform: "scale(1)" },
-        },
-        "fade-out": {
-          "0%": { opacity: "1", transform: "scale(1)" },
-          "100%": { opacity: "0", transform: "scale(0.95)" },
-        },
-        "slide-up": {
-          "0%": { opacity: "0", transform: "translateY(20px)" },
-          "100%": { opacity: "1", transform: "translateY(0)" },
-        },
-        // 🟢 ajout pour le menu mobile
-        fadeIn: {
-          "0%": { opacity: "0" },
-          "100%": { opacity: "1" },
-        },
-      },
-      animation: {
-        "accordion-down": "accordion-down 0.2s ease-out",
-        "accordion-up": "accordion-up 0.2s ease-out",
-        "fade-in": "fade-in 0.6s ease-out",
-        "fade-out": "fade-out 0.6s ease-out",
-        "slide-up": "slide-up 0.6s ease-out",
-        // 🟢 ajout pour le menu mobile
-        fadeIn: "fadeIn 0.3s ease-in-out",
-      },
-    },
-  },
-  plugins: [require("tailwindcss-animate")],
-} satisfies Config;
+@layer base {
+  :root {
+    /* L'Atelier du Volcan - Palette bois & vert */
+    --background: 42 25% 96%;
+    --foreground: 32 40% 15%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 32 40% 15%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 32 40% 15%;
+
+    /* Vert émeraude principal */
+    --primary: 160 84% 39%;
+    --primary-foreground: 0 0% 100%;
+
+    /* Brun bois #a68145 = hsl(38, 40%, 45%) */
+    --secondary: 38 40% 45%;
+    --secondary-foreground: 0 0% 100%;
+
+    --muted: 42 20% 90%;
+    --muted-foreground: 32 20% 40%;
+
+    --accent: 160 60% 50%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 42 20% 85%;
+    --input: 42 20% 85%;
+    --ring: 160 84% 39%;
+
+    --radius: 0.5rem;
+
+    /* Typographie */
+    --font-heading: 'Dancing Script', cursive;
+    --font-body: 'Inter', sans-serif;
+
+    /* Animations */
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .dark {
+    --background: 32 40% 10%;
+    --foreground: 42 25% 96%;
+
+    --card: 32 35% 15%;
+    --card-foreground: 42 25% 96%;
+
+    --popover: 32 35% 15%;
+    --popover-foreground: 42 25% 96%;
+
+    --primary: 160 70% 45%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 38 35% 40%;
+    --secondary-foreground: 0 0% 100%;
+
+    --muted: 32 30% 20%;
+    --muted-foreground: 42 20% 60%;
+
+    --accent: 160 60% 50%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 70% 50%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 32 30% 25%;
+    --input: 32 30% 25%;
+    --ring: 160 70% 45%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-body antialiased;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-heading;
+  }
+}
+
+@layer utilities {
+  .font-heading {
+    font-family: var(--font-heading);
+  }
+
+  .font-body {
+    font-family: var(--font-body);
+  }
+}
