@@ -61,3 +61,13 @@
     font-family: 'Dancing Script', cursive;
   }
 }
+
+@layer utilities {
+  .font-heading {
+    font-family: 'Dancing Script', cursive;
+  }
+
+  .font-body {
+    font-family: 'Inter', sans-serif;
+  }
+}
