@@ -93,7 +93,7 @@ const Home = () => {
         {/* Bottom Wave - Green with transparency */}
         <div className="absolute bottom-0 left-0 w-full overflow-hidden leading-none">
           <svg className="relative block w-full h-56 md:h-72" viewBox="0 0 1200 120" preserveAspectRatio="none">
-            <path d="M0,20 C300,40 600,50 900,70 C1050,80 1150,90 1200,100 L1200,120 L0,120 Z" 
+            <path d="M0,20 C300,45 600,60 900,65 C1050,68 1150,65 1200,60 L1200,120 L0,120 Z" 
                   className="fill-primary opacity-90"></path>
           </svg>
           
