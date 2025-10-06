@@ -92,13 +92,13 @@ const Home = () => {
         
         {/* Bottom Wave - Green with transparency */}
         <div className="absolute bottom-0 left-0 w-full overflow-hidden leading-none">
-          <svg className="relative block w-full h-48 md:h-64" viewBox="0 0 1200 120" preserveAspectRatio="none">
-            <path d="M0,0 C150,80 350,80 600,60 C850,40 1050,40 1200,80 L1200,120 L0,120 Z" 
+          <svg className="relative block w-full h-56 md:h-72" viewBox="0 0 1200 120" preserveAspectRatio="none">
+            <path d="M0,20 C300,40 600,50 900,70 C1050,80 1150,90 1200,100 L1200,120 L0,120 Z" 
                   className="fill-primary opacity-90"></path>
           </svg>
           
           {/* Text inside the wave */}
-          <div className="absolute bottom-2 left-0 right-0 text-center text-white px-4 pb-4">
+          <div className="absolute bottom-4 left-0 right-0 text-center text-white px-4 pb-6">
             <h2 className="text-2xl md:text-3xl font-heading mb-3 italic drop-shadow-lg">
               « Deux artisans, une même passion : le bois »
             </h2>
