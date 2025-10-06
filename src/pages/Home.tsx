@@ -11,7 +11,7 @@ import extensionImage from "@/assets/extension.jpg";
 
 const Home = () => {
   const highlights = [
-    { icon: Clock, title: "Devis sous 48h", description: "Réponse rapide et personnalisée" },
+    { icon: Clock, title: "Devis personnalisé", description: "Réponse rapide et personnalisée" },
     { icon: CheckCircle2, title: "Pose soignée", description: "Finitions impeccables garanties" },
     { icon: ThumbsUp, title: "Matériaux adaptés", description: "Sélection rigoureuse pour chaque projet" },
     { icon: MapPin, title: "Local & réactif", description: "Proximité et disponibilité" },
@@ -66,7 +66,7 @@ const Home = () => {
     <>
       {/* Hero Section with integrated transparent navigation */}
       <section 
-        className="relative h-[80vh] min-h-[600px] flex items-center justify-center text-center overflow-hidden"
+        className="relative h-screen min-h-[700px] flex items-center justify-center text-center overflow-hidden"
         style={{
           backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.25)), url(${heroImage})`,
           backgroundSize: "cover",
@@ -92,16 +92,13 @@ const Home = () => {
         
         {/* Bottom Wave - Green with transparency */}
         <div className="absolute bottom-0 left-0 w-full overflow-hidden leading-none">
-          <svg className="relative block w-full h-32 md:h-48" viewBox="0 0 1200 120" preserveAspectRatio="none">
+          <svg className="relative block w-full h-48 md:h-64" viewBox="0 0 1200 120" preserveAspectRatio="none">
             <path d="M0,0 C150,80 350,80 600,60 C850,40 1050,40 1200,80 L1200,120 L0,120 Z" 
                   className="fill-primary opacity-90"></path>
           </svg>
           
           {/* Text inside the wave */}
-          <div className="absolute bottom-4 left-0 right-0 text-center text-white px-4 pb-8">
-            <h2 className="text-2xl md:text-3xl font-heading mb-3 italic drop-shadow-lg">
-              « Deux artisans, une même passion : le bois »
-            </h2>
+          <div className="absolute bottom-2 left-0 right-0 text-center text-white px-4 pb-4">
             <p className="text-sm md:text-base max-w-3xl mx-auto leading-relaxed font-body drop-shadow">
               Forts de nos compétences dans le domaine, nous avons choisi de mettre notre savoir-faire au service de vos envies. 
               Implantés sur la commune de Sansac de Marmiesse, notre atelier à trouvé sa place dans l'ancienne boîte de nuit du Volcan.
