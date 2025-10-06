@@ -99,6 +99,9 @@ const Home = () => {
           
           {/* Text inside the wave */}
           <div className="absolute bottom-2 left-0 right-0 text-center text-white px-4 pb-4">
+            <h2 className="text-2xl md:text-3xl font-heading mb-3 italic drop-shadow-lg">
+              « Deux artisans, une même passion : le bois »
+            </h2>
             <p className="text-sm md:text-base max-w-3xl mx-auto leading-relaxed font-body drop-shadow">
               Forts de nos compétences dans le domaine, nous avons choisi de mettre notre savoir-faire au service de vos envies. 
               Implantés sur la commune de Sansac de Marmiesse, notre atelier à trouvé sa place dans l'ancienne boîte de nuit du Volcan.
