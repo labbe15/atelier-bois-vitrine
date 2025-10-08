@@ -1,5 +1,3 @@
-import type { VercelRequest, VercelResponse } from '@vercel/node';
-
 interface ContactRequest {
   name: string;
   email: string;
@@ -7,10 +5,7 @@ interface ContactRequest {
   message: string;
 }
 
-export default async function handler(
-  req: VercelRequest,
-  res: VercelResponse
-) {
+export default async function handler(req: any, res: any) {
   // Allow only POST requests
   if (req.method !== 'POST') {
     return res.status(405).json({ error: 'Method not allowed' });
