@@ -1,0 +1,14 @@
+{
+  "title": "Carport",
+  "subtitle": "Protection élégante pour vos véhicules",
+  "description": "Nos carports en bois offrent une protection efficace et esthétique pour vos véhicules. Design moderne, structure robuste et intégration harmonieuse à votre habitat.",
+  "image": "/src/assets/charpente.jpg",
+  "features": [
+    "Protection contre les intempéries",
+    "Design contemporain",
+    "Structure en bois massif",
+    "Options de couverture",
+    "Adapté à tous véhicules",
+    "Installation rapide"
+  ]
+}

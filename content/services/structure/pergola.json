@@ -1,0 +1,14 @@
+{
+  "title": "Pergola",
+  "subtitle": "Créez votre espace extérieur de détente",
+  "description": "Nos pergolas sur mesure allient esthétique et fonctionnalité pour créer un espace de vie extérieur agréable. Bois noble, finitions soignées et adaptation à votre terrain.",
+  "image": "/src/assets/charpente.jpg",
+  "features": [
+    "Design sur mesure",
+    "Essence de bois au choix",
+    "Protection solaire optimale",
+    "Structure robuste",
+    "Intégration paysagère",
+    "Options de couverture"
+  ]
+}

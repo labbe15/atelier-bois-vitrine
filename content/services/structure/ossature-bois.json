@@ -1,0 +1,14 @@
+{
+  "title": "Ossature Bois",
+  "subtitle": "Construction écologique et performante",
+  "description": "L'ossature bois offre une solution de construction moderne, écologique et performante. Isolation optimale, rapidité d'exécution et design contemporain.",
+  "image": "/src/assets/charpente.jpg",
+  "features": [
+    "Construction rapide et propre",
+    "Excellente isolation thermique",
+    "Matériau écologique et durable",
+    "Grande liberté architecturale",
+    "Respect des normes RT 2020",
+    "Garantie décennale"
+  ]
+}
