@@ -2,7 +2,6 @@ import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import * as z from "zod";
-import { supabase } from "@/integrations/supabase/client";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
@@ -36,16 +35,22 @@ const Contact = () => {
     setIsSubmitting(true);
     
     try {
-      const { data, error } = await supabase.functions.invoke('send-contact-email', {
-        body: {
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
           name: values.name,
           email: values.email,
           phone: values.phone,
           message: values.message,
-        }
+        }),
       });
 
-      if (error) throw error;
+      if (!response.ok) {
+        throw new Error('Failed to send message');
+      }
 
       toast({
         title: "Message envoyé !",

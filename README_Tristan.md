@@ -1,16 +1,16 @@
-# Guide d'utilisation - L'Atelier du Volcan
+# Guide de gestion du site - L'Atelier du Volcan
 
-Bonjour Tristan ! 👋
+Bienvenue Tristan ! Ce guide va te montrer comment gérer le contenu de ton site facilement.
 
-Ce guide va vous expliquer comment modifier facilement le contenu de votre site web sans avoir besoin de coder.
+---
 
-## 🌐 Accéder à l'administration
+## 🎨 Accès au panneau d'administration
 
-Pour modifier le contenu de votre site, vous devez vous connecter à l'interface d'administration :
+**URL :** `https://atelierduvolcan.fr/admin`
 
-**URL d'administration** : `https://atelierduvolcan.fr/admin`
+⚠️ **Note importante** : Pour modifier le contenu directement via le CMS, une configuration initiale est nécessaire (voir la section "Configuration initiale" en bas de ce document). Pour le moment, tu peux me demander (Lovable AI) de modifier le contenu via des prompts, et je le ferai pour toi instantanément.
 
-> ⚠️ **Note importante** : Le CMS Decap nécessite d'être configuré après le déploiement sur Vercel et la connexion à GitHub. Pour l'instant, vous pouvez modifier le contenu en demandant à Lovable AI de faire les changements pour vous via des prompts.
+---
 
 ## 📝 Modifier le contenu du site
 
@@ -137,7 +137,9 @@ Pour que le formulaire de contact fonctionne :
 1. Créez un compte sur [Resend.com](https://resend.com)
 2. Validez votre domaine email dans Resend
 3. Générez une clé API
-4. Ajoutez la clé API dans les variables d'environnement Vercel
+4. Ajoutez la clé API dans les variables d'environnement Vercel :
+   - **Name** : `RESEND_API_KEY`
+   - **Value** : [ta clé API Resend]
 5. Le formulaire enverra les messages à `contact@atelier-du-volcan.com`
 
 ## ❓ Besoin d'aide ?
