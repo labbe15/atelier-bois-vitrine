@@ -3,19 +3,18 @@ import { motion, AnimatePresence } from "framer-motion";
 
 const IntroAnimation = () => {
   const [isVisible, setIsVisible] = useState(true);
-  const [hasPlayed, setHasPlayed] = useState(false);
+  
 
   useEffect(() => {
     // Play animation
     const timer = setTimeout(() => {
       setIsVisible(false);
-      setHasPlayed(true);
     }, 3500); // 3.5 seconds total
 
     return () => clearTimeout(timer);
   }, []);
 
-  if (hasPlayed && !isVisible) return null;
+  
 
   return (
     <AnimatePresence>
