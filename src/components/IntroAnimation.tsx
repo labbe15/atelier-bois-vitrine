@@ -32,12 +32,12 @@ const IntroAnimation = () => {
             animate={{ opacity: 1, scale: 1 }}
             exit={{ 
               opacity: 0, 
-              scale: 1.2,
-              filter: "blur(10px)"
+              scale: 0.9,
+              y: -30
             }}
             transition={{ 
-              duration: 1.2, 
-              ease: "easeOut"
+              duration: 0.6, 
+              ease: "easeInOut"
             }}
           >
             <motion.div
