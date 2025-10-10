@@ -12,8 +12,8 @@ import {
 // 🎯 Configuration centralisée des menus
 const MENU_CONFIG = {
   structure: [
+    { label: "Maison ossature bois", path: "/structure/ossature-bois" },
     { label: "Charpente", path: "/structure/charpente" },
-    { label: "Ossature bois", path: "/structure/ossature-bois" },
     { label: "Pergola", path: "/structure/pergola" },
     { label: "Terrasses", path: "/structure/terrasses" },
     { label: "Carport", path: "/structure/carport" },
