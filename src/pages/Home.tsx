@@ -92,17 +92,17 @@ const Home = () => {
         
         {/* Bottom Wave - Green with transparency */}
         <div className="absolute bottom-0 left-0 w-full overflow-hidden leading-none">
-          <svg className="relative block w-full h-64 md:h-80" viewBox="0 0 1200 120" preserveAspectRatio="none">
+          <svg className="relative block w-full h-80 md:h-80" viewBox="0 0 1200 120" preserveAspectRatio="none">
             <path d="M0,15 C300,40 600,55 900,60 C1050,63 1150,60 1200,55 L1200,120 L0,120 Z" 
                   className="fill-primary opacity-90"></path>
           </svg>
           
           {/* Text inside the wave */}
-          <div className="absolute bottom-4 left-0 right-0 text-center text-white px-4 pb-6">
-            <h2 className="text-2xl md:text-3xl font-heading mb-3 italic drop-shadow-lg">
+          <div className="absolute bottom-8 md:bottom-6 left-0 right-0 text-center text-white px-4 pb-4 md:pb-6">
+            <h2 className="text-xl md:text-3xl font-heading mb-2 md:mb-3 italic drop-shadow-lg">
               « Deux artisans, une même passion : le bois »
             </h2>
-            <p className="text-sm md:text-base max-w-3xl mx-auto leading-relaxed font-body drop-shadow">
+            <p className="text-xs md:text-base max-w-3xl mx-auto leading-relaxed font-body drop-shadow">
               Forts de nos compétences dans le domaine, nous avons choisi de mettre notre savoir-faire au service de vos envies. 
               Implantés sur la commune de Sansac de Marmiesse, notre atelier à trouvé sa place dans l'ancienne boîte de nuit du Volcan.
             </p>
