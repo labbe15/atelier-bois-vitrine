@@ -1,6 +1,6 @@
 import { useState, useEffect, useMemo } from "react";
 import { Link, useLocation } from "react-router-dom";
-import { Menu, X, ChevronDown, Hammer, Home, Building2, LayoutGrid, TreePine } from "lucide-react";
+import { Menu, X, ChevronDown, Hammer, Home, Frame, LayoutGrid, Layers } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import {
   DropdownMenu,
@@ -158,10 +158,10 @@ const Navigation = () => {
               </Link>
 
               <NavDropdown label="Structure" items={MENU_CONFIG.structure} icon={Hammer} />
-              <NavDropdown label="Menuiserie Intérieure" items={MENU_CONFIG.menuiserieInterieur} icon={Home} />
-              <NavDropdown label="Menuiserie Extérieure" items={MENU_CONFIG.menuiserieExterieur} icon={Building2} />
+              <NavDropdown label="Menuiserie Intérieure" items={MENU_CONFIG.menuiserieInterieur} icon={Layers} />
+              <NavDropdown label="Menuiserie Extérieure" items={MENU_CONFIG.menuiserieExterieur} icon={Frame} />
               <NavDropdown label="Agencement" items={MENU_CONFIG.agencement} icon={LayoutGrid} />
-              <NavDropdown label="Extension" items={MENU_CONFIG.extension} icon={TreePine} />
+              <NavDropdown label="Extension" items={MENU_CONFIG.extension} icon={Home} />
 
               <Link
                 to="/realisations"
