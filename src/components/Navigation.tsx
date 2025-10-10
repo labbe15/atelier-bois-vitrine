@@ -1,6 +1,6 @@
 import { useState, useEffect, useMemo } from "react";
 import { Link, useLocation } from "react-router-dom";
-import { Menu, X, ChevronDown } from "lucide-react";
+import { Menu, X, ChevronDown, Hammer, DoorOpen, LayoutGrid, TreePine } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import {
   DropdownMenu,
@@ -83,9 +83,11 @@ const Navigation = () => {
   const NavDropdown = ({
     label,
     items,
+    icon: Icon,
   }: {
     label: string;
     items: readonly { label: string; path: string }[];
+    icon?: React.ComponentType<{ className?: string }>;
   }) => (
     <DropdownMenu>
       <DropdownMenuTrigger
@@ -95,6 +97,7 @@ const Navigation = () => {
             : "text-foreground/80 hover:text-primary"
         }`}
       >
+        {Icon && <Icon className="h-4 w-4" />}
         {label} <ChevronDown className="h-4 w-4 transition-transform duration-200" />
       </DropdownMenuTrigger>
       <DropdownMenuContent className="min-w-[200px]">
@@ -140,10 +143,10 @@ const Navigation = () => {
                 Accueil
               </Link>
 
-              <NavDropdown label="Structure" items={MENU_CONFIG.structure} />
-              <NavDropdown label="Menuiserie" items={MENU_CONFIG.menuiserie} />
-              <NavDropdown label="Agencement" items={MENU_CONFIG.agencement} />
-              <NavDropdown label="Extension Bois" items={MENU_CONFIG.extension} />
+              <NavDropdown label="Structure" items={MENU_CONFIG.structure} icon={Hammer} />
+              <NavDropdown label="Menuiserie" items={MENU_CONFIG.menuiserie} icon={DoorOpen} />
+              <NavDropdown label="Agencement" items={MENU_CONFIG.agencement} icon={LayoutGrid} />
+              <NavDropdown label="Extension Bois" items={MENU_CONFIG.extension} icon={TreePine} />
 
               <Link
                 to="/realisations"
