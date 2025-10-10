@@ -16,15 +16,27 @@ import OssatureBois from "./pages/services/OssatureBois";
 import Pergola from "./pages/services/Pergola";
 import Terrasses from "./pages/services/Terrasses";
 import Carport from "./pages/services/Carport";
-import MenuiserieInterieur from "./pages/services/MenuiserieInterieur";
-import MenuiserieExterieur from "./pages/services/MenuiserieExterieur";
 import Escaliers from "./pages/services/Escaliers";
+import Bibliotheques from "./pages/services/Bibliotheques";
+import Tables from "./pages/services/Tables";
 import Sols from "./pages/services/Sols";
+import PortesCommunication from "./pages/services/PortesCommunication";
+import MobilierSurMesure from "./pages/services/MobilierSurMesure";
+import Fenetres from "./pages/services/Fenetres";
+import Volets from "./pages/services/Volets";
+import PortesEntree from "./pages/services/PortesEntree";
+import PortesGarage from "./pages/services/PortesGarage";
+import Portails from "./pages/services/Portails";
+import Clotures from "./pages/services/Clotures";
 import Dressing from "./pages/services/Dressing";
 import Cuisines from "./pages/services/Cuisines";
-import MobilierSurMesure from "./pages/services/MobilierSurMesure";
+import AmenagementSurMesure from "./pages/services/AmenagementSurMesure";
 import ExtensionOssatureBois from "./pages/services/ExtensionOssatureBois";
+import Garage from "./pages/services/Garage";
 import Surelevation from "./pages/services/Surelevation";
+import Veranda from "./pages/services/Veranda";
+import PoolHouse from "./pages/services/PoolHouse";
+import AbriJardin from "./pages/services/AbriJardin";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -50,20 +62,34 @@ const AppContent = () => {
         <Route path="/structure/terrasses" element={<Terrasses />} />
         <Route path="/structure/carport" element={<Carport />} />
         
-        {/* Menuiserie */}
-        <Route path="/menuiserie/interieur" element={<MenuiserieInterieur />} />
-        <Route path="/menuiserie/exterieur" element={<MenuiserieExterieur />} />
-        <Route path="/menuiserie/escaliers" element={<Escaliers />} />
+        {/* Menuiserie Intérieure */}
+        <Route path="/menuiserie-interieur/escaliers" element={<Escaliers />} />
+        <Route path="/menuiserie-interieur/bibliotheques" element={<Bibliotheques />} />
+        <Route path="/menuiserie-interieur/tables" element={<Tables />} />
+        <Route path="/menuiserie-interieur/sols" element={<Sols />} />
+        <Route path="/menuiserie-interieur/portes-communication" element={<PortesCommunication />} />
+        <Route path="/menuiserie-interieur/mobilier" element={<MobilierSurMesure />} />
+        
+        {/* Menuiserie Extérieure */}
+        <Route path="/menuiserie-exterieur/fenetres" element={<Fenetres />} />
+        <Route path="/menuiserie-exterieur/volets" element={<Volets />} />
+        <Route path="/menuiserie-exterieur/portes-entree" element={<PortesEntree />} />
+        <Route path="/menuiserie-exterieur/portes-garage" element={<PortesGarage />} />
+        <Route path="/menuiserie-exterieur/portails" element={<Portails />} />
+        <Route path="/menuiserie-exterieur/clotures" element={<Clotures />} />
         
         {/* Agencement */}
-        <Route path="/agencement/sols" element={<Sols />} />
         <Route path="/agencement/dressing" element={<Dressing />} />
         <Route path="/agencement/cuisines" element={<Cuisines />} />
-        <Route path="/agencement/mobilier" element={<MobilierSurMesure />} />
+        <Route path="/agencement/amenagement" element={<AmenagementSurMesure />} />
         
         {/* Extension */}
         <Route path="/extension/ossature-bois" element={<ExtensionOssatureBois />} />
+        <Route path="/extension/garage" element={<Garage />} />
         <Route path="/extension/surelevation" element={<Surelevation />} />
+        <Route path="/extension/veranda" element={<Veranda />} />
+        <Route path="/extension/pool-house" element={<PoolHouse />} />
+        <Route path="/extension/abri-jardin" element={<AbriJardin />} />
         
         <Route path="*" element={<NotFound />} />
       </Routes>

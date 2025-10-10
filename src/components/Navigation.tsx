@@ -1,6 +1,6 @@
 import { useState, useEffect, useMemo } from "react";
 import { Link, useLocation } from "react-router-dom";
-import { Menu, X, ChevronDown, Hammer, DoorOpen, LayoutGrid, TreePine } from "lucide-react";
+import { Menu, X, ChevronDown, Hammer, Home, Building2, LayoutGrid, TreePine } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import {
   DropdownMenu,
@@ -18,20 +18,34 @@ const MENU_CONFIG = {
     { label: "Terrasses", path: "/structure/terrasses" },
     { label: "Carport", path: "/structure/carport" },
   ],
-  menuiserie: [
-    { label: "Intérieur", path: "/menuiserie/interieur" },
-    { label: "Extérieur", path: "/menuiserie/exterieur" },
-    { label: "Escaliers", path: "/menuiserie/escaliers" },
+  menuiserieInterieur: [
+    { label: "Escaliers", path: "/menuiserie-interieur/escaliers" },
+    { label: "Bibliothèques", path: "/menuiserie-interieur/bibliotheques" },
+    { label: "Tables", path: "/menuiserie-interieur/tables" },
+    { label: "Sols", path: "/menuiserie-interieur/sols" },
+    { label: "Portes de communication", path: "/menuiserie-interieur/portes-communication" },
+    { label: "Mobilier sur mesure", path: "/menuiserie-interieur/mobilier" },
+  ],
+  menuiserieExterieur: [
+    { label: "Fenêtres", path: "/menuiserie-exterieur/fenetres" },
+    { label: "Volets", path: "/menuiserie-exterieur/volets" },
+    { label: "Portes d'entrée", path: "/menuiserie-exterieur/portes-entree" },
+    { label: "Portes de garage", path: "/menuiserie-exterieur/portes-garage" },
+    { label: "Portails", path: "/menuiserie-exterieur/portails" },
+    { label: "Clôtures", path: "/menuiserie-exterieur/clotures" },
   ],
   agencement: [
-    { label: "Sols", path: "/agencement/sols" },
     { label: "Dressing", path: "/agencement/dressing" },
     { label: "Cuisines", path: "/agencement/cuisines" },
-    { label: "Mobilier sur mesure", path: "/agencement/mobilier" },
+    { label: "Aménagement sur mesure", path: "/agencement/amenagement" },
   ],
   extension: [
     { label: "Extension ossature bois", path: "/extension/ossature-bois" },
+    { label: "Garage", path: "/extension/garage" },
     { label: "Surélévation", path: "/extension/surelevation" },
+    { label: "Véranda", path: "/extension/veranda" },
+    { label: "Pool House", path: "/extension/pool-house" },
+    { label: "Abri de jardin", path: "/extension/abri-jardin" },
   ],
 } as const;
 
@@ -144,9 +158,10 @@ const Navigation = () => {
               </Link>
 
               <NavDropdown label="Structure" items={MENU_CONFIG.structure} icon={Hammer} />
-              <NavDropdown label="Menuiserie" items={MENU_CONFIG.menuiserie} icon={DoorOpen} />
+              <NavDropdown label="Menuiserie Intérieure" items={MENU_CONFIG.menuiserieInterieur} icon={Home} />
+              <NavDropdown label="Menuiserie Extérieure" items={MENU_CONFIG.menuiserieExterieur} icon={Building2} />
               <NavDropdown label="Agencement" items={MENU_CONFIG.agencement} icon={LayoutGrid} />
-              <NavDropdown label="Extension Bois" items={MENU_CONFIG.extension} icon={TreePine} />
+              <NavDropdown label="Extension" items={MENU_CONFIG.extension} icon={TreePine} />
 
               <Link
                 to="/realisations"
@@ -220,11 +235,13 @@ const Navigation = () => {
                     <h3 className="text-sm uppercase text-white/70 font-semibold tracking-wider">
                       {key === "structure"
                         ? "Structure"
-                        : key === "menuiserie"
-                        ? "Menuiserie"
+                        : key === "menuiserieInterieur"
+                        ? "Menuiserie Intérieure"
+                        : key === "menuiserieExterieur"
+                        ? "Menuiserie Extérieure"
                         : key === "agencement"
                         ? "Agencement"
-                        : "Extension Bois"}
+                        : "Extension"}
                     </h3>
                     <div className="flex flex-col gap-2">
                       {items.map((item) => (
