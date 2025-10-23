@@ -9,7 +9,7 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 
-// 🎯 Configuration centralisée des menus
+// Configuration centralisée des menus
 const MENU_CONFIG = {
   structure: [
     { label: "Maison ossature bois", path: "/structure/ossature-bois" },
@@ -53,10 +53,10 @@ const Navigation = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const location = useLocation();
 
-  // ✅ Header transparent uniquement sur la page d'accueil
+  // Header transparent uniquement sur la page d'accueil
   const isHomePage = location.pathname === "/";
 
-  // ✅ Bloque le scroll de la page quand le menu est ouvert
+  // Bloque le scroll de la page quand le menu est ouvert
   useEffect(() => {
     document.body.style.overflow = mobileMenuOpen ? "hidden" : "";
     return () => {
@@ -64,16 +64,16 @@ const Navigation = () => {
     };
   }, [mobileMenuOpen]);
 
-  // 🔥 FIX: Scroll en haut à chaque changement de page
+  // Scroll en haut à chaque changement de page
   useEffect(() => {
     window.scrollTo({ top: 0, behavior: "instant" });
     setMobileMenuOpen(false); // Ferme aussi le menu mobile
   }, [location.pathname]);
 
-  // 📱 Ferme le menu mobile
+  // Ferme le menu mobile
   const closeMobileMenu = () => setMobileMenuOpen(false);
 
-  // 🎨 Classes CSS optimisées avec useMemo
+  // Classes CSS optimisées avec useMemo
   const navClasses = useMemo(
     () =>
       `top-0 z-40 w-full transition-all duration-500 ease-in-out ${
@@ -93,7 +93,7 @@ const Navigation = () => {
         : "text-foreground/80 hover:text-primary"
     } ${isActive ? "after:absolute after:bottom-0 after:left-0 after:w-full after:h-0.5 after:bg-primary" : ""}`;
 
-  // 🎯 Composant DropdownMenu réutilisable
+  // Composant DropdownMenu réutilisable
   const NavDropdown = ({
     label,
     items,
@@ -202,7 +202,7 @@ const Navigation = () => {
         </div>
       </nav>
 
-      {/* 🎨 Menu Mobile Fullscreen avec animations améliorées */}
+      {/* Menu Mobile Fullscreen avec animations améliorées */}
       {mobileMenuOpen && (
         <div className="fixed inset-0 z-[9999] bg-primary/95 backdrop-blur-md text-white animate-in fade-in duration-300">
           <div className="h-full overflow-y-auto overscroll-contain">

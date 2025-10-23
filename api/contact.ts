@@ -35,6 +35,16 @@ export default async function handler(req: any, res: any) {
       return res.status(500).json({ error: 'Server configuration error' });
     }
 
+    // HTML escape function to prevent XSS
+    const escapeHtml = (unsafe: string): string => {
+      return unsafe
+        .replace(/&/g, "&amp;")
+        .replace(/</g, "&lt;")
+        .replace(/>/g, "&gt;")
+        .replace(/"/g, "&quot;")
+        .replace(/'/g, "&#039;");
+    };
+
     // Send email via Resend
     const resendResponse = await fetch('https://api.resend.com/emails', {
       method: 'POST',
@@ -46,14 +56,14 @@ export default async function handler(req: any, res: any) {
         from: "L'Atelier du Volcan <onboarding@resend.dev>",
         to: ["contact@atelier-du-volcan.com"],
         reply_to: email,
-        subject: `Nouveau message de ${name}`,
+        subject: `Nouveau message de ${escapeHtml(name)}`,
         html: `
           <h2>Nouveau message depuis le site</h2>
-          <p><strong>Nom:</strong> ${name}</p>
-          <p><strong>Email:</strong> ${email}</p>
-          ${phone ? `<p><strong>Téléphone:</strong> ${phone}</p>` : ''}
+          <p><strong>Nom:</strong> ${escapeHtml(name)}</p>
+          <p><strong>Email:</strong> ${escapeHtml(email)}</p>
+          ${phone ? `<p><strong>Téléphone:</strong> ${escapeHtml(phone)}</p>` : ''}
           <p><strong>Message:</strong></p>
-          <p>${message.replace(/\n/g, '<br>')}</p>
+          <p>${escapeHtml(message).replace(/\n/g, '<br>')}</p>
         `,
       }),
     });
@@ -65,9 +75,8 @@ export default async function handler(req: any, res: any) {
     }
 
     const result = await resendResponse.json();
-    console.log('Email sent successfully:', result.id);
 
-    return res.status(200).json({ success: true });
+    return res.status(200).json({ success: true, emailId: result.id });
   } catch (error: any) {
     console.error('Error in contact handler:', error);
     return res.status(500).json({ error: 'Internal server error' });
