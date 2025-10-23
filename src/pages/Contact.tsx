@@ -13,7 +13,7 @@ import { MapPin, Phone, Mail, Facebook, Instagram, Clock, Send } from "lucide-re
 const formSchema = z.object({
   name: z.string().min(2, "Le nom doit contenir au moins 2 caractères"),
   email: z.string().email("Email invalide"),
-  phone: z.string().min(10, "Téléphone invalide"),
+  phone: z.string().optional(),
   message: z.string().min(10, "Le message doit contenir au moins 10 caractères"),
 });
 
@@ -138,13 +138,13 @@ const Contact = () => {
                     name="phone"
                     render={({ field }) => (
                       <FormItem>
-                        <FormLabel>Téléphone *</FormLabel>
+                        <FormLabel>Téléphone</FormLabel>
                         <FormControl>
-                          <Input 
-                            type="tel" 
-                            placeholder="06 12 34 56 78" 
+                          <Input
+                            type="tel"
+                            placeholder="06 12 34 56 78"
                             className="transition-all duration-200 focus:scale-[1.02]"
-                            {...field} 
+                            {...field}
                           />
                         </FormControl>
                         <FormMessage />
