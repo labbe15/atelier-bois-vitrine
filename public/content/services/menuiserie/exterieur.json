@@ -1,0 +1,14 @@
+{
+  "title": "Menuiserie Extérieur",
+  "subtitle": "Menuiseries extérieures de qualité",
+  "description": "Conception et pose de menuiseries extérieures en bois. Fenêtres, portes d'entrée, volets et portails alliant esthétique et performance.",
+  "image": "/src/assets/menuiserie.jpg",
+  "features": [
+    "Fenêtres bois double vitrage",
+    "Portes d'entrée massives",
+    "Volets battants et coulissants",
+    "Portails et portillons",
+    "Traitement insecticide et fongicide",
+    "Garantie étanchéité"
+  ]
+}

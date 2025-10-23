@@ -1,0 +1,14 @@
+{
+  "title": "Menuiserie Intérieur",
+  "subtitle": "Aménagement intérieur sur mesure",
+  "description": "Création de menuiseries intérieures sur mesure adaptées à vos besoins et à votre décoration. Portes, placards, bibliothèques et aménagements personnalisés.",
+  "image": "/src/assets/menuiserie.jpg",
+  "features": [
+    "Portes intérieures sur mesure",
+    "Placards et rangements",
+    "Bibliothèques intégrées",
+    "Habillage de murs",
+    "Finitions nobles",
+    "Adaptation au style de votre intérieur"
+  ]
+}

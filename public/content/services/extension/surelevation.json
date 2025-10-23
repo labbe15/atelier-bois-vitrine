@@ -1,0 +1,14 @@
+{
+  "title": "Surélévation",
+  "subtitle": "Gagnez de l'espace en hauteur",
+  "description": "Surélévation de votre habitat pour créer un nouvel étage. Structure légère en bois, idéale pour augmenter la surface habitable sans emprise au sol.",
+  "image": "/src/assets/extension.jpg",
+  "features": [
+    "Analyse structure existante",
+    "Construction légère",
+    "Pas d'emprise au sol",
+    "Isolation optimale",
+    "Raccordements techniques",
+    "Chantier rapide et propre"
+  ]
+}

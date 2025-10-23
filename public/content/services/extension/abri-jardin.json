@@ -1,0 +1,14 @@
+{
+  "title": "Abri de jardin",
+  "subtitle": "Abris de jardin en bois sur mesure",
+  "description": "Abris de jardin solides et esthétiques pour ranger vos outils et équipements. Construction en bois traité, toiture étanche, porte sécurisée. Du petit cabanon au grand abri, nous adaptons les dimensions à vos besoins.",
+  "image": "/src/assets/extension.jpg",
+  "features": [
+    "Bois traité classe 3",
+    "Toiture étanche",
+    "Plancher sur solives",
+    "Porte avec serrure",
+    "Fenêtres (optionnel)",
+    "Sur-mesure dimensions"
+  ]
+}

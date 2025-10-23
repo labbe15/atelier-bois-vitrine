@@ -1,0 +1,14 @@
+{
+  "title": "Dressing",
+  "subtitle": "Dressings sur mesure optimisés",
+  "description": "Conception de dressings sur mesure parfaitement adaptés à votre espace. Optimisation du rangement, modularité et finitions soignées.",
+  "image": "/src/assets/agencement.jpg",
+  "features": [
+    "Conception 3D personnalisée",
+    "Optimisation de l'espace",
+    "Aménagement modulable",
+    "Finitions au choix",
+    "Éclairage LED intégré",
+    "Accessoires de rangement"
+  ]
+}

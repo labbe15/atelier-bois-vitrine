@@ -1,0 +1,14 @@
+{
+  "title": "Mobilier sur mesure",
+  "subtitle": "Créations uniques adaptées à vos besoins",
+  "description": "Du mobilier unique conçu spécialement pour vous. Tables de chevet, consoles, buffets, bancs... Chaque meuble est une pièce unique réalisée dans notre atelier. Nous donnons vie à vos idées avec passion et savoir-faire.",
+  "image": "/src/assets/menuiserie.jpg",
+  "features": [
+    "Conception personnalisée",
+    "Bois massif noble",
+    "Design unique",
+    "Finitions artisanales",
+    "Adaptation à votre espace",
+    "Pièces signées"
+  ]
+}

@@ -6,11 +6,15 @@
     "paths": {
       "@/*": ["./src/*"]
     },
-    "noImplicitAny": false,
-    "noUnusedParameters": false,
+    // Configuration TypeScript progressivement plus stricte
+    // Activez ces options une par une au fur et à mesure
+    "noImplicitAny": false, // TODO: passer à true quand le code est prêt
+    "noUnusedParameters": false, // TODO: passer à true pour détecter les paramètres inutilisés
+    "noUnusedLocals": false, // TODO: passer à true pour détecter les variables inutilisées
+    "strictNullChecks": false, // TODO: passer à true pour une meilleure sécurité des types
+
+    // Options déjà activées
     "skipLibCheck": true,
-    "allowJs": true,
-    "noUnusedLocals": false,
-    "strictNullChecks": false
+    "allowJs": true
   }
 }
