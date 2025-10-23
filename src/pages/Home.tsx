@@ -1,8 +1,10 @@
+import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { CheckCircle2, Clock, ThumbsUp, MapPin } from "lucide-react";
 import Navigation from "@/components/Navigation";
+import { loadHomeContent, loadTestimonials, type HomeContent, type TestimonialContent } from "@/lib/content-loader";
 import heroImage from "@/assets/hero-wood.jpg";
 import charpenteImage from "@/assets/charpente.jpg";
 import menuiserieImage from "@/assets/menuiserie.jpg";
@@ -10,62 +12,63 @@ import agencementImage from "@/assets/agencement.jpg";
 import extensionImage from "@/assets/extension.jpg";
 
 const Home = () => {
-  const highlights = [
-    { icon: Clock, title: "Devis personnalisé", description: "Réponse rapide et personnalisée" },
-    { icon: CheckCircle2, title: "Pose soignée", description: "Finitions impeccables garanties" },
-    { icon: ThumbsUp, title: "Matériaux adaptés", description: "Sélection rigoureuse pour chaque projet" },
-    { icon: MapPin, title: "Local & réactif", description: "Proximité et disponibilité" },
+  const [content, setContent] = useState<HomeContent | null>(null);
+  const [testimonials, setTestimonials] = useState<TestimonialContent[]>([]);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    const loadContent = async () => {
+      try {
+        const [homeData, testimonialsData] = await Promise.all([
+          loadHomeContent(),
+          loadTestimonials()
+        ]);
+        setContent(homeData);
+        setTestimonials(testimonialsData);
+      } catch (error) {
+        console.error('Failed to load content:', error);
+      } finally {
+        setLoading(false);
+      }
+    };
+    loadContent();
+  }, []);
+
+  // Fallback par défaut en cas d'erreur de chargement
+  const highlights = content?.highlights || [
+    { title: "Devis personnalisé", description: "Réponse rapide et personnalisée" },
+    { title: "Pose soignée", description: "Finitions impeccables garanties" },
+    { title: "Matériaux adaptés", description: "Sélection rigoureuse pour chaque projet" },
+    { title: "Local & réactif", description: "Proximité et disponibilité" },
   ];
 
-  const services = [
-    {
-      title: "Structure",
-      description: "Charpente, ossature bois, pergola, terrasses et carport",
-      image: charpenteImage,
-      link: "/structure/charpente",
-    },
-    {
-      title: "Menuiserie",
-      description: "Menuiserie intérieure, extérieure et escaliers sur mesure",
-      image: menuiserieImage,
-      link: "/menuiserie/interieur",
-    },
-    {
-      title: "Agencement",
-      description: "Dressing, cuisines, mobilier sur mesure et sols",
-      image: agencementImage,
-      link: "/agencement/cuisines",
-    },
-    {
-      title: "Extension Bois",
-      description: "Extension ossature bois et surélévation",
-      image: extensionImage,
-      link: "/extension/ossature-bois",
-    },
-  ];
+  const highlightIcons = [Clock, CheckCircle2, ThumbsUp, MapPin];
 
-  const testimonials = [
-    {
-      name: "Claire D.",
-      text: "Très satisfaite de notre terrasse en bois. Travail soigné et équipe professionnelle.",
-      rating: 5,
-    },
-    {
-      name: "Hugo M.",
-      text: "Excellente prestation pour notre cuisine sur mesure. À l'écoute et de bon conseil.",
-      rating: 5,
-    },
-    {
-      name: "Nina S.",
-      text: "Extension réalisée dans les temps avec une qualité remarquable. Je recommande !",
-      rating: 5,
-    },
-  ];
+  // Mapping des images pour les services
+  const serviceImages: Record<string, string> = {
+    Structure: charpenteImage,
+    Menuiserie: menuiserieImage,
+    Agencement: agencementImage,
+    "Extension Bois": extensionImage,
+  };
+
+  const services = content?.services.map(service => ({
+    ...service,
+    image: serviceImages[service.title] || service.image,
+  })) || [];
+
+  if (loading) {
+    return (
+      <div className="min-h-screen flex items-center justify-center">
+        <p className="text-lg">Chargement...</p>
+      </div>
+    );
+  }
 
   return (
     <>
       {/* Hero Section with integrated transparent navigation */}
-      <section 
+      <section
         className="relative h-screen min-h-[700px] flex items-center justify-center text-center overflow-hidden"
         style={{
           backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.25)), url(${heroImage})`,
@@ -76,35 +79,34 @@ const Home = () => {
         <Navigation />
         <div className="container mx-auto px-4 animate-slide-up z-10">
           <h1 className="text-6xl md:text-8xl lg:text-9xl font-heading mb-4 text-white" style={{ textShadow: '2px 2px 4px rgba(0,0,0,0.3)' }}>
-            L'Atelier du Volcan
+            {content?.hero_title || "L'Atelier du Volcan"}
           </h1>
           <p className="text-lg md:text-xl lg:text-2xl mb-8 tracking-widest text-white uppercase font-body font-light">
-            Création & rénovation sur-mesure
+            {content?.hero_subtitle || "Création & rénovation sur-mesure"}
           </p>
-          <Button 
-            size="lg" 
-            asChild 
+          <Button
+            size="lg"
+            asChild
             className="text-lg px-10 py-7 rounded-full bg-white text-foreground hover:bg-white/90 shadow-lg font-body font-medium"
           >
             <Link to="/contact">Contactez nous</Link>
           </Button>
         </div>
-        
+
         {/* Bottom Wave - Green with transparency */}
         <div className="absolute bottom-0 left-0 w-full overflow-hidden leading-none">
           <svg className="relative block w-full h-80 md:h-80" viewBox="0 0 1200 120" preserveAspectRatio="none">
-            <path d="M0,15 C300,40 600,55 900,60 C1050,63 1150,60 1200,55 L1200,120 L0,120 Z" 
+            <path d="M0,15 C300,40 600,55 900,60 C1050,63 1150,60 1200,55 L1200,120 L0,120 Z"
                   className="fill-primary opacity-90"></path>
           </svg>
-          
+
           {/* Text inside the wave */}
           <div className="absolute bottom-8 md:bottom-6 left-0 right-0 text-center text-white px-4 pb-4 md:pb-6">
             <h2 className="text-xl md:text-3xl font-heading mb-2 md:mb-3 italic drop-shadow-lg">
-              « Deux artisans, une même passion : le bois »
+              {content?.quote.text || "« Deux artisans, une même passion : le bois »"}
             </h2>
             <p className="text-xs md:text-base max-w-3xl mx-auto leading-relaxed font-body drop-shadow">
-              Forts de nos compétences dans le domaine, nous avons choisi de mettre notre savoir-faire au service de vos envies. 
-              Implantés sur la commune de Sansac de Marmiesse, notre atelier à trouvé sa place dans l'ancienne boîte de nuit du Volcan.
+              {content?.quote.description || "Forts de nos compétences dans le domaine, nous avons choisi de mettre notre savoir-faire au service de vos envies."}
             </p>
           </div>
         </div>
@@ -114,15 +116,18 @@ const Home = () => {
       <section className="py-16 bg-muted/30">
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
-            {highlights.map((highlight, index) => (
-              <Card key={index} className="text-center">
-                <CardContent className="pt-6">
-                  <highlight.icon className="h-12 w-12 mx-auto mb-4 text-primary" />
-                  <h3 className="font-semibold mb-2">{highlight.title}</h3>
-                  <p className="text-sm text-muted-foreground">{highlight.description}</p>
-                </CardContent>
-              </Card>
-            ))}
+            {highlights.map((highlight, index) => {
+              const Icon = highlightIcons[index] || Clock;
+              return (
+                <Card key={index} className="text-center">
+                  <CardContent className="pt-6">
+                    <Icon className="h-12 w-12 mx-auto mb-4 text-primary" />
+                    <h3 className="font-semibold mb-2">{highlight.title}</h3>
+                    <p className="text-sm text-muted-foreground">{highlight.description}</p>
+                  </CardContent>
+                </Card>
+              );
+            })}
           </div>
         </div>
       </section>

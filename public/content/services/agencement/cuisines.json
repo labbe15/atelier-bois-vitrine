@@ -1,0 +1,14 @@
+{
+  "title": "Cuisines",
+  "subtitle": "Cuisines sur mesure alliant fonctionnalité et design",
+  "description": "Création de cuisines sur mesure adaptées à votre mode de vie. Du design à l'installation, nous réalisons des cuisines fonctionnelles et esthétiques.",
+  "image": "/src/assets/agencement.jpg",
+  "features": [
+    "Design personnalisé",
+    "Plans de travail bois massif",
+    "Intégration électroménager",
+    "Rangements optimisés",
+    "Quincaillerie de qualité",
+    "Installation complète"
+  ]
+}

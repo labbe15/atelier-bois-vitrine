@@ -1,0 +1,14 @@
+{
+  "title": "Pool House",
+  "subtitle": "Pool house en bois pour votre piscine",
+  "description": "Complétez votre espace piscine avec un pool house en bois. Vestiaire, local technique, cuisine d'été... Nous créons un espace fonctionnel et esthétique. Ossature bois, bardage, grande ouverture sur l'extérieur.",
+  "image": "/src/assets/extension.jpg",
+  "features": [
+    "Ossature bois",
+    "Bardage bois naturel",
+    "Local technique intégré",
+    "Espace vestiaire/douche",
+    "Cuisine d'été (optionnel)",
+    "Intégration paysagère"
+  ]
+}

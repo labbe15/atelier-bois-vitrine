@@ -1,0 +1,14 @@
+{
+  "title": "Véranda",
+  "subtitle": "Vérandas bois et vitrées",
+  "description": "Agrandissez votre espace de vie avec une véranda en bois. Structure bois, grandes baies vitrées, toiture isolée. Profitez de la lumière naturelle toute l'année. Conception bioclimatique pour un confort optimal.",
+  "image": "/src/assets/extension.jpg",
+  "features": [
+    "Structure bois massif",
+    "Double vitrage isolant",
+    "Toiture isolée",
+    "Chauffage intégrable",
+    "Stores et occultation",
+    "RT2012 / RE2020"
+  ]
+}

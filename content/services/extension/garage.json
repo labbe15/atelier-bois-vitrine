@@ -1,0 +1,14 @@
+{
+  "title": "Garage",
+  "subtitle": "Garages en ossature bois",
+  "description": "Construction de garages en ossature bois, économiques et rapides à mettre en œuvre. Simple ou double, avec ou sans étage, nous adaptons le garage à vos besoins. Isolation, électricité, porte sectionnelle... Tout compris.",
+  "image": "/src/assets/extension.jpg",
+  "features": [
+    "Ossature bois isolée",
+    "Simple ou double",
+    "Toit plat ou en pente",
+    "Porte sectionnelle motorisée",
+    "Électricité incluse",
+    "Délai de réalisation court"
+  ]
+}
