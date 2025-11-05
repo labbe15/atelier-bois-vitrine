@@ -45,7 +45,11 @@ collections:
   - name: "structure"
     label: "Structure"
     folder: "content/services/structure"
-    create: false
+    create: true
+    extension: "json"
+    format: "json"
+    identifier_field: "title"
+    slug: "{{slug}}"
     fields:
       - { label: "Titre", name: "title", widget: "string" }
       - { label: "Sous-titre", name: "subtitle", widget: "string" }
@@ -60,7 +64,11 @@ collections:
   - name: "menuiserie"
     label: "Menuiserie"
     folder: "content/services/menuiserie"
-    create: false
+    create: true
+    extension: "json"
+    format: "json"
+    identifier_field: "title"
+    slug: "{{slug}}"
     fields:
       - { label: "Titre", name: "title", widget: "string" }
       - { label: "Sous-titre", name: "subtitle", widget: "string" }
@@ -75,7 +83,11 @@ collections:
   - name: "agencement"
     label: "Agencement"
     folder: "content/services/agencement"
-    create: false
+    create: true
+    extension: "json"
+    format: "json"
+    identifier_field: "title"
+    slug: "{{slug}}"
     fields:
       - { label: "Titre", name: "title", widget: "string" }
       - { label: "Sous-titre", name: "subtitle", widget: "string" }
@@ -90,7 +102,11 @@ collections:
   - name: "extension"
     label: "Extension Bois"
     folder: "content/services/extension"
-    create: false
+    create: true
+    extension: "json"
+    format: "json"
+    identifier_field: "title"
+    slug: "{{slug}}"
     fields:
       - { label: "Titre", name: "title", widget: "string" }
       - { label: "Sous-titre", name: "subtitle", widget: "string" }
@@ -106,6 +122,9 @@ collections:
     label: "Réalisations"
     folder: "content/realisations"
     create: true
+    extension: "json"
+    format: "json"
+    identifier_field: "title"
     slug: "{{slug}}"
     fields:
       - { label: "Titre", name: "title", widget: "string" }
@@ -124,6 +143,9 @@ collections:
     label: "Avis clients"
     folder: "content/testimonials"
     create: true
+    extension: "json"
+    format: "json"
+    identifier_field: "name"
     slug: "{{slug}}"
     fields:
       - { label: "Nom du client", name: "name", widget: "string" }
