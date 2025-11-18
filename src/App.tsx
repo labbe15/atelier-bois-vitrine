@@ -16,6 +16,7 @@ import Contact from "./pages/Contact";
 const About = lazy(() => import("./pages/About"));
 const Testimonials = lazy(() => import("./pages/Testimonials"));
 const Realisations = lazy(() => import("./pages/Realisations"));
+const MentionsLegales = lazy(() => import("./pages/MentionsLegales"));
 const NotFound = lazy(() => import("./pages/NotFound"));
 
 // Lazy loading pour toutes les pages de services
@@ -24,21 +25,25 @@ const OssatureBois = lazy(() => import("./pages/services/OssatureBois"));
 const Pergola = lazy(() => import("./pages/services/Pergola"));
 const Terrasses = lazy(() => import("./pages/services/Terrasses"));
 const Carport = lazy(() => import("./pages/services/Carport"));
+const IsolationExterieur = lazy(() => import("./pages/services/IsolationExterieur"));
 const Escaliers = lazy(() => import("./pages/services/Escaliers"));
 const Bibliotheques = lazy(() => import("./pages/services/Bibliotheques"));
 const Tables = lazy(() => import("./pages/services/Tables"));
 const Sols = lazy(() => import("./pages/services/Sols"));
 const PortesCommunication = lazy(() => import("./pages/services/PortesCommunication"));
 const MobilierSurMesure = lazy(() => import("./pages/services/MobilierSurMesure"));
+const Verrieres = lazy(() => import("./pages/services/Verrieres"));
 const Fenetres = lazy(() => import("./pages/services/Fenetres"));
 const Volets = lazy(() => import("./pages/services/Volets"));
 const PortesEntree = lazy(() => import("./pages/services/PortesEntree"));
 const PortesGarage = lazy(() => import("./pages/services/PortesGarage"));
 const Portails = lazy(() => import("./pages/services/Portails"));
 const Clotures = lazy(() => import("./pages/services/Clotures"));
+const Bardages = lazy(() => import("./pages/services/Bardages"));
 const Dressing = lazy(() => import("./pages/services/Dressing"));
 const Cuisines = lazy(() => import("./pages/services/Cuisines"));
 const AmenagementSurMesure = lazy(() => import("./pages/services/AmenagementSurMesure"));
+const Cloisons = lazy(() => import("./pages/services/Cloisons"));
 const ExtensionOssatureBois = lazy(() => import("./pages/services/ExtensionOssatureBois"));
 const Garage = lazy(() => import("./pages/services/Garage"));
 const Surelevation = lazy(() => import("./pages/services/Surelevation"));
@@ -72,6 +77,7 @@ const AppContent = () => {
           <Route path="/contact" element={<Contact />} />
           <Route path="/avis" element={<Testimonials />} />
           <Route path="/realisations" element={<Realisations />} />
+          <Route path="/mentions-legales" element={<MentionsLegales />} />
 
           {/* Structure */}
           <Route path="/structure/charpente" element={<Charpente />} />
@@ -79,6 +85,7 @@ const AppContent = () => {
           <Route path="/structure/pergola" element={<Pergola />} />
           <Route path="/structure/terrasses" element={<Terrasses />} />
           <Route path="/structure/carport" element={<Carport />} />
+          <Route path="/structure/isolation-exterieur" element={<IsolationExterieur />} />
 
           {/* Menuiserie Intérieure */}
           <Route path="/menuiserie-interieur/escaliers" element={<Escaliers />} />
@@ -87,6 +94,7 @@ const AppContent = () => {
           <Route path="/menuiserie-interieur/sols" element={<Sols />} />
           <Route path="/menuiserie-interieur/portes-communication" element={<PortesCommunication />} />
           <Route path="/menuiserie-interieur/mobilier" element={<MobilierSurMesure />} />
+          <Route path="/menuiserie-interieur/verrieres" element={<Verrieres />} />
 
           {/* Menuiserie Extérieure */}
           <Route path="/menuiserie-exterieur/fenetres" element={<Fenetres />} />
@@ -95,11 +103,13 @@ const AppContent = () => {
           <Route path="/menuiserie-exterieur/portes-garage" element={<PortesGarage />} />
           <Route path="/menuiserie-exterieur/portails" element={<Portails />} />
           <Route path="/menuiserie-exterieur/clotures" element={<Clotures />} />
+          <Route path="/menuiserie-exterieur/bardages" element={<Bardages />} />
 
           {/* Agencement */}
           <Route path="/agencement/dressing" element={<Dressing />} />
           <Route path="/agencement/cuisines" element={<Cuisines />} />
           <Route path="/agencement/amenagement" element={<AmenagementSurMesure />} />
+          <Route path="/agencement/cloisons" element={<Cloisons />} />
 
           {/* Extension */}
           <Route path="/extension/ossature-bois" element={<ExtensionOssatureBois />} />

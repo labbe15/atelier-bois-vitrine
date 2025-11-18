@@ -5,16 +5,15 @@ const Bibliotheques = () => {
   return (
     <ServiceLayout
       title="Bibliothèques"
-      subtitle="Bibliothèques sur mesure pour sublimer vos livres"
-      description="Créez un espace de rangement élégant et fonctionnel avec nos bibliothèques sur mesure. Murales, modulables ou intégrées, elles s'adaptent parfaitement à votre intérieur. Choisissez parmi différentes essences de bois, finitions et configurations pour un résultat unique qui valorise votre collection."
+      subtitle="Alliez design, praticité et savoir-faire artisanal"
+      description="Chez L'Atelier du Volcan, à Sansac-de-Marmiesse, nous concevons et fabriquons des bibliothèques sur mesure qui allient élégance, fonctionnalité et durabilité. Nos artisans menuisiers mettent leur savoir-faire au service de vos envies pour créer un mobilier design et unique, parfaitement adapté à votre intérieur et à vos besoins de rangement."
       image={menuiserieImage}
       features={[
-        "Bibliothèques murales sur mesure",
-        "Modules modulables et évolutifs",
-        "Bibliothèques encastrées",
-        "Étagères ajustables",
-        "Finitions personnalisées",
-        "Intégration d'éclairage LED",
+        "Fabrication sur mesure 100 % artisanale",
+        "Large choix de matériaux, coloris et finitions",
+        "Design unique et durable",
+        "Fabrication locale à Sansac-de-Marmiesse (Cantal)",
+        "Livraison et installation dans tout le Cantal : Aurillac, Ytrac, Maurs, Vic-sur-Cère, Murat…",
       ]}
     />
   );

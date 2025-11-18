@@ -4,17 +4,15 @@ import menuiserieImage from "@/assets/menuiserie.jpg";
 const Volets = () => {
   return (
     <ServiceLayout
-      title="Volets"
-      subtitle="Volets en bois traditionnels et contemporains"
-      description="Protégez et embellissez vos façades avec nos volets en bois sur mesure. Battants, pliants ou coulissants, nos volets allient authenticité et robustesse. Traités contre les intempéries et personnalisables en couleur, ils s'intègrent harmonieusement à tous les styles architecturaux."
+      title="Volets & Protections solaires"
+      subtitle="Alliez confort, sécurité et esthétisme avec nos volets et stores sur mesure"
+      description="Chez L'Atelier du Volcan, votre expert en menuiserie dans le Cantal, nous vous accompagnons dans le choix et la pose de volets battants, volets roulants, brise-soleil et stores adaptés à votre habitation et à votre style. Forts de notre savoir-faire artisanal et de notre exigence de qualité, nous sélectionnons pour vous des produits durables, performants et esthétiques, conçus pour résister aux conditions climatiques de notre belle région."
       image={menuiserieImage}
       features={[
-        "Volets battants traditionnels",
-        "Volets pliants et persiennes",
-        "Volets coulissants sur rail",
-        "Traitement autoclave et lasure",
-        "Quincaillerie de qualité",
-        "Coloris et finitions au choix",
+        "Expertise locale dans la menuiserie sur mesure",
+        "Produits de qualité, garantis et durables",
+        "Installation professionnelle et finitions soignées",
+        "Conseils personnalisés selon votre habitat et votre budget",
       ]}
     />
   );

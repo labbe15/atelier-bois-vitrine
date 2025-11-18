@@ -5,16 +5,14 @@ const Clotures = () => {
   return (
     <ServiceLayout
       title="Clôtures"
-      subtitle="Clôtures en bois naturelles et résistantes"
-      description="Délimitez harmonieusement votre terrain avec nos clôtures en bois sur mesure. Ganivelles, palissades, claustras ou piquets, nous proposons différents styles pour allier intimité et esthétique. Bois traité classe 4 pour une durabilité optimale face aux intempéries."
+      subtitle="Alliez sécurité, intimité et esthétisme avec nos clôtures en bois, PVC ou aluminium"
+      description="Chez L'Atelier du Volcan, votre spécialiste en menuiserie et aménagements extérieurs dans le Cantal, nous vous proposons des clôtures sur mesure qui s'adaptent à votre style de maison et à vos besoins. Que vous recherchiez une clôture moderne, traditionnelle ou contemporaine, nous vous accompagnons dans le choix, la fabrication et la pose pour un résultat à la fois solide, harmonieux et durable."
       image={menuiserieImage}
       features={[
-        "Ganivelles châtaignier naturel",
-        "Palissades pleines ou ajourées",
-        "Claustras et brise-vue design",
-        "Piquets et barrières traditionnelles",
-        "Bois traité autoclave classe 4",
-        "Pose avec scellement béton",
+        "Conseils personnalisés",
+        "Fabrication sur mesure",
+        "Pose professionnelle dans tout le Cantal",
+        "Devis gratuit et rapide",
       ]}
     />
   );

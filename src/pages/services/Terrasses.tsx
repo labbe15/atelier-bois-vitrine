@@ -5,16 +5,15 @@ const Terrasses = () => {
   return (
     <ServiceLayout
       title="Terrasses"
-      subtitle="Terrasses en bois pour sublimer votre extérieur"
-      description="Profitez de votre jardin avec une terrasse en bois sur mesure. Nous réalisons des terrasses adaptées à tous les terrains, avec une attention particulière portée à la structure, au drainage et au choix des essences. Bois européen, bois exotique ou bois composite, nous vous conseillons selon vos besoins."
+      subtitle="Créez un espace extérieur chaleureux et durable"
+      description="Chez L'Atelier du Volcan, entreprise de menuiserie et charpente à Sansac-de-Marmiesse, nous concevons et posons des terrasses en bois sur mesure, adaptées à votre maison, à votre terrain et à vos envies. Nos réalisations allient esthétisme, solidité et confort d'utilisation, pour transformer votre extérieur en un véritable lieu de vie convivial."
       image={charpenteImage}
       features={[
-        "Terrasses en bois européen (Douglas, Mélèze)",
-        "Terrasses en bois exotique (Ipé, Cumaru)",
-        "Terrasses en bois composite",
-        "Structure porteuse adaptée au terrain",
-        "Garde-corps et escaliers intégrés",
-        "Entretien et traitement du bois",
+        "Fabrication et pose sur mesure",
+        "Bois de qualité : exotique, européen ou composite plein",
+        "Design personnalisé selon vos envies",
+        "Intervention dans tout le Cantal : Aurillac, Pleaux, Murat, Maurs, Le Rouget, St Mamet…",
+        "Savoir-faire artisanal local à Sansac-de-Marmiesse",
       ]}
     />
   );

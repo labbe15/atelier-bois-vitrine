@@ -5,16 +5,15 @@ const Escaliers = () => {
   return (
     <ServiceLayout
       title="Escaliers"
-      subtitle="Escaliers sur mesure alliant fonctionnalité et esthétique"
-      description="Créez une liaison élégante entre vos étages avec un escalier sur mesure. Escalier droit, quart tournant, colimaçon ou suspendu, nous adaptons le design à votre intérieur. Bois massif, métal et verre peuvent être combinés pour un résultat unique."
+      subtitle="Le mariage parfait entre sécurité, design et artisanat"
+      description="Chez L'Atelier du Volcan, à Sansac-de-Marmiesse, nous concevons, fabriquons et posons des escaliers sur mesure en bois massif ainsi que des gardes-corps design en bois, métal ou verre. Nos créations allient esthétique, confort et sécurité, tout en reflétant le style unique de votre intérieur ou de votre extérieur. Chaque escalier ou garde-corps est pensé sur mesure, selon vos envies, votre espace et votre budget, pour devenir une véritable pièce maîtresse de votre habitat."
       image={menuiserieImage}
       features={[
-        "Escalier droit et quart tournant",
-        "Escalier deux quarts tournant",
-        "Escalier colimaçon et hélicoïdal",
-        "Escalier suspendu et design",
-        "Garde-corps et rampes sur mesure",
-        "Rénovation d'escaliers existants",
+        "Fabrication sur mesure et locale à Sansac-de-Marmiesse",
+        "Matériaux de qualité sélectionnés avec soin",
+        "Design personnalisé selon votre intérieur",
+        "Pose précise et sécurisée par des menuisiers qualifiés",
+        "Intervention dans tout le Cantal : Aurillac, Le Rouget, Maurs, Murat, Pers…",
       ]}
     />
   );
