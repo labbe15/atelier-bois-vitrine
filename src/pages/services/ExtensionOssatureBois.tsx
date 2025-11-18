@@ -9,8 +9,8 @@ const ExtensionOssatureBois = () => {
       description="Vous rêvez d'un espace de vie supplémentaire sans déménager ? Avec L'Atelier du Volcan, spécialiste de la charpente et de la menuiserie bois à Sansac-de-Marmiesse (Cantal), profitez d'une extension de maison en ossature bois à la fois rapide à monter, performante thermiquement et entièrement personnalisée."
       image={extensionImage}
       features={[
-        "Entreprise locale à Sansac-de-Marmiesse dans le Cantal (15)",
-        "Expertise artisanale en charpente et ossature bois",
+        "Entreprise locale à Sansac-de-Marmiesse (Cantal 15)",
+        "Expertise artisanale en menuiserie et charpente bois",
         "Montage rapide et propre grâce à la préfabrication bois",
         "Isolation performante et confort durable",
         "Finitions personnalisées intérieures et extérieures",

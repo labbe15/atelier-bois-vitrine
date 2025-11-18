@@ -6,7 +6,7 @@ const Portails = () => {
     <ServiceLayout
       title="Portails"
       subtitle="Alliez sécurité, élégance et confort au quotidien"
-      description="Chez L'Atelier du Volcan, nous concevons et posons des portails coulissants et battants adaptés à tous les styles d'habitation et à tous les budgets. Situés au cœur du Cantal, nous mettons notre savoir-faire artisanal au service de vos extérieurs pour allier esthétique, robustesse et praticité."
+      description="Chez Atelier du Volcan, nous concevons et posons des portails coulissants et battants adaptés à tous les styles d'habitation et à tous les budgets. Situés au cœur du Cantal, nous mettons notre savoir-faire artisanal au service de vos extérieurs pour allier esthétique, robustesse et praticité."
       image={menuiserieImage}
       features={[
         "Entreprise locale du Cantal – une équipe proche de vous, réactive et à l'écoute",

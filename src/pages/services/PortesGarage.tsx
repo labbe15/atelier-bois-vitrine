@@ -6,7 +6,7 @@ const PortesGarage = () => {
     <ServiceLayout
       title="Portes de garage"
       subtitle="Alliez élégance, performance et sécurité pour votre garage"
-      description="Chez L'Atelier du Volcan, nous mettons notre savoir-faire artisanal au service de vos projets de menuiserie sur mesure dans le Cantal. Spécialistes de la pose de portes de garage en aluminium, nous vous proposons des solutions esthétiques, isolantes et durables, parfaitement adaptées à votre habitation et à votre mode de vie."
+      description="Chez Atelier du Volcan, nous mettons notre savoir-faire artisanal au service de vos projets de menuiserie sur mesure dans le Cantal. Spécialistes de la pose de portes de garage en aluminium, nous vous proposons des solutions esthétiques, isolantes et durables, parfaitement adaptées à votre habitation et à votre mode de vie."
       image={menuiserieImage}
       features={[
         "Fabrication sur mesure selon vos dimensions et vos envies",
