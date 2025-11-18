@@ -16,6 +16,7 @@ import Contact from "./pages/Contact";
 const About = lazy(() => import("./pages/About"));
 const Testimonials = lazy(() => import("./pages/Testimonials"));
 const Realisations = lazy(() => import("./pages/Realisations"));
+const MentionsLegales = lazy(() => import("./pages/MentionsLegales"));
 const NotFound = lazy(() => import("./pages/NotFound"));
 
 // Lazy loading pour toutes les pages de services
@@ -76,6 +77,7 @@ const AppContent = () => {
           <Route path="/contact" element={<Contact />} />
           <Route path="/avis" element={<Testimonials />} />
           <Route path="/realisations" element={<Realisations />} />
+          <Route path="/mentions-legales" element={<MentionsLegales />} />
 
           {/* Structure */}
           <Route path="/structure/charpente" element={<Charpente />} />
