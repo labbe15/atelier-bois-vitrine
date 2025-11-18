@@ -43,7 +43,7 @@ const ServiceLayout = ({ title, subtitle, description, image, features, children
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
             <Card>
               <CardContent className="pt-6">
-                <h3 className="text-xl font-semibold mb-4 text-primary">Nos atouts</h3>
+                <h3 className="text-xl font-semibold mb-4 text-primary">Pourquoi choisir L'Atelier du Volcan ?</h3>
                 <ul className="space-y-3">
                   {features.map((feature, index) => (
                     <li key={index} className="flex items-start gap-2">

@@ -4,17 +4,15 @@ import menuiserieImage from "@/assets/menuiserie.jpg";
 const PortesCommunication = () => {
   return (
     <ServiceLayout
-      title="Portes de Communication"
-      subtitle="Portes intérieures sur mesure en bois massif"
-      description="Harmonisez votre intérieur avec nos portes de communication sur mesure. Portes pleines, vitrées, coulissantes ou battantes, nous créons des portes intérieures qui allient esthétique et fonctionnalité. Essences variées, finitions soignées et quincaillerie de qualité."
+      title="Portes intérieures"
+      subtitle="Sublimez votre intérieur avec des portes élégantes et durables"
+      description="Chez L'Atelier du Volcan, entreprise spécialisée dans la pose de menuiseries à Sansac-de-Marmiesse, nous vous accompagnons dans le choix et la pose de vos portes intérieures. Design, robustes et parfaitement adaptées à votre intérieur, nos portes conjuguent esthétisme, confort et qualité artisanale. Que vous rénoviez une maison traditionnelle ou que vous aménagiez un intérieur contemporain, nous vous proposons une large gamme de portes bois ou aluminium sélectionnées pour leur performance et leur élégance."
       image={menuiserieImage}
       features={[
-        "Portes pleines en bois massif",
-        "Portes vitrées et semi-vitrées",
-        "Portes coulissantes et galandage",
-        "Portes battantes classiques",
-        "Finitions et teintes personnalisées",
-        "Pose d'huisseries et quincaillerie",
+        "Conseils personnalisés selon vos besoins et votre budget",
+        "Pose professionnelle et finitions soignées",
+        "Produits de qualité, durables et esthétiques",
+        "Large choix de modèles et de matériaux",
       ]}
     />
   );

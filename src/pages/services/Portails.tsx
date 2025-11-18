@@ -5,16 +5,14 @@ const Portails = () => {
   return (
     <ServiceLayout
       title="Portails"
-      subtitle="Portails en bois sur mesure pour votre propriété"
-      description="Délimitez et sécurisez votre propriété avec un portail en bois personnalisé. Battants ou coulissants, pleins ou ajourés, nos portails allient authenticité et durabilité. Traités contre les intempéries et motorisables, ils s'adaptent à tous les styles de maison et de terrain."
+      subtitle="Alliez sécurité, élégance et confort au quotidien"
+      description="Chez L'Atelier du Volcan, nous concevons et posons des portails coulissants et battants adaptés à tous les styles d'habitation et à tous les budgets. Situés au cœur du Cantal, nous mettons notre savoir-faire artisanal au service de vos extérieurs pour allier esthétique, robustesse et praticité."
       image={menuiserieImage}
       features={[
-        "Portails battants classiques",
-        "Portails coulissants sur rail",
-        "Design plein ou ajouré",
-        "Motorisation et automatisme",
-        "Traitement autoclave",
-        "Quincaillerie robuste et durable",
+        "Entreprise locale du Cantal – une équipe proche de vous, réactive et à l'écoute",
+        "Fabrication sur mesure – pour un portail unique, adapté à votre maison",
+        "Pose soignée – réalisée par nos menuisiers expérimentés",
+        "Matériaux de qualité – durables, esthétiques et résistants aux intempéries",
       ]}
     />
   );

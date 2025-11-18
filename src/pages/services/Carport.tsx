@@ -4,17 +4,17 @@ import charpenteImage from "@/assets/charpente.jpg";
 const Carport = () => {
   return (
     <ServiceLayout
-      title="Carport"
-      subtitle="Abris voiture en bois élégants et fonctionnels"
-      description="Protégez votre véhicule avec un carport en bois sur mesure. Structure solide, design contemporain et intégration harmonieuse à votre habitation. Nous réalisons des carports simples ou doubles, avec options de rangement et toiture adaptée."
+      title="Carports"
+      subtitle="Protégez vos véhicules avec élégance et durabilité"
+      description="Chez L'Atelier du Volcan, entreprise de charpente artisanale à Sansac-de-Marmiesse, nous concevons et réalisons des carports sur mesure en bois massif, bois lamellé-collé ou aluminium, adaptés à vos besoins et à votre habitat. Alliant solidité, esthétisme et fonctionnalité, nos carports protègent efficacement vos véhicules, camping-cars ou remorques, tout en valorisant votre propriété."
       image={charpenteImage}
       features={[
-        "Carport simple ou double",
-        "Structure en bois lamellé-collé",
-        "Toiture bac acier, tuiles ou végétalisée",
-        "Options de rangement intégré",
-        "Éclairage et prises électriques",
-        "Respect des règles d'urbanisme",
+        "Fabrication sur mesure adaptée à votre terrain et à vos besoins",
+        "Matériaux durables (bois massif, lamellé-collé, aluminium)",
+        "Pose soignée par des charpentiers expérimentés",
+        "Accompagnement administratif complet",
+        "Fabrication locale à Sansac-de-Marmiesse (Cantal)",
+        "Intervention dans tout le Cantal : Aurillac, Mandailles, Maurs, Murat, Polminhac…",
       ]}
     />
   );

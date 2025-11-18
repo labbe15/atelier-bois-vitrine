@@ -5,16 +5,15 @@ const Sols = () => {
   return (
     <ServiceLayout
       title="Sols"
-      subtitle="Pose de parquets et sols en bois de qualité"
-      description="Apportez chaleur et authenticité à votre intérieur avec nos sols en bois. Parquet massif, contrecollé ou stratifié, nous vous accompagnons dans le choix de l'essence, de la finition et du type de pose. Ponçage et vitrification pour redonner vie à vos parquets anciens."
+      subtitle="Offrez chaleur, élégance et confort à votre intérieur"
+      description="Chez L'Atelier du Volcan, entreprise artisanale de pose de menuiserie à Sansac-de-Marmiesse, nous donnons vie à vos projets d'aménagement intérieur avec la pose de sols sur mesure : bois massif, vinyle à clipser, contrecollé, stratifié ou OSB. Nous intervenons dans tout le Cantal pour transformer vos pièces en espaces chaleureux, esthétiques et durables. Nos menuisiers qualifiés assurent une installation soignée et durable, avec nivelage et renforcement du plancher si nécessaire, pour garantir une base parfaitement stable et un résultat irréprochable."
       image={agencementImage}
       features={[
-        "Parquet massif cloué ou collé",
-        "Parquet contrecollé flottant",
-        "Sol stratifié haute qualité",
-        "Ponçage et vitrification",
-        "Plinthes et barre de seuil",
-        "Conseil sur l'entretien du bois",
+        "Expertise locale à Sansac-de-Marmiesse",
+        "Conseils personnalisés selon vos goûts et votre budget",
+        "Pose soignée par des menuisiers qualifiés",
+        "Matériaux durables et finitions haut de gamme",
+        "Intervention dans tout le Cantal : Aurillac, Arpajon sur cère, Maurs, Vic-sur-Cère, Murat...",
       ]}
     />
   );

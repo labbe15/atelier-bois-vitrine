@@ -4,17 +4,16 @@ import agencementImage from "@/assets/agencement.jpg";
 const AmenagementSurMesure = () => {
   return (
     <ServiceLayout
-      title="Aménagement sur Mesure"
-      subtitle="Aménagements personnalisés pour optimiser votre espace"
-      description="Transformez votre intérieur avec des aménagements sur mesure parfaitement adaptés à vos besoins. Rangements sous combles, placards intégrés, bureaux encastrés, nous créons des solutions ingénieuses pour exploiter chaque mètre carré. Fonctionnalité et esthétique au service de votre quotidien."
+      title="Aménagement sur mesure"
+      subtitle="Sublimez vos espaces avec des agencements intérieurs en bois uniques"
+      description="Envie d'un intérieur chaleureux, fonctionnel et à votre image ? L'Atelier du Volcan, spécialiste de la menuiserie sur mesure à Sansac-de-Marmiesse (Cantal), conçoit et réalise vos agencements intérieurs en bois et en panneaux dérivés du bois. Du salon à la cuisine, en passant par la chambre, le bureau ou les espaces professionnels, notre équipe met tout son savoir-faire au service de l'aménagement de vos espaces de vie avec élégance, précision et durabilité."
       image={agencementImage}
       features={[
-        "Aménagement de combles et mezzanines",
-        "Placards intégrés sur mesure",
-        "Bureaux et espaces de travail",
-        "Rangements optimisés",
-        "Cloisons et séparations bois",
-        "Finitions soignées et durables",
+        "Entreprise locale à Sansac-de-Marmiesse (Cantal 15)",
+        "Expertise artisanale en menuiserie bois et dérivés",
+        "Agencements intérieurs sur mesure pour particuliers et professionnels",
+        "Large choix de matériaux et de finitions",
+        "Qualité, précision et accompagnement personnalisé",
       ]}
     />
   );

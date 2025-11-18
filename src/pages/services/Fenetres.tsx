@@ -5,16 +5,15 @@ const Fenetres = () => {
   return (
     <ServiceLayout
       title="Fenêtres"
-      subtitle="Fenêtres en bois alliant charme et performance"
-      description="Apportez lumière et caractère à votre habitation avec nos fenêtres en bois sur mesure. Fabriquées avec des essences durables et des vitrages performants, elles garantissent isolation thermique et acoustique. Du modèle traditionnel aux ouvertures contemporaines, nous créons des fenêtres adaptées à votre architecture."
+      subtitle="Des fenêtres performantes et esthétiques pour votre confort au quotidien"
+      description="Chez L'Atelier du Volcan, nous mettons notre expertise au service de vos projets de rénovation ou de construction dans tout le Cantal. Spécialistes de la pose de fenêtres sur mesure, nous vous proposons une large gamme de fenêtres en bois, PVC, aluminium ou mixtes pour répondre à toutes vos envies, alliant isolation, luminosité et design."
       image={menuiserieImage}
       features={[
-        "Fenêtres à la française",
-        "Fenêtres oscillo-battantes",
-        "Fenêtres à soufflet",
-        "Double et triple vitrage",
-        "Essences résistantes aux intempéries",
-        "Finitions extérieures protégées",
+        "Fabrication et pose sur mesure, adaptées à votre maison",
+        "Conseils personnalisés selon vos besoins et votre budget",
+        "Produits certifiés et performants sur le plan énergétique",
+        "Intervention dans tout le Cantal : Aurillac, Saint-Mamet, Murat, Maurs, et alentours",
+        "Une entreprise locale et artisanale, reconnue pour son sérieux et la qualité de ses finitions",
       ]}
     />
   );
