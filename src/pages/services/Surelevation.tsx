@@ -1,5 +1,5 @@
 import ServiceLayout from "@/components/ServiceLayout";
-import extensionImage from "@/assets/extension.jpg";
+import surelevationImage from "@/assets/Surélévation.jpg";
 import { Card, CardContent } from "@/components/ui/card";
 
 const Surelevation = () => {
@@ -8,7 +8,7 @@ const Surelevation = () => {
       title="Surélévation"
       subtitle="Gagnez de l'espace sans déménager grâce à la surélévation en ossature bois"
       description="Besoin d'agrandir votre maison sans empiéter sur votre terrain ? L'Atelier du Volcan, spécialiste de la charpente et de la menuiserie sur mesure à Sansac-de-Marmiesse (Cantal), vous propose des surélévations de maison en ossature bois à la fois rapides, esthétiques et durables."
-      image={extensionImage}
+      image={surelevationImage}
       features={[
         "Entreprise locale basée à Sansac-de-Marmiesse dans le Cantal (15)",
         "Expertise artisanale en charpente et ossature bois",

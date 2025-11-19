@@ -1,98 +1,122 @@
 import { useState } from "react";
 import { Card, CardContent } from "@/components/ui/card";
 import { Dialog, DialogContent, DialogHeader, DialogTitle } from "@/components/ui/dialog";
-import charpenteImage from "@/assets/charpente.jpg";
-import menuiserieImage from "@/assets/menuiserie.jpg";
-import agencementImage from "@/assets/agencement.jpg";
-import extensionImage from "@/assets/extension.jpg";
+import poolHouseImage from "@/assets/Pool house.jpg";
+import garageImage from "@/assets/Extension garage.jpg";
+import fenetresImage from "@/assets/Fenêtres.jpg";
+import cloisonsImage from "@/assets/Cloison bois.jpg";
+import dressingImage from "@/assets/Dressing.jpg";
+import cuisineImage from "@/assets/Cuisine.jpg";
+import escalierImage from "@/assets/Escalier.jpg";
+import pergolaImage from "@/assets/Pergola.jpg";
+import portailImage from "@/assets/Portail.jpg";
+import solImage from "@/assets/Sol.jpg";
+import surelevationImage from "@/assets/Surélévation.jpg";
+import tableImage from "@/assets/Table.jpg";
+import terrasseImage from "@/assets/Terrasse.jpg";
+import voletsImage from "@/assets/Volet roulant.jpg";
 
 const Realisations = () => {
   const [selectedProject, setSelectedProject] = useState<any>(null);
 
   const projects = [
     {
-      title: "Charpente traditionnelle",
-      category: "Structure",
-      location: "Sansac de Marmiesse",
-      description: "Réalisation d'une charpente traditionnelle en chêne pour une maison de caractère. Taille et assemblage à l'ancienne.",
-      image: charpenteImage,
-    },
-    {
-      title: "Cuisine sur mesure",
-      category: "Agencement",
-      location: "Aurillac",
-      description: "Conception et installation d'une cuisine complète en bois massif avec plan de travail en chêne.",
-      image: agencementImage,
-    },
-    {
-      title: "Extension ossature bois",
+      title: "Pool House sur mesure",
       category: "Extension",
-      location: "Polminhac",
-      description: "Extension de 30m² en ossature bois, isolation haute performance et bardage douglas.",
-      image: extensionImage,
+      location: "Cantal",
+      description: "Création d'un pool house élégant et fonctionnel pour profiter pleinement de l'espace piscine.",
+      image: poolHouseImage,
     },
     {
-      title: "Menuiserie extérieure",
+      title: "Extension garage",
+      category: "Extension",
+      location: "Cantal",
+      description: "Extension garage en ossature bois, montage rapide et sur mesure.",
+      image: garageImage,
+    },
+    {
+      title: "Fenêtres sur mesure",
       category: "Menuiserie Extérieure",
-      location: "Vic-sur-Cère",
-      description: "Fenêtres et volets en bois sur mesure pour une rénovation complète.",
-      image: menuiserieImage,
+      location: "Cantal",
+      description: "Installation de fenêtres performantes et esthétiques pour un confort optimal.",
+      image: fenetresImage,
     },
     {
-      title: "Terrasse en bois",
-      category: "Structure",
-      location: "Arpajon-sur-Cère",
-      description: "Terrasse en bois exotique de 50m² avec garde-corps intégré.",
-      image: charpenteImage,
+      title: "Cloisons bois",
+      category: "Agencement",
+      location: "Cantal",
+      description: "Cloisons en bois pour structurer vos espaces avec élégance et fonctionnalité.",
+      image: cloisonsImage,
     },
     {
       title: "Dressing sur mesure",
       category: "Agencement",
-      location: "Ytrac",
-      description: "Dressing modulable optimisant l'espace sous combles avec finitions soignées.",
-      image: agencementImage,
+      location: "Cantal",
+      description: "Dressing fonctionnel et élégant adapté à votre style et à votre espace.",
+      image: dressingImage,
     },
     {
-      title: "Pergola bioclimatique",
-      category: "Structure",
-      location: "Crandelles",
-      description: "Pergola en bois avec lames orientables pour profiter du jardin toute l'année.",
-      image: charpenteImage,
-    },
-    {
-      title: "Escalier intérieur",
-      category: "Menuiserie Intérieure",
-      location: "Aurillac",
-      description: "Escalier quart tournant en chêne massif avec contremarches intégrées.",
-      image: menuiserieImage,
-    },
-    {
-      title: "Carport double",
-      category: "Structure",
-      location: "Sansac de Marmiesse",
-      description: "Carport double en ossature bois et toiture bac acier anthracite.",
-      image: charpenteImage,
-    },
-    {
-      title: "Mobilier sur mesure",
+      title: "Cuisine sur mesure",
       category: "Agencement",
-      location: "Naucelles",
-      description: "Bibliothèque murale et bureau intégrés en noyer massif.",
-      image: agencementImage,
+      location: "Cantal",
+      description: "Cuisine à votre image, fonctionnelle et élégante en bois de qualité.",
+      image: cuisineImage,
     },
     {
-      title: "Surélévation",
-      category: "Extension",
-      location: "Saint-Paul-des-Landes",
-      description: "Surélévation ossature bois pour création de deux chambres et salle de bains.",
-      image: extensionImage,
+      title: "Escalier en bois massif",
+      category: "Menuiserie Intérieure",
+      location: "Cantal",
+      description: "Escalier sur mesure alliant sécurité, design et artisanat.",
+      image: escalierImage,
     },
     {
-      title: "Bardage bois",
+      title: "Pergola",
+      category: "Structure",
+      location: "Cantal",
+      description: "Pergola sur mesure pour profiter de votre extérieur en toute saison.",
+      image: pergolaImage,
+    },
+    {
+      title: "Portail sur mesure",
       category: "Menuiserie Extérieure",
-      location: "Laroquebrou",
-      description: "Pose de bardage en mélèze pour isolation extérieure et ravalement de façade.",
-      image: menuiserieImage,
+      location: "Cantal",
+      description: "Portail coulissant alliant sécurité, élégance et confort au quotidien.",
+      image: portailImage,
+    },
+    {
+      title: "Sol en bois",
+      category: "Agencement",
+      location: "Cantal",
+      description: "Pose de sol offrant chaleur, élégance et confort à votre intérieur.",
+      image: solImage,
+    },
+    {
+      title: "Surélévation ossature bois",
+      category: "Extension",
+      location: "Cantal",
+      description: "Surélévation pour gagner de l'espace sans déménager.",
+      image: surelevationImage,
+    },
+    {
+      title: "Table sur mesure",
+      category: "Menuiserie Intérieure",
+      location: "Cantal",
+      description: "Table en bois massif alliant design, authenticité et qualité artisanale.",
+      image: tableImage,
+    },
+    {
+      title: "Terrasse en bois",
+      category: "Structure",
+      location: "Cantal",
+      description: "Terrasse en bois créant un espace extérieur chaleureux et durable.",
+      image: terrasseImage,
+    },
+    {
+      title: "Volets roulants",
+      category: "Menuiserie Extérieure",
+      location: "Cantal",
+      description: "Volets et protections solaires alliant confort, sécurité et esthétisme.",
+      image: voletsImage,
     },
   ];
 
