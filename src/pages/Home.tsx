@@ -5,11 +5,12 @@ import { Card, CardContent } from "@/components/ui/card";
 import { CheckCircle2, Clock, ThumbsUp, MapPin } from "lucide-react";
 import Navigation from "@/components/Navigation";
 import { loadHomeContent, loadTestimonials, type HomeContent, type TestimonialContent } from "@/lib/content-loader";
-import { heroImage, categoryImages } from "@/config/images";
+import { heroImage, categoryImages, serviceImages } from "@/config/images";
 
 // Utilisation des images depuis la configuration centralisée
 const charpenteImage = categoryImages.structure;
 const menuiserieImage = categoryImages.menuiserieInterieur;
+const menuiserieExtImage = categoryImages.menuiserieExterieur;
 const agencementImage = categoryImages.agencement;
 const extensionImage = categoryImages.extension;
 
@@ -163,7 +164,7 @@ const Home = () => {
                   <Link to="/structure/ossature-bois" className="block">
                     <Card className="hover:shadow-md transition-shadow">
                       <div className="h-20 overflow-hidden">
-                        <img src={charpenteImage} alt="Maison ossature bois" className="w-full h-full object-cover" />
+                        <img src={serviceImages.structure["ossature-bois"]} alt="Maison ossature bois" className="w-full h-full object-cover" />
                       </div>
                       <CardContent className="p-2">
                         <p className="text-xs font-medium text-center">Maison ossature bois</p>
@@ -173,7 +174,7 @@ const Home = () => {
                   <Link to="/structure/charpente" className="block">
                     <Card className="hover:shadow-md transition-shadow">
                       <div className="h-20 overflow-hidden">
-                        <img src={charpenteImage} alt="Charpente" className="w-full h-full object-cover" />
+                        <img src={serviceImages.structure["charpente"]} alt="Charpente" className="w-full h-full object-cover" />
                       </div>
                       <CardContent className="p-2">
                         <p className="text-xs font-medium text-center">Charpente</p>
@@ -183,7 +184,7 @@ const Home = () => {
                   <Link to="/structure/pergola" className="block">
                     <Card className="hover:shadow-md transition-shadow">
                       <div className="h-20 overflow-hidden">
-                        <img src={charpenteImage} alt="Pergola" className="w-full h-full object-cover" />
+                        <img src={serviceImages.structure["pergola"]} alt="Pergola" className="w-full h-full object-cover" />
                       </div>
                       <CardContent className="p-2">
                         <p className="text-xs font-medium text-center">Pergola</p>
@@ -193,7 +194,7 @@ const Home = () => {
                   <Link to="/structure/carport" className="block">
                     <Card className="hover:shadow-md transition-shadow">
                       <div className="h-20 overflow-hidden">
-                        <img src={charpenteImage} alt="Carport" className="w-full h-full object-cover" />
+                        <img src={serviceImages.structure["carport"]} alt="Carport" className="w-full h-full object-cover" />
                       </div>
                       <CardContent className="p-2">
                         <p className="text-xs font-medium text-center">Carport</p>
@@ -203,7 +204,7 @@ const Home = () => {
                   <Link to="/structure/terrasse" className="block">
                     <Card className="hover:shadow-md transition-shadow">
                       <div className="h-20 overflow-hidden">
-                        <img src={charpenteImage} alt="Terrasse" className="w-full h-full object-cover" />
+                        <img src={serviceImages.structure["terrasses"]} alt="Terrasse" className="w-full h-full object-cover" />
                       </div>
                       <CardContent className="p-2">
                         <p className="text-xs font-medium text-center">Terrasse</p>
@@ -246,7 +247,7 @@ const Home = () => {
                   <Link to="/menuiserie-interieur/escaliers" className="block">
                     <Card className="hover:shadow-md transition-shadow">
                       <div className="h-20 overflow-hidden">
-                        <img src={menuiserieImage} alt="Escaliers" className="w-full h-full object-cover" />
+                        <img src={serviceImages.menuiserieInterieur["escaliers"]} alt="Escaliers" className="w-full h-full object-cover" />
                       </div>
                       <CardContent className="p-2">
                         <p className="text-xs font-medium text-center">Escaliers</p>
@@ -256,7 +257,7 @@ const Home = () => {
                   <Link to="/menuiserie-interieur/tables" className="block">
                     <Card className="hover:shadow-md transition-shadow">
                       <div className="h-20 overflow-hidden">
-                        <img src={menuiserieImage} alt="Tables" className="w-full h-full object-cover" />
+                        <img src={serviceImages.menuiserieInterieur["tables"]} alt="Tables" className="w-full h-full object-cover" />
                       </div>
                       <CardContent className="p-2">
                         <p className="text-xs font-medium text-center">Tables</p>
@@ -266,7 +267,7 @@ const Home = () => {
                   <Link to="/menuiserie-interieur/sols" className="block">
                     <Card className="hover:shadow-md transition-shadow">
                       <div className="h-20 overflow-hidden">
-                        <img src={menuiserieImage} alt="Sols" className="w-full h-full object-cover" />
+                        <img src={serviceImages.menuiserieInterieur["sols"]} alt="Sols" className="w-full h-full object-cover" />
                       </div>
                       <CardContent className="p-2">
                         <p className="text-xs font-medium text-center">Sols</p>
@@ -276,7 +277,7 @@ const Home = () => {
                   <Link to="/menuiserie-interieur/portes-communication" className="block">
                     <Card className="hover:shadow-md transition-shadow">
                       <div className="h-20 overflow-hidden">
-                        <img src={menuiserieImage} alt="Portes intérieures" className="w-full h-full object-cover" />
+                        <img src={serviceImages.menuiserieInterieur["portes-communication"]} alt="Portes intérieures" className="w-full h-full object-cover" />
                       </div>
                       <CardContent className="p-2">
                         <p className="text-xs font-medium text-center">Portes intérieures</p>
@@ -286,7 +287,7 @@ const Home = () => {
                   <Link to="/menuiserie-interieur/mobilier-sur-mesure" className="block">
                     <Card className="hover:shadow-md transition-shadow">
                       <div className="h-20 overflow-hidden">
-                        <img src={menuiserieImage} alt="Mobilier sur mesure" className="w-full h-full object-cover" />
+                        <img src={serviceImages.menuiserieInterieur["mobilier"]} alt="Mobilier sur mesure" className="w-full h-full object-cover" />
                       </div>
                       <CardContent className="p-2">
                         <p className="text-xs font-medium text-center">Mobilier sur mesure</p>
@@ -296,7 +297,7 @@ const Home = () => {
                   <Link to="/menuiserie-interieur/verrieres" className="block">
                     <Card className="hover:shadow-md transition-shadow">
                       <div className="h-20 overflow-hidden">
-                        <img src={menuiserieImage} alt="Verrières" className="w-full h-full object-cover" />
+                        <img src={serviceImages.menuiserieInterieur["verrieres"]} alt="Verrières" className="w-full h-full object-cover" />
                       </div>
                       <CardContent className="p-2">
                         <p className="text-xs font-medium text-center">Verrières</p>
@@ -321,7 +322,7 @@ const Home = () => {
             <Card className="overflow-hidden group relative cursor-pointer h-56">
               <div className="h-full overflow-hidden relative">
                 <img
-                  src={menuiserieImage}
+                  src={menuiserieExtImage}
                   alt="Menuiserie Extérieure"
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                 />
@@ -339,7 +340,7 @@ const Home = () => {
                   <Link to="/menuiserie-exterieur/fenetres" className="block">
                     <Card className="hover:shadow-md transition-shadow">
                       <div className="h-20 overflow-hidden">
-                        <img src={menuiserieImage} alt="Fenêtres" className="w-full h-full object-cover" />
+                        <img src={serviceImages.menuiserieExterieur["fenetres"]} alt="Fenêtres" className="w-full h-full object-cover" />
                       </div>
                       <CardContent className="p-2">
                         <p className="text-xs font-medium text-center">Fenêtres</p>
@@ -349,7 +350,7 @@ const Home = () => {
                   <Link to="/menuiserie-exterieur/volets" className="block">
                     <Card className="hover:shadow-md transition-shadow">
                       <div className="h-20 overflow-hidden">
-                        <img src={menuiserieImage} alt="Volets" className="w-full h-full object-cover" />
+                        <img src={serviceImages.menuiserieExterieur["volets"]} alt="Volets" className="w-full h-full object-cover" />
                       </div>
                       <CardContent className="p-2">
                         <p className="text-xs font-medium text-center">Volets</p>
@@ -359,7 +360,7 @@ const Home = () => {
                   <Link to="/menuiserie-exterieur/portes-entree" className="block">
                     <Card className="hover:shadow-md transition-shadow">
                       <div className="h-20 overflow-hidden">
-                        <img src={menuiserieImage} alt="Portes d'entrée" className="w-full h-full object-cover" />
+                        <img src={serviceImages.menuiserieExterieur["portes-entree"]} alt="Portes d'entrée" className="w-full h-full object-cover" />
                       </div>
                       <CardContent className="p-2">
                         <p className="text-xs font-medium text-center">Portes d'entrée</p>
@@ -369,7 +370,7 @@ const Home = () => {
                   <Link to="/menuiserie-exterieur/portes-garage" className="block">
                     <Card className="hover:shadow-md transition-shadow">
                       <div className="h-20 overflow-hidden">
-                        <img src={menuiserieImage} alt="Portes de garage" className="w-full h-full object-cover" />
+                        <img src={serviceImages.menuiserieExterieur["portes-garage"]} alt="Portes de garage" className="w-full h-full object-cover" />
                       </div>
                       <CardContent className="p-2">
                         <p className="text-xs font-medium text-center">Portes de garage</p>
@@ -379,7 +380,7 @@ const Home = () => {
                   <Link to="/menuiserie-exterieur/portails" className="block">
                     <Card className="hover:shadow-md transition-shadow">
                       <div className="h-20 overflow-hidden">
-                        <img src={menuiserieImage} alt="Portails" className="w-full h-full object-cover" />
+                        <img src={serviceImages.menuiserieExterieur["portails"]} alt="Portails" className="w-full h-full object-cover" />
                       </div>
                       <CardContent className="p-2">
                         <p className="text-xs font-medium text-center">Portails</p>
@@ -389,7 +390,7 @@ const Home = () => {
                   <Link to="/menuiserie-exterieur/clotures" className="block">
                     <Card className="hover:shadow-md transition-shadow">
                       <div className="h-20 overflow-hidden">
-                        <img src={menuiserieImage} alt="Clôtures" className="w-full h-full object-cover" />
+                        <img src={serviceImages.menuiserieExterieur["clotures"]} alt="Clôtures" className="w-full h-full object-cover" />
                       </div>
                       <CardContent className="p-2">
                         <p className="text-xs font-medium text-center">Clôtures</p>
@@ -399,7 +400,7 @@ const Home = () => {
                   <Link to="/menuiserie-exterieur/bardages" className="block">
                     <Card className="hover:shadow-md transition-shadow">
                       <div className="h-20 overflow-hidden">
-                        <img src={menuiserieImage} alt="Bardages" className="w-full h-full object-cover" />
+                        <img src={serviceImages.menuiserieExterieur["bardages"]} alt="Bardages" className="w-full h-full object-cover" />
                       </div>
                       <CardContent className="p-2">
                         <p className="text-xs font-medium text-center">Bardages</p>
@@ -432,7 +433,7 @@ const Home = () => {
                   <Link to="/agencement/dressing" className="block">
                     <Card className="hover:shadow-md transition-shadow">
                       <div className="h-20 overflow-hidden">
-                        <img src={agencementImage} alt="Dressing" className="w-full h-full object-cover" />
+                        <img src={serviceImages.agencement["dressing"]} alt="Dressing" className="w-full h-full object-cover" />
                       </div>
                       <CardContent className="p-2">
                         <p className="text-xs font-medium text-center">Dressing</p>
@@ -442,7 +443,7 @@ const Home = () => {
                   <Link to="/agencement/cuisines" className="block">
                     <Card className="hover:shadow-md transition-shadow">
                       <div className="h-20 overflow-hidden">
-                        <img src={agencementImage} alt="Cuisines" className="w-full h-full object-cover" />
+                        <img src={serviceImages.agencement["cuisines"]} alt="Cuisines" className="w-full h-full object-cover" />
                       </div>
                       <CardContent className="p-2">
                         <p className="text-xs font-medium text-center">Cuisines</p>
@@ -452,7 +453,7 @@ const Home = () => {
                   <Link to="/agencement/amenagement-sur-mesure" className="block">
                     <Card className="hover:shadow-md transition-shadow">
                       <div className="h-20 overflow-hidden">
-                        <img src={agencementImage} alt="Aménagement sur mesure" className="w-full h-full object-cover" />
+                        <img src={serviceImages.agencement["amenagement"]} alt="Aménagement sur mesure" className="w-full h-full object-cover" />
                       </div>
                       <CardContent className="p-2">
                         <p className="text-xs font-medium text-center">Aménagement sur mesure</p>
@@ -462,7 +463,7 @@ const Home = () => {
                   <Link to="/agencement/cloisons" className="block">
                     <Card className="hover:shadow-md transition-shadow">
                       <div className="h-20 overflow-hidden">
-                        <img src={agencementImage} alt="Cloisons" className="w-full h-full object-cover" />
+                        <img src={serviceImages.agencement["cloisons"]} alt="Cloisons" className="w-full h-full object-cover" />
                       </div>
                       <CardContent className="p-2">
                         <p className="text-xs font-medium text-center">Cloisons</p>
@@ -495,7 +496,7 @@ const Home = () => {
                   <Link to="/extension/ossature-bois" className="block">
                     <Card className="hover:shadow-md transition-shadow">
                       <div className="h-20 overflow-hidden">
-                        <img src={extensionImage} alt="Extension ossature bois" className="w-full h-full object-cover" />
+                        <img src={serviceImages.extension["ossature-bois"]} alt="Extension ossature bois" className="w-full h-full object-cover" />
                       </div>
                       <CardContent className="p-2">
                         <p className="text-xs font-medium text-center">Extension ossature bois</p>
@@ -505,7 +506,7 @@ const Home = () => {
                   <Link to="/extension/garage" className="block">
                     <Card className="hover:shadow-md transition-shadow">
                       <div className="h-20 overflow-hidden">
-                        <img src={extensionImage} alt="Garage" className="w-full h-full object-cover" />
+                        <img src={serviceImages.extension["garage"]} alt="Garage" className="w-full h-full object-cover" />
                       </div>
                       <CardContent className="p-2">
                         <p className="text-xs font-medium text-center">Garage</p>
@@ -515,7 +516,7 @@ const Home = () => {
                   <Link to="/extension/surelevation" className="block">
                     <Card className="hover:shadow-md transition-shadow">
                       <div className="h-20 overflow-hidden">
-                        <img src={extensionImage} alt="Surélévation" className="w-full h-full object-cover" />
+                        <img src={serviceImages.extension["surelevation"]} alt="Surélévation" className="w-full h-full object-cover" />
                       </div>
                       <CardContent className="p-2">
                         <p className="text-xs font-medium text-center">Surélévation</p>
@@ -525,7 +526,7 @@ const Home = () => {
                   <Link to="/extension/veranda" className="block">
                     <Card className="hover:shadow-md transition-shadow">
                       <div className="h-20 overflow-hidden">
-                        <img src={extensionImage} alt="Véranda" className="w-full h-full object-cover" />
+                        <img src={serviceImages.extension["veranda"]} alt="Véranda" className="w-full h-full object-cover" />
                       </div>
                       <CardContent className="p-2">
                         <p className="text-xs font-medium text-center">Véranda</p>
@@ -535,7 +536,7 @@ const Home = () => {
                   <Link to="/extension/pool-house" className="block">
                     <Card className="hover:shadow-md transition-shadow">
                       <div className="h-20 overflow-hidden">
-                        <img src={extensionImage} alt="Pool house" className="w-full h-full object-cover" />
+                        <img src={serviceImages.extension["pool-house"]} alt="Pool house" className="w-full h-full object-cover" />
                       </div>
                       <CardContent className="p-2">
                         <p className="text-xs font-medium text-center">Pool house</p>
@@ -545,7 +546,7 @@ const Home = () => {
                   <Link to="/extension/abri-jardin" className="block">
                     <Card className="hover:shadow-md transition-shadow">
                       <div className="h-20 overflow-hidden">
-                        <img src={extensionImage} alt="Studio de jardin" className="w-full h-full object-cover" />
+                        <img src={serviceImages.extension["abri-jardin"]} alt="Studio de jardin" className="w-full h-full object-cover" />
                       </div>
                       <CardContent className="p-2">
                         <p className="text-xs font-medium text-center">Studio de jardin</p>

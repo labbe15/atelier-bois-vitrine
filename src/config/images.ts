@@ -14,57 +14,56 @@ export const categoryImages = {
 };
 
 // Images spécifiques pour chaque service
-// Noms de fichiers simplifiés (ex: cuisine.jpg, escaliers.jpg, etc.)
-// Si le fichier n'existe pas, le fallback utilisera l'image de catégorie
+// Utilisation des noms de fichiers exacts uploadés par l'utilisateur
 export const serviceImages = {
   // Structure (6 services)
   structure: {
-    "ossature-bois": "/src/assets/ossature-bois.jpg",
+    "ossature-bois": "/src/assets/charpente.jpg", // Fallback
     "charpente": "/src/assets/charpente.jpg",
-    "pergola": "/src/assets/pergola.jpg",
-    "terrasses": "/src/assets/terrasse.jpg",
-    "carport": "/src/assets/carport.jpg",
-    "isolation-exterieur": "/src/assets/isolation.jpg",
+    "pergola": "/src/assets/Pergola.jpg",
+    "terrasses": "/src/assets/Terrasse.jpg",
+    "carport": "/src/assets/charpente.jpg", // Fallback
+    "isolation-exterieur": "/src/assets/charpente.jpg", // Fallback
   },
 
   // Menuiserie Intérieure (7 services)
   menuiserieInterieur: {
-    "escaliers": "/src/assets/escaliers.jpg",
-    "bibliotheques": "/src/assets/bibliotheques.jpg",
-    "tables": "/src/assets/tables.jpg",
-    "sols": "/src/assets/sols.jpg",
-    "portes-communication": "/src/assets/portes.jpg",
-    "mobilier": "/src/assets/mobilier.jpg",
-    "verrieres": "/src/assets/verrieres.jpg",
+    "escaliers": "/src/assets/Escalier.jpg",
+    "bibliotheques": "/src/assets/menuiserie.jpg", // Fallback
+    "tables": "/src/assets/Table.jpg",
+    "sols": "/src/assets/Sol.jpg",
+    "portes-communication": "/src/assets/menuiserie.jpg", // Fallback
+    "mobilier": "/src/assets/menuiserie.jpg", // Fallback
+    "verrieres": "/src/assets/menuiserie.jpg", // Fallback
   },
 
   // Menuiserie Extérieure (7 services)
   menuiserieExterieur: {
-    "fenetres": "/src/assets/fenetres.jpg",
-    "volets": "/src/assets/volets.jpg",
-    "portes-entree": "/src/assets/portes-entree.jpg",
-    "portes-garage": "/src/assets/portes-garage.jpg",
-    "portails": "/src/assets/portails.jpg",
-    "clotures": "/src/assets/clotures.jpg",
-    "bardages": "/src/assets/bardages.jpg",
+    "fenetres": "/src/assets/Fenêtres.jpg",
+    "volets": "/src/assets/Volet battant.jpg",
+    "portes-entree": "/src/assets/menuiserie.jpg", // Fallback
+    "portes-garage": "/src/assets/menuiserie.jpg", // Fallback
+    "portails": "/src/assets/Portail.jpg",
+    "clotures": "/src/assets/menuiserie.jpg", // Fallback
+    "bardages": "/src/assets/BSO.jpg",
   },
 
   // Agencement (4 services)
   agencement: {
-    "dressing": "/src/assets/dressing.jpg",
-    "cuisines": "/src/assets/cuisine.jpg",
-    "amenagement": "/src/assets/amenagement.jpg",
-    "cloisons": "/src/assets/cloisons.jpg",
+    "dressing": "/src/assets/Dressing.jpg",
+    "cuisines": "/src/assets/Cuisine.jpg",
+    "amenagement": "/src/assets/Aménagement sur mesure.jpg",
+    "cloisons": "/src/assets/Cloison bois.jpg",
   },
 
   // Extensions (6 services)
   extension: {
-    "ossature-bois": "/src/assets/extension-ossature.jpg",
-    "garage": "/src/assets/garage.jpg",
-    "surelevation": "/src/assets/surelevation.jpg",
-    "veranda": "/src/assets/veranda.jpg",
-    "pool-house": "/src/assets/pool-house.jpg",
-    "abri-jardin": "/src/assets/studio-jardin.jpg",
+    "ossature-bois": "/src/assets/extension.jpg", // Fallback
+    "garage": "/src/assets/Extension garage.jpg",
+    "surelevation": "/src/assets/Surélévation.jpg",
+    "veranda": "/src/assets/extension.jpg", // Fallback
+    "pool-house": "/src/assets/Pool house.jpg",
+    "abri-jardin": "/src/assets/extension.jpg", // Fallback
   },
 };
 
