@@ -144,7 +144,7 @@ const Navigation = () => {
               className="flex items-center gap-3 group transition-transform duration-200 hover:scale-105"
             >
               <img
-                src="/favicon.png"
+                src="/logo.svg"
                 alt="Logo L'Atelier du Volcan"
                 className="h-12 w-12 transition-transform duration-200 group-hover:rotate-6"
               />

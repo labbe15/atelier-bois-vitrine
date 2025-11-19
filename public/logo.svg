@@ -1,0 +1,22 @@
+<svg width="200" height="200" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Hexagone brun foncé -->
+  <path d="M100 10 L170 55 L170 145 L100 190 L30 145 L30 55 Z"
+        stroke="#3E2723"
+        stroke-width="8"
+        fill="none"
+        stroke-linejoin="round"/>
+
+  <!-- Volcan (montagne verte avec sommet jaune/or) -->
+  <!-- Base verte -->
+  <path d="M100 80 L140 150 L60 150 Z"
+        fill="#4CAF50"/>
+
+  <!-- Sommet jaune/or -->
+  <path d="M100 80 L120 110 L80 110 Z"
+        fill="#FFA726"/>
+
+  <!-- Ligne de neige blanche -->
+  <path d="M90 100 Q100 95 110 100 L105 110 L95 110 Z"
+        fill="#FFFFFF"
+        opacity="0.9"/>
+</svg>
