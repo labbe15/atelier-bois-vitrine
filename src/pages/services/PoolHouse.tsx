@@ -1,5 +1,5 @@
 import ServiceLayout from "@/components/ServiceLayout";
-import extensionImage from "@/assets/extension.jpg";
+import poolHouseImage from "@/assets/Pool house.jpg";
 import { Card, CardContent } from "@/components/ui/card";
 
 const PoolHouse = () => {
@@ -8,7 +8,7 @@ const PoolHouse = () => {
       title="Pool House"
       subtitle="Créez un espace élégant et fonctionnel autour de votre piscine"
       description="Vous rêvez d'un pool house sur mesure pour profiter pleinement de votre extérieur ? L'Atelier du Volcan, spécialiste de la menuiserie et charpente en ossature bois à Sansac-de-Marmiesse (Cantal), conçoit et installe des pools houses esthétiques, durables et entièrement personnalisables."
-      image={extensionImage}
+      image={poolHouseImage}
       features={[
         "Expertise locale en menuiserie et charpente bois dans le Cantal",
         "Réalisation sur mesure et 100 % personnalisée",
