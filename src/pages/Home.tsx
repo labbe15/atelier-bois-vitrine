@@ -122,8 +122,8 @@ const Home = () => {
                 <Card key={index} className="text-center">
                   <CardContent className="pt-6">
                     <Icon className="h-12 w-12 mx-auto mb-4 text-primary" />
-                    <h3 className="font-semibold mb-2">{highlight.title}</h3>
-                    <p className="text-sm text-muted-foreground">{highlight.description}</p>
+                    <h3 className="text-lg font-semibold mb-2">{highlight.title}</h3>
+                    <p className="text-base text-muted-foreground">{highlight.description}</p>
                   </CardContent>
                 </Card>
               );

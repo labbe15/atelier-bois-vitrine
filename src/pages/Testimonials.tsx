@@ -70,19 +70,19 @@ const Testimonials = () => {
                     <Star key={i} className="h-5 w-5 fill-yellow-500 text-yellow-500" />
                   ))}
                 </div>
-                <p className="text-sm text-muted-foreground">Note moyenne</p>
+                <p className="text-base text-muted-foreground">Note moyenne</p>
               </CardContent>
             </Card>
             <Card className="text-center">
               <CardContent className="pt-6">
                 <div className="text-4xl font-bold text-primary mb-2">100%</div>
-                <p className="text-sm text-muted-foreground">Clients satisfaits</p>
+                <p className="text-base text-muted-foreground">Clients satisfaits</p>
               </CardContent>
             </Card>
             <Card className="text-center">
               <CardContent className="pt-6">
                 <div className="text-4xl font-bold text-primary mb-2">50+</div>
-                <p className="text-sm text-muted-foreground">Projets réalisés</p>
+                <p className="text-base text-muted-foreground">Projets réalisés</p>
               </CardContent>
             </Card>
           </div>
@@ -103,7 +103,7 @@ const Testimonials = () => {
                       ))}
                     </div>
                   </div>
-                  <p className="text-sm mb-4 italic">"{testimonial.text}"</p>
+                  <p className="text-base mb-4 italic">"{testimonial.text}"</p>
                   <div className="pt-3 border-t">
                     <span className="text-xs font-medium text-primary bg-primary/10 px-3 py-1 rounded-full">
                       {testimonial.project}

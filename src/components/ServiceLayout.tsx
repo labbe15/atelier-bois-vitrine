@@ -48,7 +48,7 @@ const ServiceLayout = ({ title, subtitle, description, image, features, children
                   {features.map((feature, index) => (
                     <li key={index} className="flex items-start gap-2">
                       <CheckCircle2 className="h-5 w-5 text-primary mt-0.5 flex-shrink-0" />
-                      <span className="text-sm">{feature}</span>
+                      <span className="text-base">{feature}</span>
                     </li>
                   ))}
                 </ul>
@@ -59,7 +59,7 @@ const ServiceLayout = ({ title, subtitle, description, image, features, children
               <CardContent className="pt-6">
                 <h3 className="text-xl font-semibold mb-4">Besoin d'un devis ?</h3>
                 <p className="mb-6">
-                  Contactez-nous pour discuter de votre projet. Nous vous répondons sous 48h avec un devis détaillé.
+                  Contactez-nous pour discuter de votre projet. Nous serons ravis d'étudier votre demande et de vous proposer un devis détaillé.
                 </p>
                 <Button variant="secondary" asChild className="w-full">
                   <Link to="/contact">Demander un devis</Link>

@@ -30,7 +30,7 @@ const About = () => {
             <CardContent className="pt-6 text-center">
               <Heart className="h-12 w-12 mx-auto mb-4 text-primary" />
               <h3 className="text-xl font-semibold mb-2">Passion du bois</h3>
-              <p className="text-sm text-muted-foreground">
+              <p className="text-base text-muted-foreground">
                 Chaque essence, chaque texture nous inspire pour créer des réalisations uniques
               </p>
             </CardContent>
@@ -39,7 +39,7 @@ const About = () => {
             <CardContent className="pt-6 text-center">
               <Target className="h-12 w-12 mx-auto mb-4 text-primary" />
               <h3 className="text-xl font-semibold mb-2">Précision</h3>
-              <p className="text-sm text-muted-foreground">
+              <p className="text-base text-muted-foreground">
                 Un souci du détail constant pour des finitions impeccables
               </p>
             </CardContent>
@@ -48,7 +48,7 @@ const About = () => {
             <CardContent className="pt-6 text-center">
               <Award className="h-12 w-12 mx-auto mb-4 text-primary" />
               <h3 className="text-xl font-semibold mb-2">Excellence</h3>
-              <p className="text-sm text-muted-foreground">
+              <p className="text-base text-muted-foreground">
                 Des matériaux sélectionnés et des techniques éprouvées
               </p>
             </CardContent>
