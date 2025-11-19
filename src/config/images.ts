@@ -2,7 +2,7 @@
 // Remplacez les chemins par vos propres images
 
 // Page d'accueil
-export const heroImage = "/src/assets/hero-wood.jpg";
+export const heroImage = "/src/assets/Présentation.jpg";
 
 // Images par catégorie pour les cartes principales
 export const categoryImages = {
