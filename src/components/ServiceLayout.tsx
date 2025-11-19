@@ -17,8 +17,8 @@ const ServiceLayout = ({ title, subtitle, description, image, features, children
   return (
     <div className="min-h-screen">
       {/* Hero */}
-      <section 
-        className="relative h-[400px] flex items-center justify-center text-center"
+      <section
+        className="relative h-[400px] flex items-center justify-center text-center bg-gradient-to-br from-primary/20 to-primary/5"
         style={{
           backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(${image})`,
           backgroundSize: "cover",

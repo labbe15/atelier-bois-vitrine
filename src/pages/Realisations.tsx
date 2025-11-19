@@ -164,11 +164,12 @@ const Realisations = () => {
               className="overflow-hidden group cursor-pointer hover:shadow-xl transition-shadow"
               onClick={() => setSelectedProject(project)}
             >
-              <div className="h-64 overflow-hidden">
-                <img 
-                  src={project.image} 
+              <div className="h-64 overflow-hidden bg-gradient-to-br from-primary/10 to-primary/5">
+                <img
+                  src={project.image}
                   alt={project.title}
                   className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
+                  loading="lazy"
                 />
               </div>
               <CardContent className="p-6">
@@ -195,8 +196,9 @@ const Realisations = () => {
             </DialogHeader>
             {selectedProject && (
               <div>
-                <img 
-                  src={selectedProject.image} 
+                <img
+                  src={selectedProject.image}
+                  loading="lazy" 
                   alt={selectedProject.title}
                   className="w-full h-96 object-cover rounded-lg mb-4"
                 />

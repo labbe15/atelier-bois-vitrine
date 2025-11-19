@@ -1,16 +1,21 @@
 // Configuration centralisée de toutes les images du site
-// Remplacez les chemins par vos propres images
+// Imports directs pour que Vite puisse les résoudre
+import presentationImage from "@/assets/Présentation.jpg";
+import charpenteImage from "@/assets/charpente.jpg";
+import menuiserieImage from "@/assets/menuiserie.jpg";
+import agencementImage from "@/assets/agencement.jpg";
+import extensionImage from "@/assets/extension.jpg";
 
 // Page d'accueil
-export const heroImage = "/src/assets/Présentation.jpg";
+export const heroImage = presentationImage;
 
 // Images par catégorie pour les cartes principales
 export const categoryImages = {
-  structure: "/src/assets/charpente.jpg",
-  menuiserieInterieur: "/src/assets/menuiserie.jpg",
-  menuiserieExterieur: "/src/assets/menuiserie.jpg",
-  agencement: "/src/assets/agencement.jpg",
-  extension: "/src/assets/extension.jpg",
+  structure: charpenteImage,
+  menuiserieInterieur: menuiserieImage,
+  menuiserieExterieur: menuiserieImage,
+  agencement: agencementImage,
+  extension: extensionImage,
 };
 
 // Images spécifiques pour chaque service
