@@ -141,8 +141,13 @@ const Navigation = () => {
             {/* Logo avec animation hover */}
             <Link
               to="/"
-              className="flex items-center space-x-2 group transition-transform duration-200 hover:scale-105"
+              className="flex items-center gap-3 group transition-transform duration-200 hover:scale-105"
             >
+              <img
+                src="/favicon.png"
+                alt="Logo L'Atelier du Volcan"
+                className="h-12 w-12 transition-transform duration-200 group-hover:rotate-6"
+              />
               <span
                 className={`text-2xl font-heading transition-colors ${
                   isHomePage ? "text-white" : "text-primary"
