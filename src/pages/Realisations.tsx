@@ -155,7 +155,7 @@ const Realisations = () => {
                   <span className="text-xs text-muted-foreground">{project.location}</span>
                 </div>
                 <h3 className="text-xl font-semibold mb-2">{project.title}</h3>
-                <p className="text-sm text-muted-foreground line-clamp-2">{project.description}</p>
+                <p className="text-base text-muted-foreground line-clamp-2">{project.description}</p>
               </CardContent>
             </Card>
           ))}

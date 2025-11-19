@@ -122,8 +122,8 @@ const Home = () => {
                 <Card key={index} className="text-center">
                   <CardContent className="pt-6">
                     <Icon className="h-12 w-12 mx-auto mb-4 text-primary" />
-                    <h3 className="font-semibold mb-2">{highlight.title}</h3>
-                    <p className="text-sm text-muted-foreground">{highlight.description}</p>
+                    <h3 className="text-lg font-semibold mb-2">{highlight.title}</h3>
+                    <p className="text-base text-muted-foreground">{highlight.description}</p>
                   </CardContent>
                 </Card>
               );
@@ -138,25 +138,421 @@ const Home = () => {
           <h2 className="text-4xl md:text-5xl font-heading text-center mb-12 text-primary">
             Nos Services
           </h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {services.map((service, index) => (
-              <Card key={index} className="overflow-hidden group hover:shadow-lg transition-shadow">
-                <div className="h-48 overflow-hidden">
-                  <img 
-                    src={service.image} 
-                    alt={service.title}
-                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
-                  />
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6 mx-auto">
+            {/* Structure */}
+            <Card className="overflow-hidden group relative cursor-pointer h-56">
+              <div className="h-full overflow-hidden relative">
+                <img
+                  src={charpenteImage}
+                  alt="Structure"
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent" />
+                <div className="absolute bottom-0 left-0 right-0 p-4">
+                  <h3 className="text-lg font-bold text-white">Structure</h3>
+                  <p className="text-xs text-white/80 mt-1">Survolez pour découvrir</p>
                 </div>
-                <CardContent className="p-6">
-                  <h3 className="text-xl font-semibold mb-2">{service.title}</h3>
-                  <p className="text-sm text-muted-foreground mb-4">{service.description}</p>
-                  <Button variant="outline" asChild className="w-full">
-                    <Link to={service.link}>En savoir plus</Link>
-                  </Button>
-                </CardContent>
-              </Card>
-            ))}
+              </div>
+
+              {/* Hover overlay with sub-services */}
+              <div className="absolute inset-0 bg-white/98 opacity-0 group-hover:opacity-100 transition-opacity duration-300 overflow-y-auto p-4">
+                <h3 className="text-xl font-bold text-primary mb-3 text-center">Structure</h3>
+                <div className="grid grid-cols-2 gap-3">
+                  <Link to="/structure/ossature-bois" className="block">
+                    <Card className="hover:shadow-md transition-shadow">
+                      <div className="h-20 overflow-hidden">
+                        <img src={charpenteImage} alt="Maison ossature bois" className="w-full h-full object-cover" />
+                      </div>
+                      <CardContent className="p-2">
+                        <p className="text-xs font-medium text-center">Maison ossature bois</p>
+                      </CardContent>
+                    </Card>
+                  </Link>
+                  <Link to="/structure/charpente" className="block">
+                    <Card className="hover:shadow-md transition-shadow">
+                      <div className="h-20 overflow-hidden">
+                        <img src={charpenteImage} alt="Charpente" className="w-full h-full object-cover" />
+                      </div>
+                      <CardContent className="p-2">
+                        <p className="text-xs font-medium text-center">Charpente</p>
+                      </CardContent>
+                    </Card>
+                  </Link>
+                  <Link to="/structure/pergola" className="block">
+                    <Card className="hover:shadow-md transition-shadow">
+                      <div className="h-20 overflow-hidden">
+                        <img src={charpenteImage} alt="Pergola" className="w-full h-full object-cover" />
+                      </div>
+                      <CardContent className="p-2">
+                        <p className="text-xs font-medium text-center">Pergola</p>
+                      </CardContent>
+                    </Card>
+                  </Link>
+                  <Link to="/structure/carport" className="block">
+                    <Card className="hover:shadow-md transition-shadow">
+                      <div className="h-20 overflow-hidden">
+                        <img src={charpenteImage} alt="Carport" className="w-full h-full object-cover" />
+                      </div>
+                      <CardContent className="p-2">
+                        <p className="text-xs font-medium text-center">Carport</p>
+                      </CardContent>
+                    </Card>
+                  </Link>
+                  <Link to="/structure/terrasse" className="block">
+                    <Card className="hover:shadow-md transition-shadow">
+                      <div className="h-20 overflow-hidden">
+                        <img src={charpenteImage} alt="Terrasse" className="w-full h-full object-cover" />
+                      </div>
+                      <CardContent className="p-2">
+                        <p className="text-xs font-medium text-center">Terrasse</p>
+                      </CardContent>
+                    </Card>
+                  </Link>
+                  <Link to="/structure/abri-jardin" className="block">
+                    <Card className="hover:shadow-md transition-shadow">
+                      <div className="h-20 overflow-hidden">
+                        <img src={charpenteImage} alt="Abri de jardin" className="w-full h-full object-cover" />
+                      </div>
+                      <CardContent className="p-2">
+                        <p className="text-xs font-medium text-center">Abri de jardin</p>
+                      </CardContent>
+                    </Card>
+                  </Link>
+                </div>
+              </div>
+            </Card>
+
+            {/* Menuiserie Intérieure */}
+            <Card className="overflow-hidden group relative cursor-pointer h-56">
+              <div className="h-full overflow-hidden relative">
+                <img
+                  src={menuiserieImage}
+                  alt="Menuiserie Intérieure"
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent" />
+                <div className="absolute bottom-0 left-0 right-0 p-4">
+                  <h3 className="text-lg font-bold text-white">Menuiserie Intérieure</h3>
+                  <p className="text-xs text-white/80 mt-1">Survolez pour découvrir</p>
+                </div>
+              </div>
+
+              {/* Hover overlay with sub-services */}
+              <div className="absolute inset-0 bg-white/98 opacity-0 group-hover:opacity-100 transition-opacity duration-300 overflow-y-auto p-4">
+                <h3 className="text-xl font-bold text-primary mb-3 text-center">Menuiserie Intérieure</h3>
+                <div className="grid grid-cols-2 gap-3">
+                  <Link to="/menuiserie-interieur/escaliers" className="block">
+                    <Card className="hover:shadow-md transition-shadow">
+                      <div className="h-20 overflow-hidden">
+                        <img src={menuiserieImage} alt="Escaliers" className="w-full h-full object-cover" />
+                      </div>
+                      <CardContent className="p-2">
+                        <p className="text-xs font-medium text-center">Escaliers</p>
+                      </CardContent>
+                    </Card>
+                  </Link>
+                  <Link to="/menuiserie-interieur/tables" className="block">
+                    <Card className="hover:shadow-md transition-shadow">
+                      <div className="h-20 overflow-hidden">
+                        <img src={menuiserieImage} alt="Tables" className="w-full h-full object-cover" />
+                      </div>
+                      <CardContent className="p-2">
+                        <p className="text-xs font-medium text-center">Tables</p>
+                      </CardContent>
+                    </Card>
+                  </Link>
+                  <Link to="/menuiserie-interieur/sols" className="block">
+                    <Card className="hover:shadow-md transition-shadow">
+                      <div className="h-20 overflow-hidden">
+                        <img src={menuiserieImage} alt="Sols" className="w-full h-full object-cover" />
+                      </div>
+                      <CardContent className="p-2">
+                        <p className="text-xs font-medium text-center">Sols</p>
+                      </CardContent>
+                    </Card>
+                  </Link>
+                  <Link to="/menuiserie-interieur/portes-communication" className="block">
+                    <Card className="hover:shadow-md transition-shadow">
+                      <div className="h-20 overflow-hidden">
+                        <img src={menuiserieImage} alt="Portes intérieures" className="w-full h-full object-cover" />
+                      </div>
+                      <CardContent className="p-2">
+                        <p className="text-xs font-medium text-center">Portes intérieures</p>
+                      </CardContent>
+                    </Card>
+                  </Link>
+                  <Link to="/menuiserie-interieur/mobilier-sur-mesure" className="block">
+                    <Card className="hover:shadow-md transition-shadow">
+                      <div className="h-20 overflow-hidden">
+                        <img src={menuiserieImage} alt="Mobilier sur mesure" className="w-full h-full object-cover" />
+                      </div>
+                      <CardContent className="p-2">
+                        <p className="text-xs font-medium text-center">Mobilier sur mesure</p>
+                      </CardContent>
+                    </Card>
+                  </Link>
+                  <Link to="/menuiserie-interieur/verrieres" className="block">
+                    <Card className="hover:shadow-md transition-shadow">
+                      <div className="h-20 overflow-hidden">
+                        <img src={menuiserieImage} alt="Verrières" className="w-full h-full object-cover" />
+                      </div>
+                      <CardContent className="p-2">
+                        <p className="text-xs font-medium text-center">Verrières</p>
+                      </CardContent>
+                    </Card>
+                  </Link>
+                  <Link to="/menuiserie-interieur/lambris" className="block">
+                    <Card className="hover:shadow-md transition-shadow">
+                      <div className="h-20 overflow-hidden">
+                        <img src={menuiserieImage} alt="Lambris" className="w-full h-full object-cover" />
+                      </div>
+                      <CardContent className="p-2">
+                        <p className="text-xs font-medium text-center">Lambris</p>
+                      </CardContent>
+                    </Card>
+                  </Link>
+                </div>
+              </div>
+            </Card>
+
+            {/* Menuiserie Extérieure */}
+            <Card className="overflow-hidden group relative cursor-pointer h-56">
+              <div className="h-full overflow-hidden relative">
+                <img
+                  src={menuiserieImage}
+                  alt="Menuiserie Extérieure"
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent" />
+                <div className="absolute bottom-0 left-0 right-0 p-4">
+                  <h3 className="text-lg font-bold text-white">Menuiserie Extérieure</h3>
+                  <p className="text-xs text-white/80 mt-1">Survolez pour découvrir</p>
+                </div>
+              </div>
+
+              {/* Hover overlay with sub-services */}
+              <div className="absolute inset-0 bg-white/98 opacity-0 group-hover:opacity-100 transition-opacity duration-300 overflow-y-auto p-4">
+                <h3 className="text-xl font-bold text-primary mb-3 text-center">Menuiserie Extérieure</h3>
+                <div className="grid grid-cols-2 gap-3">
+                  <Link to="/menuiserie-exterieur/fenetres" className="block">
+                    <Card className="hover:shadow-md transition-shadow">
+                      <div className="h-20 overflow-hidden">
+                        <img src={menuiserieImage} alt="Fenêtres" className="w-full h-full object-cover" />
+                      </div>
+                      <CardContent className="p-2">
+                        <p className="text-xs font-medium text-center">Fenêtres</p>
+                      </CardContent>
+                    </Card>
+                  </Link>
+                  <Link to="/menuiserie-exterieur/volets" className="block">
+                    <Card className="hover:shadow-md transition-shadow">
+                      <div className="h-20 overflow-hidden">
+                        <img src={menuiserieImage} alt="Volets" className="w-full h-full object-cover" />
+                      </div>
+                      <CardContent className="p-2">
+                        <p className="text-xs font-medium text-center">Volets</p>
+                      </CardContent>
+                    </Card>
+                  </Link>
+                  <Link to="/menuiserie-exterieur/portes-entree" className="block">
+                    <Card className="hover:shadow-md transition-shadow">
+                      <div className="h-20 overflow-hidden">
+                        <img src={menuiserieImage} alt="Portes d'entrée" className="w-full h-full object-cover" />
+                      </div>
+                      <CardContent className="p-2">
+                        <p className="text-xs font-medium text-center">Portes d'entrée</p>
+                      </CardContent>
+                    </Card>
+                  </Link>
+                  <Link to="/menuiserie-exterieur/portes-garage" className="block">
+                    <Card className="hover:shadow-md transition-shadow">
+                      <div className="h-20 overflow-hidden">
+                        <img src={menuiserieImage} alt="Portes de garage" className="w-full h-full object-cover" />
+                      </div>
+                      <CardContent className="p-2">
+                        <p className="text-xs font-medium text-center">Portes de garage</p>
+                      </CardContent>
+                    </Card>
+                  </Link>
+                  <Link to="/menuiserie-exterieur/portails" className="block">
+                    <Card className="hover:shadow-md transition-shadow">
+                      <div className="h-20 overflow-hidden">
+                        <img src={menuiserieImage} alt="Portails" className="w-full h-full object-cover" />
+                      </div>
+                      <CardContent className="p-2">
+                        <p className="text-xs font-medium text-center">Portails</p>
+                      </CardContent>
+                    </Card>
+                  </Link>
+                  <Link to="/menuiserie-exterieur/clotures" className="block">
+                    <Card className="hover:shadow-md transition-shadow">
+                      <div className="h-20 overflow-hidden">
+                        <img src={menuiserieImage} alt="Clôtures" className="w-full h-full object-cover" />
+                      </div>
+                      <CardContent className="p-2">
+                        <p className="text-xs font-medium text-center">Clôtures</p>
+                      </CardContent>
+                    </Card>
+                  </Link>
+                  <Link to="/menuiserie-exterieur/bardages" className="block">
+                    <Card className="hover:shadow-md transition-shadow">
+                      <div className="h-20 overflow-hidden">
+                        <img src={menuiserieImage} alt="Bardages" className="w-full h-full object-cover" />
+                      </div>
+                      <CardContent className="p-2">
+                        <p className="text-xs font-medium text-center">Bardages</p>
+                      </CardContent>
+                    </Card>
+                  </Link>
+                </div>
+              </div>
+            </Card>
+
+            {/* Agencement */}
+            <Card className="overflow-hidden group relative cursor-pointer h-56">
+              <div className="h-full overflow-hidden relative">
+                <img
+                  src={agencementImage}
+                  alt="Agencement"
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent" />
+                <div className="absolute bottom-0 left-0 right-0 p-4">
+                  <h3 className="text-lg font-bold text-white">Agencement</h3>
+                  <p className="text-xs text-white/80 mt-1">Survolez pour découvrir</p>
+                </div>
+              </div>
+
+              {/* Hover overlay with sub-services */}
+              <div className="absolute inset-0 bg-white/98 opacity-0 group-hover:opacity-100 transition-opacity duration-300 overflow-y-auto p-4">
+                <h3 className="text-xl font-bold text-primary mb-3 text-center">Agencement</h3>
+                <div className="grid grid-cols-2 gap-3">
+                  <Link to="/agencement/dressing" className="block">
+                    <Card className="hover:shadow-md transition-shadow">
+                      <div className="h-20 overflow-hidden">
+                        <img src={agencementImage} alt="Dressing" className="w-full h-full object-cover" />
+                      </div>
+                      <CardContent className="p-2">
+                        <p className="text-xs font-medium text-center">Dressing</p>
+                      </CardContent>
+                    </Card>
+                  </Link>
+                  <Link to="/agencement/cuisines" className="block">
+                    <Card className="hover:shadow-md transition-shadow">
+                      <div className="h-20 overflow-hidden">
+                        <img src={agencementImage} alt="Cuisines" className="w-full h-full object-cover" />
+                      </div>
+                      <CardContent className="p-2">
+                        <p className="text-xs font-medium text-center">Cuisines</p>
+                      </CardContent>
+                    </Card>
+                  </Link>
+                  <Link to="/agencement/amenagement-sur-mesure" className="block">
+                    <Card className="hover:shadow-md transition-shadow">
+                      <div className="h-20 overflow-hidden">
+                        <img src={agencementImage} alt="Aménagement sur mesure" className="w-full h-full object-cover" />
+                      </div>
+                      <CardContent className="p-2">
+                        <p className="text-xs font-medium text-center">Aménagement sur mesure</p>
+                      </CardContent>
+                    </Card>
+                  </Link>
+                  <Link to="/agencement/cloisons" className="block">
+                    <Card className="hover:shadow-md transition-shadow">
+                      <div className="h-20 overflow-hidden">
+                        <img src={agencementImage} alt="Cloisons" className="w-full h-full object-cover" />
+                      </div>
+                      <CardContent className="p-2">
+                        <p className="text-xs font-medium text-center">Cloisons</p>
+                      </CardContent>
+                    </Card>
+                  </Link>
+                </div>
+              </div>
+            </Card>
+
+            {/* Extensions */}
+            <Card className="overflow-hidden group relative cursor-pointer h-56">
+              <div className="h-full overflow-hidden relative">
+                <img
+                  src={extensionImage}
+                  alt="Extensions"
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent" />
+                <div className="absolute bottom-0 left-0 right-0 p-4">
+                  <h3 className="text-lg font-bold text-white">Extensions</h3>
+                  <p className="text-xs text-white/80 mt-1">Survolez pour découvrir</p>
+                </div>
+              </div>
+
+              {/* Hover overlay with sub-services */}
+              <div className="absolute inset-0 bg-white/98 opacity-0 group-hover:opacity-100 transition-opacity duration-300 overflow-y-auto p-4">
+                <h3 className="text-xl font-bold text-primary mb-3 text-center">Extensions</h3>
+                <div className="grid grid-cols-2 gap-3">
+                  <Link to="/extension/ossature-bois" className="block">
+                    <Card className="hover:shadow-md transition-shadow">
+                      <div className="h-20 overflow-hidden">
+                        <img src={extensionImage} alt="Extension ossature bois" className="w-full h-full object-cover" />
+                      </div>
+                      <CardContent className="p-2">
+                        <p className="text-xs font-medium text-center">Extension ossature bois</p>
+                      </CardContent>
+                    </Card>
+                  </Link>
+                  <Link to="/extension/garage" className="block">
+                    <Card className="hover:shadow-md transition-shadow">
+                      <div className="h-20 overflow-hidden">
+                        <img src={extensionImage} alt="Garage" className="w-full h-full object-cover" />
+                      </div>
+                      <CardContent className="p-2">
+                        <p className="text-xs font-medium text-center">Garage</p>
+                      </CardContent>
+                    </Card>
+                  </Link>
+                  <Link to="/extension/surelevation" className="block">
+                    <Card className="hover:shadow-md transition-shadow">
+                      <div className="h-20 overflow-hidden">
+                        <img src={extensionImage} alt="Surélévation" className="w-full h-full object-cover" />
+                      </div>
+                      <CardContent className="p-2">
+                        <p className="text-xs font-medium text-center">Surélévation</p>
+                      </CardContent>
+                    </Card>
+                  </Link>
+                  <Link to="/extension/veranda" className="block">
+                    <Card className="hover:shadow-md transition-shadow">
+                      <div className="h-20 overflow-hidden">
+                        <img src={extensionImage} alt="Véranda" className="w-full h-full object-cover" />
+                      </div>
+                      <CardContent className="p-2">
+                        <p className="text-xs font-medium text-center">Véranda</p>
+                      </CardContent>
+                    </Card>
+                  </Link>
+                  <Link to="/extension/pool-house" className="block">
+                    <Card className="hover:shadow-md transition-shadow">
+                      <div className="h-20 overflow-hidden">
+                        <img src={extensionImage} alt="Pool house" className="w-full h-full object-cover" />
+                      </div>
+                      <CardContent className="p-2">
+                        <p className="text-xs font-medium text-center">Pool house</p>
+                      </CardContent>
+                    </Card>
+                  </Link>
+                  <Link to="/extension/abri-jardin" className="block">
+                    <Card className="hover:shadow-md transition-shadow">
+                      <div className="h-20 overflow-hidden">
+                        <img src={extensionImage} alt="Studio de jardin" className="w-full h-full object-cover" />
+                      </div>
+                      <CardContent className="p-2">
+                        <p className="text-xs font-medium text-center">Studio de jardin</p>
+                      </CardContent>
+                    </Card>
+                  </Link>
+                </div>
+              </div>
+            </Card>
           </div>
         </div>
       </section>

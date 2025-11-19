@@ -17,6 +17,7 @@ const MENU_CONFIG = {
     { label: "Pergola", path: "/structure/pergola" },
     { label: "Terrasses", path: "/structure/terrasses" },
     { label: "Carport", path: "/structure/carport" },
+    { label: "Isolation par l'extérieur", path: "/structure/isolation-exterieur" },
   ],
   menuiserieInterieur: [
     { label: "Escaliers", path: "/menuiserie-interieur/escaliers" },
@@ -25,6 +26,7 @@ const MENU_CONFIG = {
     { label: "Sols", path: "/menuiserie-interieur/sols" },
     { label: "Portes de communication", path: "/menuiserie-interieur/portes-communication" },
     { label: "Mobilier sur mesure", path: "/menuiserie-interieur/mobilier" },
+    { label: "Verrières", path: "/menuiserie-interieur/verrieres" },
   ],
   menuiserieExterieur: [
     { label: "Fenêtres", path: "/menuiserie-exterieur/fenetres" },
@@ -33,11 +35,13 @@ const MENU_CONFIG = {
     { label: "Portes de garage", path: "/menuiserie-exterieur/portes-garage" },
     { label: "Portails", path: "/menuiserie-exterieur/portails" },
     { label: "Clôtures", path: "/menuiserie-exterieur/clotures" },
+    { label: "Bardages", path: "/menuiserie-exterieur/bardages" },
   ],
   agencement: [
     { label: "Dressing", path: "/agencement/dressing" },
     { label: "Cuisines", path: "/agencement/cuisines" },
     { label: "Aménagement sur mesure", path: "/agencement/amenagement" },
+    { label: "Cloisons", path: "/agencement/cloisons" },
   ],
   extension: [
     { label: "Extension ossature bois", path: "/extension/ossature-bois" },
@@ -137,8 +141,13 @@ const Navigation = () => {
             {/* Logo avec animation hover */}
             <Link
               to="/"
-              className="flex items-center space-x-2 group transition-transform duration-200 hover:scale-105"
+              className="flex items-center gap-3 group transition-transform duration-200 hover:scale-105"
             >
+              <img
+                src="/logo.svg"
+                alt="Logo L'Atelier du Volcan"
+                className="h-12 w-12 transition-transform duration-200 group-hover:rotate-6"
+              />
               <span
                 className={`text-2xl font-heading transition-colors ${
                   isHomePage ? "text-white" : "text-primary"

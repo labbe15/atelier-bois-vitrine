@@ -92,7 +92,7 @@ const Contact = () => {
                 Envoyez-nous un message
               </CardTitle>
               <CardDescription className="text-base">
-                Nous vous répondrons sous 48h
+                Nous serons ravis de vous répondre
               </CardDescription>
             </CardHeader>
             <CardContent>
