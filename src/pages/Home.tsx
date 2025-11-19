@@ -5,11 +5,13 @@ import { Card, CardContent } from "@/components/ui/card";
 import { CheckCircle2, Clock, ThumbsUp, MapPin } from "lucide-react";
 import Navigation from "@/components/Navigation";
 import { loadHomeContent, loadTestimonials, type HomeContent, type TestimonialContent } from "@/lib/content-loader";
-import heroImage from "@/assets/hero-wood.jpg";
-import charpenteImage from "@/assets/charpente.jpg";
-import menuiserieImage from "@/assets/menuiserie.jpg";
-import agencementImage from "@/assets/agencement.jpg";
-import extensionImage from "@/assets/extension.jpg";
+import { heroImage, categoryImages } from "@/config/images";
+
+// Utilisation des images depuis la configuration centralisée
+const charpenteImage = categoryImages.structure;
+const menuiserieImage = categoryImages.menuiserieInterieur;
+const agencementImage = categoryImages.agencement;
+const extensionImage = categoryImages.extension;
 
 const Home = () => {
   const [content, setContent] = useState<HomeContent | null>(null);
