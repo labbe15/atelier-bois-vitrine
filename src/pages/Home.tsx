@@ -138,9 +138,9 @@ const Home = () => {
           <h2 className="text-4xl md:text-5xl font-heading text-center mb-12 text-primary">
             Nos Services
           </h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6 mx-auto">
             {/* Structure */}
-            <Card className="overflow-hidden group relative cursor-pointer h-80">
+            <Card className="overflow-hidden group relative cursor-pointer h-56">
               <div className="h-full overflow-hidden relative">
                 <img
                   src={charpenteImage}
@@ -148,9 +148,9 @@ const Home = () => {
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent" />
-                <div className="absolute bottom-0 left-0 right-0 p-6">
-                  <h3 className="text-2xl font-bold text-white">Structure</h3>
-                  <p className="text-sm text-white/80 mt-1">Survolez pour voir tous les services</p>
+                <div className="absolute bottom-0 left-0 right-0 p-4">
+                  <h3 className="text-lg font-bold text-white">Structure</h3>
+                  <p className="text-xs text-white/80 mt-1">Survolez pour découvrir</p>
                 </div>
               </div>
 
@@ -223,7 +223,7 @@ const Home = () => {
             </Card>
 
             {/* Menuiserie Intérieure */}
-            <Card className="overflow-hidden group relative cursor-pointer h-80">
+            <Card className="overflow-hidden group relative cursor-pointer h-56">
               <div className="h-full overflow-hidden relative">
                 <img
                   src={menuiserieImage}
@@ -231,9 +231,9 @@ const Home = () => {
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent" />
-                <div className="absolute bottom-0 left-0 right-0 p-6">
-                  <h3 className="text-2xl font-bold text-white">Menuiserie Intérieure</h3>
-                  <p className="text-sm text-white/80 mt-1">Survolez pour voir tous les services</p>
+                <div className="absolute bottom-0 left-0 right-0 p-4">
+                  <h3 className="text-lg font-bold text-white">Menuiserie Intérieure</h3>
+                  <p className="text-xs text-white/80 mt-1">Survolez pour découvrir</p>
                 </div>
               </div>
 
@@ -316,7 +316,7 @@ const Home = () => {
             </Card>
 
             {/* Menuiserie Extérieure */}
-            <Card className="overflow-hidden group relative cursor-pointer h-80">
+            <Card className="overflow-hidden group relative cursor-pointer h-56">
               <div className="h-full overflow-hidden relative">
                 <img
                   src={menuiserieImage}
@@ -324,9 +324,9 @@ const Home = () => {
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent" />
-                <div className="absolute bottom-0 left-0 right-0 p-6">
-                  <h3 className="text-2xl font-bold text-white">Menuiserie Extérieure</h3>
-                  <p className="text-sm text-white/80 mt-1">Survolez pour voir tous les services</p>
+                <div className="absolute bottom-0 left-0 right-0 p-4">
+                  <h3 className="text-lg font-bold text-white">Menuiserie Extérieure</h3>
+                  <p className="text-xs text-white/80 mt-1">Survolez pour découvrir</p>
                 </div>
               </div>
 
@@ -409,7 +409,7 @@ const Home = () => {
             </Card>
 
             {/* Agencement */}
-            <Card className="overflow-hidden group relative cursor-pointer h-80">
+            <Card className="overflow-hidden group relative cursor-pointer h-56">
               <div className="h-full overflow-hidden relative">
                 <img
                   src={agencementImage}
@@ -417,9 +417,9 @@ const Home = () => {
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent" />
-                <div className="absolute bottom-0 left-0 right-0 p-6">
-                  <h3 className="text-2xl font-bold text-white">Agencement</h3>
-                  <p className="text-sm text-white/80 mt-1">Survolez pour voir tous les services</p>
+                <div className="absolute bottom-0 left-0 right-0 p-4">
+                  <h3 className="text-lg font-bold text-white">Agencement</h3>
+                  <p className="text-xs text-white/80 mt-1">Survolez pour découvrir</p>
                 </div>
               </div>
 
@@ -471,8 +471,8 @@ const Home = () => {
               </div>
             </Card>
 
-            {/* Extensions - Centrée en bas */}
-            <Card className="overflow-hidden group relative cursor-pointer h-80 md:col-span-2 md:max-w-md md:mx-auto">
+            {/* Extensions */}
+            <Card className="overflow-hidden group relative cursor-pointer h-56">
               <div className="h-full overflow-hidden relative">
                 <img
                   src={extensionImage}
@@ -480,9 +480,9 @@ const Home = () => {
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent" />
-                <div className="absolute bottom-0 left-0 right-0 p-6">
-                  <h3 className="text-2xl font-bold text-white">Extensions</h3>
-                  <p className="text-sm text-white/80 mt-1">Survolez pour voir tous les services</p>
+                <div className="absolute bottom-0 left-0 right-0 p-4">
+                  <h3 className="text-lg font-bold text-white">Extensions</h3>
+                  <p className="text-xs text-white/80 mt-1">Survolez pour découvrir</p>
                 </div>
               </div>
 
