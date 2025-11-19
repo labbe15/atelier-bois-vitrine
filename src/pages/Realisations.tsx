@@ -33,7 +33,7 @@ const Realisations = () => {
     },
     {
       title: "Menuiserie extérieure",
-      category: "Menuiserie",
+      category: "Menuiserie Extérieure",
       location: "Vic-sur-Cère",
       description: "Fenêtres et volets en bois sur mesure pour une rénovation complète.",
       image: menuiserieImage,
@@ -61,7 +61,7 @@ const Realisations = () => {
     },
     {
       title: "Escalier intérieur",
-      category: "Menuiserie",
+      category: "Menuiserie Intérieure",
       location: "Aurillac",
       description: "Escalier quart tournant en chêne massif avec contremarches intégrées.",
       image: menuiserieImage,
@@ -89,14 +89,14 @@ const Realisations = () => {
     },
     {
       title: "Bardage bois",
-      category: "Menuiserie",
+      category: "Menuiserie Extérieure",
       location: "Laroquebrou",
       description: "Pose de bardage en mélèze pour isolation extérieure et ravalement de façade.",
       image: menuiserieImage,
     },
   ];
 
-  const categories = ["Tous", "Structure", "Menuiserie", "Agencement", "Extension"];
+  const categories = ["Tous", "Structure", "Menuiserie Intérieure", "Menuiserie Extérieure", "Agencement", "Extension"];
   const [activeCategory, setActiveCategory] = useState("Tous");
 
   const filteredProjects = activeCategory === "Tous" 
