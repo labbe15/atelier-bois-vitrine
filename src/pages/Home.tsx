@@ -138,7 +138,7 @@ const Home = () => {
           <h2 className="text-4xl md:text-5xl font-heading text-center mb-12 text-primary">
             Nos Services
           </h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
             {/* Structure */}
             <Card className="overflow-hidden group relative cursor-pointer h-80">
               <div className="h-full overflow-hidden relative">
@@ -471,8 +471,8 @@ const Home = () => {
               </div>
             </Card>
 
-            {/* Extensions */}
-            <Card className="overflow-hidden group relative cursor-pointer h-80">
+            {/* Extensions - Centrée en bas */}
+            <Card className="overflow-hidden group relative cursor-pointer h-80 md:col-span-2 md:max-w-md md:mx-auto">
               <div className="h-full overflow-hidden relative">
                 <img
                   src={extensionImage}
