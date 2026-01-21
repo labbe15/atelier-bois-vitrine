@@ -9,10 +9,11 @@ import { heroImage, categoryImages } from "@/config/images";
 import { serviceImagesMap, categoryImagesCustom, heroImageCustom } from "@/config/service-images";
 
 // Utilisation des images depuis la configuration centralisée
-const charpenteImage = categoryImages.structure;
-const menuiserieImage = categoryImages.menuiserieInterieur;
-const agencementImage = categoryImages.agencement;
-const extensionImage = categoryImages.extension;
+const charpenteImage = categoryImagesCustom.structure;
+const menuiserieImage = categoryImagesCustom.menuiserieInterieur;
+const menuiserieExtImage = categoryImagesCustom.menuiserieExterieur;
+const agencementImage = categoryImagesCustom.agencement;
+const extensionImage = categoryImagesCustom.extension;
 
 const Home = () => {
   const [content, setContent] = useState<HomeContent | null>(null);
@@ -74,7 +75,7 @@ const Home = () => {
       <section
         className="relative h-screen min-h-[700px] flex items-center justify-center text-center overflow-hidden"
         style={{
-          backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.25)), url(${heroImage})`,
+          backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.25)), url(${heroImageCustom})`,
           backgroundSize: "cover",
           backgroundPosition: "center",
         }}
