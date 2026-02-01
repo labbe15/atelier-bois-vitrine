@@ -1,5 +1,5 @@
 import ServiceLayout from "@/components/ServiceLayout";
-import extensionImage from "@/assets/extension.jpg";
+import garageImg from "@/assets/Extension garage.jpg";
 import { Card, CardContent } from "@/components/ui/card";
 
 const Garage = () => {
@@ -8,7 +8,7 @@ const Garage = () => {
       title="Garage"
       subtitle="Agrandissez votre maison avec un garage en ossature bois, rapide et sur mesure"
       description="Besoin d'un garage fonctionnel, esthétique et durable ? L'Atelier du Volcan, votre expert en menuiserie et charpente à Sansac-de-Marmiesse (Cantal), conçoit et installe des extensions de maison à usage de garage en ossature bois adaptées à vos besoins et à l'architecture de votre habitation. Grâce à la légèreté et la modularité du bois, votre extension se monte rapidement, sans gros travaux, tout en garantissant solidité et performance énergétique."
-      image={extensionImage}
+      image={garageImg}
       features={[
         "Entreprise locale basée à Sansac-de-Marmiesse dans le Cantal (15)",
         "Expertise artisanale en charpente et ossature bois",

@@ -1,5 +1,5 @@
 import ServiceLayout from "@/components/ServiceLayout";
-import extensionImage from "@/assets/extension.jpg";
+import extensionImg from "@/assets/Extension.jpg";
 import { Card, CardContent } from "@/components/ui/card";
 
 const ExtensionOssatureBois = () => {
@@ -8,7 +8,7 @@ const ExtensionOssatureBois = () => {
       title="Extension ossature bois"
       subtitle="Agrandissez votre maison rapidement et naturellement grâce à l'ossature bois"
       description="Vous rêvez d'un espace de vie supplémentaire sans déménager ? Avec L'Atelier du Volcan, spécialiste de la charpente et de la menuiserie bois à Sansac-de-Marmiesse (Cantal), profitez d'une extension de maison en ossature bois à la fois rapide à monter, performante thermiquement et entièrement personnalisée."
-      image={extensionImage}
+      image={extensionImg}
       features={[
         "Entreprise locale à Sansac-de-Marmiesse (Cantal 15)",
         "Expertise artisanale en menuiserie et charpente bois",

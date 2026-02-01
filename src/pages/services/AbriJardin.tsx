@@ -1,5 +1,5 @@
 import ServiceLayout from "@/components/ServiceLayout";
-import extensionImage from "@/assets/extension.jpg";
+import studioJardinImg from "@/assets/Studio de jardin.jpg";
 import { Card, CardContent } from "@/components/ui/card";
 
 const AbriJardin = () => {
@@ -8,7 +8,7 @@ const AbriJardin = () => {
       title="Studio de jardin"
       subtitle="Studios de jardin en ossature bois sur mesure – Accessibles, esthétiques et durables"
       description="Chez L'Atelier du Volcan, menuisier-charpentier à Sansac-de-Marmiesse dans le Cantal (15), nous concevons et posons des studios de jardin en ossature bois sur mesure, adaptés à tous les besoins : bureau, logement d'appoint, atelier d'artiste, chambre d'amis ou studio pour personne à mobilité réduite (PMR). Chaque projet est entièrement personnalisable, fabriqué à partir de matériaux de qualité, dans le respect des normes environnementales et de construction."
-      image={extensionImage}
+      image={studioJardinImg}
       features={[
         "Basés à Sansac-de-Marmiesse, nous intervenons dans tout le Cantal et les départements voisins",
         "Expertise en menuiserie, construction bois et création de studios de jardin sur mesure",
