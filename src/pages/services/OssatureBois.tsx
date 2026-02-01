@@ -1,5 +1,5 @@
 import ServiceLayout from "@/components/ServiceLayout";
-import charpenteImage from "@/assets/charpente.jpg";
+import maisonOssatureImg from "@/assets/Maison ossature bois.jpeg";
 import { Card, CardContent } from "@/components/ui/card";
 
 const OssatureBois = () => {
@@ -8,7 +8,7 @@ const OssatureBois = () => {
       title="Maisons à ossature bois"
       subtitle="Alliez performance, rapidité et esthétisme avec une maison bois signée L'Atelier du Volcan"
       description="Basé à Sansac-de-Marmiesse, L'Atelier du Volcan conçoit et réalise des maisons à ossature bois modernes et performantes, parfaitement adaptées au climat du Cantal. Bien loin du simple chalet de montagne, la maison à ossature bois est aujourd'hui une habitation contemporaine, au design soigné et aux performances thermiques inégalées. Grâce à notre savoir-faire en menuiserie et charpente, nous assurons jusqu'à 80 % des travaux de construction, garantissant ainsi une coordination fluide, des délais maîtrisés et aucune mauvaise surprise."
-      image={charpenteImage}
+      image={maisonOssatureImg}
       features={[
         "Fabrication et pose locales à Sansac-de-Marmiesse (Cantal)",
         "Maisons performantes, modernes et durables",

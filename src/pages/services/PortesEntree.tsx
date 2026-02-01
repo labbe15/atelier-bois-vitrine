@@ -1,5 +1,5 @@
 import ServiceLayout from "@/components/ServiceLayout";
-import menuiserieImage from "@/assets/menuiserie.jpg";
+import porteEntreeImg from "@/assets/Porte d_entrée.jpg";
 import { Card, CardContent } from "@/components/ui/card";
 
 const PortesEntree = () => {
@@ -8,7 +8,7 @@ const PortesEntree = () => {
       title="Portes d'entrée"
       subtitle="Alliez sécurité, design et performance avec nos portes d'entrée en bois, PVC, aluminium, bois-aluminium ou acier"
       description="Chez L'Atelier du Volcan, nous posons des portes d'entrée sur mesure qui subliment votre façade tout en renforçant la sécurité et l'isolation de votre habitation. Basés au cœur du Cantal, nous intervenons pour tous vos projets de rénovation ou de construction neuve, avec des produits fabriqués en France et un savoir-faire artisanal reconnu."
-      image={menuiserieImage}
+      image={porteEntreeImg}
       features={[
         "Expertise locale dans le Cantal et ses alentours",
         "Pose soignée et garantie par des menuisiers qualifiés",

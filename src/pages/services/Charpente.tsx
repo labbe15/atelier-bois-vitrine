@@ -1,5 +1,5 @@
 import ServiceLayout from "@/components/ServiceLayout";
-import charpenteImage from "@/assets/charpente.jpg";
+import charpenteImg from "@/assets/charpente.jpg";
 import { Card, CardContent } from "@/components/ui/card";
 
 const Charpente = () => {
@@ -8,7 +8,7 @@ const Charpente = () => {
       title="Charpentes"
       subtitle="L'expertise et la solidité au service de votre toiture"
       description="Situé à Sansac-de-Marmiesse, L'Atelier du Volcan met son savoir-faire artisanal au service de tous vos projets de charpente en bois, qu'il s'agisse de construction neuve, de rénovation ou de transformation de combles. Nos charpentiers qualifiés conçoivent, fabriquent et posent des structures robustes, durables et esthétiques, adaptées aux particularités du climat du Cantal."
-      image={charpenteImage}
+      image={charpenteImg}
       features={[
         "Fabrication artisanale sur mesure dans nos ateliers du Cantal",
         "Pose soignée de charpentes traditionnelles ou fermettes avec volige",

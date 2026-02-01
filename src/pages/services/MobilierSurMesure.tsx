@@ -1,5 +1,5 @@
 import ServiceLayout from "@/components/ServiceLayout";
-import agencementImage from "@/assets/agencement.jpg";
+import mobilierImg from "@/assets/Mobilier sur mesure.jpg";
 import { Card, CardContent } from "@/components/ui/card";
 
 const MobilierSurMesure = () => {
@@ -8,7 +8,7 @@ const MobilierSurMesure = () => {
       title="Mobilier sur mesure"
       subtitle="Créez un intérieur unique avec du mobilier bois sur mesure"
       description="Chez L'Atelier du Volcan, à Sansac-de-Marmiesse, nous donnons vie à vos envies d'aménagement intérieur grâce à la création de meubles en bois sur mesure. De la conception à la pose, notre équipe de menuisiers passionnés conçoit des pièces uniques, parfaitement adaptées à votre espace, à votre style et à vos besoins. Parce que chaque maison est différente, nous créons du mobilier personnalisé qui allie fonctionnalité, esthétisme et durabilité, dans le respect des traditions artisanales et des essences de bois nobles."
-      image={agencementImage}
+      image={mobilierImg}
       features={[
         "Adaptation parfaite à vos espaces et contraintes techniques",
         "Design personnalisé selon vos goûts et votre décoration",

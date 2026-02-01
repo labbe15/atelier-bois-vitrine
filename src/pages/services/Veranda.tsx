@@ -1,5 +1,5 @@
 import ServiceLayout from "@/components/ServiceLayout";
-import extensionImage from "@/assets/extension.jpg";
+import verandaImg from "@/assets/Véranda.jpg";
 import { Card, CardContent } from "@/components/ui/card";
 
 const Veranda = () => {
@@ -8,7 +8,7 @@ const Veranda = () => {
       title="Véranda"
       subtitle="Offrez-vous une véranda élégante et lumineuse avec L'Atelier du Volcan"
       description="Besoin d'un nouvel espace à vivre, lumineux et confortable toute l'année ? L'Atelier du Volcan, spécialiste de la menuiserie et de la charpente à Sansac-de-Marmiesse, conçoit et installe des vérandas sur mesure en aluminium ou en structure bois-aluminium dans tout le Cantal. Alliant esthétique, performance et durabilité, nos vérandas s'adaptent à tous les styles d'habitation."
-      image={extensionImage}
+      image={verandaImg}
       features={[
         "Spécialiste local en menuiserie et charpente bois à Sansac-de-Marmiesse (15)",
         "Vérandas sur mesure, durables et esthétiques",

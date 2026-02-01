@@ -1,5 +1,5 @@
 import ServiceLayout from "@/components/ServiceLayout";
-import menuiserieImage from "@/assets/menuiserie.jpg";
+import voletsImg from "@/assets/Volets & Protection solaire.jpg";
 import { Card, CardContent } from "@/components/ui/card";
 
 const Volets = () => {
@@ -8,7 +8,7 @@ const Volets = () => {
       title="Volets & Protections solaires"
       subtitle="Alliez confort, sécurité et esthétisme avec nos volets et stores sur mesure"
       description="Chez L'Atelier du Volcan, votre expert en menuiserie dans le Cantal, nous vous accompagnons dans le choix et la pose de volets battants, volets roulants, brise-soleil et stores adaptés à votre habitation et à votre style. Forts de notre savoir-faire artisanal et de notre exigence de qualité, nous sélectionnons pour vous des produits durables, performants et esthétiques, conçus pour résister aux conditions climatiques de notre belle région."
-      image={menuiserieImage}
+      image={voletsImg}
       features={[
         "Expertise locale dans la menuiserie sur mesure",
         "Produits de qualité, garantis et durables",
