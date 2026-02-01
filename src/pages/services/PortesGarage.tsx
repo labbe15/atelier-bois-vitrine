@@ -1,5 +1,5 @@
 import ServiceLayout from "@/components/ServiceLayout";
-import menuiserieImage from "@/assets/menuiserie.jpg";
+import porteGarageImg from "@/assets/Porte de garage.jpg";
 import { Card, CardContent } from "@/components/ui/card";
 
 const PortesGarage = () => {
@@ -8,7 +8,7 @@ const PortesGarage = () => {
       title="Portes de garage"
       subtitle="Alliez élégance, performance et sécurité pour votre garage"
       description="Chez L'Atelier du Volcan, nous mettons notre savoir-faire artisanal au service de vos projets de menuiserie sur mesure dans le Cantal. Spécialistes de la pose de portes de garage en aluminium, nous vous proposons des solutions esthétiques, isolantes et durables, parfaitement adaptées à votre habitation et à votre mode de vie."
-      image={menuiserieImage}
+      image={porteGarageImg}
       features={[
         "Fabrication sur mesure selon vos dimensions et vos envies",
         "Design contemporain avec plusieurs finitions et coloris",

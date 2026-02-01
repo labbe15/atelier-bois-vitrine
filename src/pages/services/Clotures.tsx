@@ -1,5 +1,5 @@
 import ServiceLayout from "@/components/ServiceLayout";
-import menuiserieImage from "@/assets/menuiserie.jpg";
+import clotureImg from "@/assets/Clôture.jpg";
 import { Card, CardContent } from "@/components/ui/card";
 
 const Clotures = () => {
@@ -8,7 +8,7 @@ const Clotures = () => {
       title="Clôtures"
       subtitle="Alliez sécurité, intimité et esthétisme avec nos clôtures en bois, PVC ou aluminium"
       description="Chez L'Atelier du Volcan, votre spécialiste en menuiserie et aménagements extérieurs dans le Cantal, nous vous proposons des clôtures sur mesure qui s'adaptent à votre style de maison et à vos besoins. Que vous recherchiez une clôture moderne, traditionnelle ou contemporaine, nous vous accompagnons dans le choix, la fabrication et la pose pour un résultat à la fois solide, harmonieux et durable."
-      image={menuiserieImage}
+      image={clotureImg}
       features={[
         "Conseils personnalisés",
         "Fabrication sur mesure",
