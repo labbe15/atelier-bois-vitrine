@@ -137,7 +137,7 @@ const Navigation = () => {
     <>
       <nav className={navClasses}>
         <div className="container mx-auto px-4">
-          <div className="flex h-20 items-center justify-between">
+          <div className="flex h-24 items-center justify-between">
             {/* Logo avec animation hover */}
             <Link
               to="/"
