@@ -1,5 +1,5 @@
 import ServiceLayout from "@/components/ServiceLayout";
-import charpenteImage from "@/assets/charpente.jpg";
+import maisonOssatureImg from "@/assets/Maison ossature bois.jpeg";
 import { Card, CardContent } from "@/components/ui/card";
 
 const OssatureBois = () => {
