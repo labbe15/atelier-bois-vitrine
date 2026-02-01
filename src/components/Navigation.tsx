@@ -146,7 +146,7 @@ const Navigation = () => {
               <img
                 src="/logo.png"
                 alt="Logo L'Atelier du Volcan"
-                className="h-20 w-20 object-contain transition-transform duration-200 group-hover:rotate-6"
+                className="h-24 w-24 object-contain transition-transform duration-200 group-hover:rotate-6"
               />
               <span
                 className={`text-2xl font-heading transition-colors ${
