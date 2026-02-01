@@ -137,19 +137,19 @@ const Navigation = () => {
     <>
       <nav className={navClasses}>
         <div className="container mx-auto px-4">
-          <div className="flex h-24 items-center justify-between">
+          <div className="flex h-20 items-center justify-between">
             {/* Logo avec animation hover */}
             <Link
               to="/"
               className="flex items-center gap-3 group transition-transform duration-200 hover:scale-105"
             >
               <img
-                src="/logo.png"
+                src="https://cdn.builder.io/api/v1/image/assets%2F84324df9213f4803b9e1f18d532c8968%2Fadaf25294bc848f2836d95ce5f9a100b?format=webp&width=800&height=1200"
                 alt="Logo L'Atelier du Volcan"
-                className="h-24 w-24 object-contain transition-transform duration-200 group-hover:rotate-6"
+                className="h-16 w-16 object-contain transition-transform duration-200 group-hover:rotate-6"
               />
               <span
-                className={`text-2xl font-heading transition-colors ${
+                className={`text-xl font-heading transition-colors ${
                   isHomePage ? "text-white" : "text-primary"
                 }`}
               >
