@@ -1,5 +1,5 @@
 import ServiceLayout from "@/components/ServiceLayout";
-import charpenteImage from "@/assets/charpente.jpg";
+import terrasseImg from "@/assets/Terrasse.jpg";
 import { Card, CardContent } from "@/components/ui/card";
 
 const Terrasses = () => {
@@ -8,7 +8,7 @@ const Terrasses = () => {
       title="Terrasses"
       subtitle="Créez un espace extérieur chaleureux et durable"
       description="Chez L'Atelier du Volcan, entreprise de menuiserie et charpente à Sansac-de-Marmiesse, nous concevons et posons des terrasses en bois sur mesure, adaptées à votre maison, à votre terrain et à vos envies. Nos réalisations allient esthétisme, solidité et confort d'utilisation, pour transformer votre extérieur en un véritable lieu de vie convivial."
-      image={charpenteImage}
+      image={terrasseImg}
       features={[
         "Fabrication et pose sur mesure",
         "Bois de qualité : exotique, européen ou composite plein",
