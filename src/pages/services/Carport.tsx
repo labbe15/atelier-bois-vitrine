@@ -1,5 +1,5 @@
 import ServiceLayout from "@/components/ServiceLayout";
-import charpenteImage from "@/assets/charpente.jpg";
+import carportImg from "@/assets/Carport.jpg";
 import { Card, CardContent } from "@/components/ui/card";
 
 const Carport = () => {
@@ -8,7 +8,7 @@ const Carport = () => {
       title="Carports"
       subtitle="Protégez vos véhicules avec élégance et durabilité"
       description="Chez L'Atelier du Volcan, entreprise de charpente artisanale à Sansac-de-Marmiesse, nous concevons et réalisons des carports sur mesure en bois massif, bois lamellé-collé ou aluminium, adaptés à vos besoins et à votre habitat. Alliant solidité, esthétisme et fonctionnalité, nos carports protègent efficacement vos véhicules, camping-cars ou remorques, tout en valorisant votre propriété."
-      image={charpenteImage}
+      image={carportImg}
       features={[
         "Fabrication sur mesure adaptée à votre terrain et à vos besoins",
         "Matériaux durables (bois massif, lamellé-collé, aluminium)",
