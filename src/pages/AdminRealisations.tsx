@@ -1,12 +1,13 @@
 import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Card, CardContent } from "@/components/ui/card";
 import { loadRealisations, type RealisationContent } from "@/lib/content-loader";
 import { AlertCircle, Plus, ExternalLink } from "lucide-react";
 
 const AdminRealisations = () => {
   const [projects, setProjects] = useState<RealisationContent[]>([]);
   const [loading, setLoading] = useState(true);
+  const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
     const loadContent = async () => {
