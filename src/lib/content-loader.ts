@@ -108,43 +108,34 @@ export async function loadTestimonials(): Promise<TestimonialContent[]> {
 
 /**
  * Charge toutes les réalisations depuis le CMS
- * Essaie d'abord l'API (production), puis fallback sur scannage direct des fichiers (dev)
+ * Charge les fichiers basé sur l'index.json
  */
 export async function loadRealisations(): Promise<RealisationContent[]> {
   try {
-    // Essayer d'abord l'API (Vercel en production)
-    try {
-      const apiResponse = await fetch('/api/realisations');
-      if (apiResponse.ok) {
-        return await apiResponse.json();
-      }
-    } catch (e) {
-      // API non disponible, continuer avec la méthode alternative
+    // Charger le manifest pour obtenir la liste des fichiers
+    const indexResponse = await fetch('/content/realisations/index.json');
+    if (!indexResponse.ok) {
+      console.error('Failed to load index');
+      return [];
     }
 
-    // Fallback: charger depuis le manifest (plus fiable en dev)
-    try {
-      const manifestResponse = await fetch('/content/realisations/index.json');
-      if (manifestResponse.ok) {
-        const fileList: string[] = await manifestResponse.json();
-        const realisations = await Promise.all(
-          fileList.map(async (file) => {
-            try {
-              const response = await fetch(`/content/realisations/${file}.json`);
-              if (!response.ok) return null;
-              return await response.json();
-            } catch {
-              return null;
-            }
-          })
-        );
-        return realisations.filter((r): r is RealisationContent => r !== null);
-      }
-    } catch (e) {
-      // Manifest non disponible aussi
-    }
+    const fileList: string[] = await indexResponse.json();
 
-    return [];
+    // Charger chaque réalisation
+    const realisations = await Promise.all(
+      fileList.map(async (filename) => {
+        try {
+          const response = await fetch(`/content/realisations/${filename}.json`);
+          if (!response.ok) return null;
+          return await response.json();
+        } catch (error) {
+          console.error(`Error loading ${filename}:`, error);
+          return null;
+        }
+      })
+    );
+
+    return realisations.filter((r): r is RealisationContent => r !== null);
   } catch (error) {
     console.error('Error loading realisations:', error);
     return [];
