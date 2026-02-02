@@ -1,7 +1,23 @@
 import { Link } from "react-router-dom";
 import { Facebook, Instagram, Phone, Mail, MapPin } from "lucide-react";
+import { useState, useEffect } from "react";
+import { loadHomeContent, type HomeContent } from "@/lib/content-loader";
 
 const Footer = () => {
+  const [content, setContent] = useState<HomeContent | null>(null);
+
+  useEffect(() => {
+    const loadContent = async () => {
+      try {
+        const data = await loadHomeContent();
+        setContent(data);
+      } catch (error) {
+        console.error('Failed to load content:', error);
+      }
+    };
+    loadContent();
+  }, []);
+
   return (
     <footer className="bg-muted/30 border-t border-border">
       <div className="container mx-auto px-4 py-12">
@@ -10,7 +26,7 @@ const Footer = () => {
           <div>
             <h3 className="text-xl font-heading text-primary mb-4">L'Atelier du Volcan</h3>
             <p className="text-sm text-muted-foreground">
-              Deux artisans, une même passion : le bois. Spécialistes en charpente, menuiserie et agencement.
+              {content?.quote.description || "Deux artisans, une même passion : le bois. Spécialistes en charpente, menuiserie et agencement."}
             </p>
           </div>
 
@@ -30,8 +46,8 @@ const Footer = () => {
           <div>
             <h4 className="font-semibold mb-4">Services</h4>
             <ul className="space-y-2 text-sm">
-              <li><Link to="/structure/charpente" className="hover:text-primary transition-colors">Charpente</Link></li>
-              <li><Link to="/menuiserie/interieur" className="hover:text-primary transition-colors">Menuiserie</Link></li>
+              <li><Link to="/structure/ossature-bois" className="hover:text-primary transition-colors">Ossature bois</Link></li>
+              <li><Link to="/menuiserie-interieur/escaliers" className="hover:text-primary transition-colors">Menuiserie</Link></li>
               <li><Link to="/agencement/cuisines" className="hover:text-primary transition-colors">Agencement</Link></li>
               <li><Link to="/extension/ossature-bois" className="hover:text-primary transition-colors">Extension bois</Link></li>
             </ul>

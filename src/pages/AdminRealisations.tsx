@@ -1,0 +1,133 @@
+import { useState, useEffect } from "react";
+import { Button } from "@/components/ui/button";
+import { Card, CardContent } from "@/components/ui/card";
+import { loadRealisations, type RealisationContent } from "@/lib/content-loader";
+import { Plus, ExternalLink } from "lucide-react";
+
+const AdminRealisations = () => {
+  const [projects, setProjects] = useState<RealisationContent[]>([]);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    const loadContent = async () => {
+      try {
+        const data = await loadRealisations();
+        setProjects(data);
+      } catch (error) {
+        console.error('Failed to load realisations:', error);
+      } finally {
+        setLoading(false);
+      }
+    };
+    loadContent();
+  }, []);
+
+  return (
+    <div className="min-h-screen bg-background py-12">
+      <div className="container mx-auto px-4 max-w-4xl">
+        {/* Header */}
+        <div className="mb-8">
+          <h1 className="text-4xl font-bold text-primary mb-4">
+            Gérer les réalisations
+          </h1>
+          <p className="text-muted-foreground text-lg mb-6">
+            Ajoutez, modifiez ou supprimez les réalisations de votre portfolio
+          </p>
+        </div>
+
+        {/* Info Box */}
+        <Card className="mb-8 border-blue-200 bg-blue-50">
+          <CardContent className="pt-6">
+            <h3 className="font-semibold text-blue-900 mb-3">
+              Comment ajouter une nouvelle réalisation ?
+            </h3>
+            <p className="text-sm text-blue-800 mb-3">
+              Cliquez sur le bouton "Ajouter une réalisation" pour ouvrir l'interface de gestion.
+            </p>
+            <ul className="text-xs text-blue-700 space-y-1 ml-4">
+              <li>• <strong>Titre :</strong> Nom du projet</li>
+              <li>• <strong>Catégorie :</strong> Structure, Menuiserie, Agencement ou Extension</li>
+              <li>• <strong>Lieu :</strong> Ville où se situe le projet</li>
+              <li>• <strong>Description :</strong> Détails du projet</li>
+              <li>• <strong>Image :</strong> Photo du projet</li>
+            </ul>
+          </CardContent>
+        </Card>
+
+        {/* Add Button */}
+        <div className="mb-8">
+          <Button asChild size="lg" className="gap-2">
+            <a href="/admin" target="_blank" rel="noopener noreferrer">
+              <Plus className="h-5 w-5" />
+              Ajouter une réalisation
+              <ExternalLink className="h-4 w-4" />
+            </a>
+          </Button>
+        </div>
+
+        {/* Loading State */}
+        {loading && (
+          <div className="text-center py-12">
+            <p className="text-lg text-muted-foreground">Chargement...</p>
+          </div>
+        )}
+
+        {/* Realisations List */}
+        {!loading && (
+          <div>
+            <h2 className="text-2xl font-bold mb-6">
+              Réalisations actuelles ({projects.length})
+            </h2>
+
+            {projects.length === 0 ? (
+              <Card>
+                <CardContent className="pt-12 pb-12 text-center">
+                  <p className="text-muted-foreground">
+                    Aucune réalisation pour le moment.
+                  </p>
+                </CardContent>
+              </Card>
+            ) : (
+              <div className="space-y-4">
+                {projects.map((project, index) => (
+                  <Card key={index} className="overflow-hidden hover:shadow-md transition-shadow">
+                    <div className="flex items-center gap-4 p-6">
+                      {/* Image */}
+                      <div className="flex-shrink-0">
+                        <img
+                          src={project.image}
+                          alt={project.title}
+                          className="h-24 w-24 object-cover rounded-lg"
+                        />
+                      </div>
+
+                      {/* Content */}
+                      <div className="flex-grow min-w-0">
+                        <h3 className="text-lg font-semibold text-foreground mb-1">
+                          {project.title}
+                        </h3>
+                        <div className="flex gap-2 mb-2 flex-wrap text-sm">
+                          <span className="font-medium bg-primary/10 text-primary px-2 py-1 rounded">
+                            {project.category}
+                          </span>
+                          <span className="text-muted-foreground px-2 py-1">
+                            📍 {project.location}
+                          </span>
+                        </div>
+                        <p className="text-sm text-muted-foreground line-clamp-2">
+                          {project.description}
+                        </p>
+                      </div>
+                    </div>
+                  </Card>
+                ))}
+              </div>
+            )}
+          </div>
+        )}
+      </div>
+    </div>
+  );
+};
+
+export default AdminRealisations;

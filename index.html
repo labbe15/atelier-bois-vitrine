@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="fr">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -11,9 +11,12 @@
   <meta name="author" content="L'Atelier du Volcan" />
 
   <!-- ✅ Favicon et couleurs -->
-  <link rel="icon" type="image/png" href="/logo.png" />
-  <link rel="apple-touch-icon" href="/logo.png" />
+  <link rel="icon" type="image/png" href="https://cdn.builder.io/api/v1/image/assets%2F84324df9213f4803b9e1f18d532c8968%2Fadaf25294bc848f2836d95ce5f9a100b?format=webp&width=800&height=1200" />
+  <link rel="apple-touch-icon" href="https://cdn.builder.io/api/v1/image/assets%2F84324df9213f4803b9e1f18d532c8968%2Fadaf25294bc848f2836d95ce5f9a100b?format=webp&width=800&height=1200" />
   <meta name="theme-color" content="#3E9E7C" />
+
+  <!-- ✅ Canonical URL -->
+  <link rel="canonical" href="https://atelierduvolcan.fr/" />
 
   <!-- ✅ Polices -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -23,6 +26,37 @@
     rel="stylesheet"
   />
 
+  <!-- ✅ JSON-LD Schema Markup -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "L'Atelier du Volcan",
+    "description": "Artisans spécialisés en charpente, ossature bois, menuiserie et agencement. Devis sous 48h.",
+    "url": "https://atelierduvolcan.fr",
+    "telephone": "+33(0)4XXXXXXXX",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Sansac-de-Marmiesse",
+      "addressLocality": "Sansac-de-Marmiesse",
+      "postalCode": "15200",
+      "addressCountry": "FR",
+      "addressRegion": "Cantal"
+    },
+    "image": "https://cdn.builder.io/api/v1/image/assets%2F84324df9213f4803b9e1f18d532c8968%2Fadaf25294bc848f2836d95ce5f9a100b?format=webp&width=800&height=1200",
+    "priceRange": "$$",
+    "areaServed": {
+      "@type": "Region",
+      "name": "Cantal, Auvergne-Rhône-Alpes"
+    },
+    "sameAs": [
+      "https://www.facebook.com/atelier-du-volcan",
+      "https://www.instagram.com/atelier-du-volcan"
+    ],
+    "servesCuisine": ["Bois", "Menuiserie", "Charpente"]
+  }
+  </script>
+
   <!-- ✅ Open Graph (aperçu partage réseaux) -->
   <meta property="og:title" content="L'Atelier du Volcan - Artisans du bois" />
   <meta
@@ -30,12 +64,17 @@
     content="Deux artisans, une même passion : le bois. Charpente, menuiserie, agencement et extensions bois sur mesure."
   />
   <meta property="og:type" content="website" />
-  <meta property="og:image" content="https://atelier-bois-vitrine.vercel.app/favicon.png" />
+  <meta property="og:url" content="https://atelierduvolcan.fr/" />
+  <meta property="og:image" content="https://cdn.builder.io/api/v1/image/assets%2F84324df9213f4803b9e1f18d532c8968%2F2c95e68fba6b4dd5a88b9cd3f3eb35d2?format=webp&width=1200&height=630" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:type" content="image/webp" />
 
   <!-- ✅ Twitter Card -->
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="L'Atelier du Volcan - Artisans du bois" />
-  <meta name="twitter:image" content="https://atelier-bois-vitrine.vercel.app/favicon.png" />
+  <meta name="twitter:description" content="Deux artisans, une même passion : le bois. Charpente, menuiserie, agencement et extensions bois sur mesure." />
+  <meta name="twitter:image" content="https://cdn.builder.io/api/v1/image/assets%2F84324df9213f4803b9e1f18d532c8968%2F2c95e68fba6b4dd5a88b9cd3f3eb35d2?format=webp&width=1200&height=630" />
 </head>
 
 
