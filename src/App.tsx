@@ -43,6 +43,7 @@ const Bardages = lazy(() => import("./pages/services/Bardages"));
 const Dressing = lazy(() => import("./pages/services/Dressing"));
 const Cuisines = lazy(() => import("./pages/services/Cuisines"));
 const AmenagementSurMesure = lazy(() => import("./pages/services/AmenagementSurMesure"));
+const AmenagementVehicules = lazy(() => import("./pages/services/AmenagementVehicules"));
 const Cloisons = lazy(() => import("./pages/services/Cloisons"));
 const ExtensionOssatureBois = lazy(() => import("./pages/services/ExtensionOssatureBois"));
 const Garage = lazy(() => import("./pages/services/Garage"));
@@ -109,6 +110,7 @@ const AppContent = () => {
           <Route path="/agencement/dressing" element={<Dressing />} />
           <Route path="/agencement/cuisines" element={<Cuisines />} />
           <Route path="/agencement/amenagement" element={<AmenagementSurMesure />} />
+          <Route path="/agencement/amenagement-vehicules" element={<AmenagementVehicules />} />
           <Route path="/agencement/cloisons" element={<Cloisons />} />
 
           {/* Extension */}

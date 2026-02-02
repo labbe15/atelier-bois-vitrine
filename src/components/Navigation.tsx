@@ -24,13 +24,13 @@ const MENU_CONFIG = {
     { label: "Bibliothèques", path: "/menuiserie-interieur/bibliotheques" },
     { label: "Tables", path: "/menuiserie-interieur/tables" },
     { label: "Sols", path: "/menuiserie-interieur/sols" },
-    { label: "Portes de communication", path: "/menuiserie-interieur/portes-communication" },
+    { label: "Portes intérieur", path: "/menuiserie-interieur/portes-communication" },
     { label: "Mobilier sur mesure", path: "/menuiserie-interieur/mobilier" },
     { label: "Verrières", path: "/menuiserie-interieur/verrieres" },
   ],
   menuiserieExterieur: [
     { label: "Fenêtres", path: "/menuiserie-exterieur/fenetres" },
-    { label: "Volets", path: "/menuiserie-exterieur/volets" },
+    { label: "Volets & Protections solaires", path: "/menuiserie-exterieur/volets" },
     { label: "Portes d'entrée", path: "/menuiserie-exterieur/portes-entree" },
     { label: "Portes de garage", path: "/menuiserie-exterieur/portes-garage" },
     { label: "Portails", path: "/menuiserie-exterieur/portails" },
@@ -41,6 +41,7 @@ const MENU_CONFIG = {
     { label: "Dressing", path: "/agencement/dressing" },
     { label: "Cuisines", path: "/agencement/cuisines" },
     { label: "Aménagement sur mesure", path: "/agencement/amenagement" },
+    { label: "Aménagement des véhicules", path: "/agencement/amenagement-vehicules" },
     { label: "Cloisons", path: "/agencement/cloisons" },
   ],
   extension: [
@@ -49,7 +50,7 @@ const MENU_CONFIG = {
     { label: "Surélévation", path: "/extension/surelevation" },
     { label: "Véranda", path: "/extension/veranda" },
     { label: "Pool House", path: "/extension/pool-house" },
-    { label: "Abri de jardin", path: "/extension/abri-jardin" },
+    { label: "Studio de jardin", path: "/extension/abri-jardin" },
   ],
 } as const;
 

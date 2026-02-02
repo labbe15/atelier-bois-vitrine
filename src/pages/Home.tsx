@@ -212,13 +212,13 @@ const Home = () => {
                       </CardContent>
                     </Card>
                   </Link>
-                  <Link to="/structure/abri-jardin" className="block">
+                  <Link to="/structure/isolation-exterieur" className="block">
                     <Card className="hover:shadow-md transition-shadow">
                       <div className="h-20 overflow-hidden">
-                        <img src={charpenteImage} alt="Abri de jardin" className="w-full h-full object-cover" />
+                        <img src={serviceImagesMap.structure["isolation-exterieur"]} alt="Isolation par l'extérieur" className="w-full h-full object-cover" />
                       </div>
                       <CardContent className="p-2">
-                        <p className="text-xs font-medium text-center">Abri de jardin</p>
+                        <p className="text-xs font-medium text-center">Isolation par l'extérieur</p>
                       </CardContent>
                     </Card>
                   </Link>
@@ -305,13 +305,13 @@ const Home = () => {
                       </CardContent>
                     </Card>
                   </Link>
-                  <Link to="/menuiserie-interieur/lambris" className="block">
+                  <Link to="/menuiserie-interieur/bibliotheques" className="block">
                     <Card className="hover:shadow-md transition-shadow">
                       <div className="h-20 overflow-hidden">
-                        <img src={menuiserieImage} alt="Lambris" className="w-full h-full object-cover" />
+                        <img src={serviceImagesMap.menuiserieInterieur.bibliotheques} alt="Bibliothèques" className="w-full h-full object-cover" />
                       </div>
                       <CardContent className="p-2">
-                        <p className="text-xs font-medium text-center">Lambris</p>
+                        <p className="text-xs font-medium text-center">Bibliothèques</p>
                       </CardContent>
                     </Card>
                   </Link>
@@ -351,10 +351,10 @@ const Home = () => {
                   <Link to="/menuiserie-exterieur/volets" className="block">
                     <Card className="hover:shadow-md transition-shadow">
                       <div className="h-20 overflow-hidden">
-                        <img src={serviceImagesMap.menuiserieExterieur.volets} alt="Volets" className="w-full h-full object-cover" />
+                        <img src={serviceImagesMap.menuiserieExterieur.volets} alt="Volets & Protections solaires" className="w-full h-full object-cover" />
                       </div>
                       <CardContent className="p-2">
-                        <p className="text-xs font-medium text-center">Volets</p>
+                        <p className="text-xs font-medium text-center">Volets & Protections solaires</p>
                       </CardContent>
                     </Card>
                   </Link>
@@ -461,6 +461,16 @@ const Home = () => {
                       </CardContent>
                     </Card>
                   </Link>
+                  <Link to="/agencement/amenagement-vehicules" className="block">
+                    <Card className="hover:shadow-md transition-shadow">
+                      <div className="h-20 overflow-hidden">
+                        <img src={serviceImagesMap.agencement["amenagement-vehicules"]} alt="Aménagement des véhicules" className="w-full h-full object-cover" />
+                      </div>
+                      <CardContent className="p-2">
+                        <p className="text-xs font-medium text-center">Aménagement des véhicules</p>
+                      </CardContent>
+                    </Card>
+                  </Link>
                   <Link to="/agencement/cloisons" className="block">
                     <Card className="hover:shadow-md transition-shadow">
                       <div className="h-20 overflow-hidden">
@@ -537,10 +547,10 @@ const Home = () => {
                   <Link to="/extension/pool-house" className="block">
                     <Card className="hover:shadow-md transition-shadow">
                       <div className="h-20 overflow-hidden">
-                        <img src={extensionImage} alt="Pool house" className="w-full h-full object-cover" />
+                        <img src={extensionImage} alt="Pool House" className="w-full h-full object-cover" />
                       </div>
                       <CardContent className="p-2">
-                        <p className="text-xs font-medium text-center">Pool house</p>
+                        <p className="text-xs font-medium text-center">Pool House</p>
                       </CardContent>
                     </Card>
                   </Link>
