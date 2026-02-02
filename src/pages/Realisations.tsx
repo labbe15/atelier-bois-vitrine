@@ -31,11 +31,12 @@ const Realisations = () => {
     );
   }
 
-  const categories = ["Tous", "Structure", "Menuiserie Intérieure", "Menuiserie Extérieure", "Agencement", "Extension"];
-  const [activeCategory, setActiveCategory] = useState("Tous");
+  // Extract unique categories from projects
+  const uniqueCategories = Array.from(new Set(projects.map(p => p.category)));
+  const categories = ["Tous", ...uniqueCategories];
 
-  const filteredProjects = activeCategory === "Tous" 
-    ? projects 
+  const filteredProjects = activeCategory === "Tous"
+    ? projects
     : projects.filter(p => p.category === activeCategory);
 
   return (
