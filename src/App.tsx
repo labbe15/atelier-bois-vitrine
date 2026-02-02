@@ -16,11 +16,9 @@ import Contact from "./pages/Contact";
 const About = lazy(() => import("./pages/About"));
 const Testimonials = lazy(() => import("./pages/Testimonials"));
 const Realisations = lazy(() => import("./pages/Realisations"));
+const AdminRealisations = lazy(() => import("./pages/AdminRealisations"));
 const MentionsLegales = lazy(() => import("./pages/MentionsLegales"));
 const NotFound = lazy(() => import("./pages/NotFound"));
-
-// Eager loading pour la page admin (important pour ne pas être lazy)
-import AdminRealisations from "./pages/AdminRealisations";
 
 // Lazy loading pour toutes les pages de services
 const Charpente = lazy(() => import("./pages/services/Charpente"));
