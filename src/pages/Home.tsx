@@ -461,6 +461,16 @@ const Home = () => {
                       </CardContent>
                     </Card>
                   </Link>
+                  <Link to="/agencement/amenagement-vehicules" className="block">
+                    <Card className="hover:shadow-md transition-shadow">
+                      <div className="h-20 overflow-hidden">
+                        <img src={serviceImagesMap.agencement["amenagement-vehicules"]} alt="Aménagement des véhicules" className="w-full h-full object-cover" />
+                      </div>
+                      <CardContent className="p-2">
+                        <p className="text-xs font-medium text-center">Aménagement des véhicules</p>
+                      </CardContent>
+                    </Card>
+                  </Link>
                   <Link to="/agencement/cloisons" className="block">
                     <Card className="hover:shadow-md transition-shadow">
                       <div className="h-20 overflow-hidden">
