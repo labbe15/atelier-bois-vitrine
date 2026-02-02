@@ -41,6 +41,7 @@ const MENU_CONFIG = {
     { label: "Dressing", path: "/agencement/dressing" },
     { label: "Cuisines", path: "/agencement/cuisines" },
     { label: "Aménagement sur mesure", path: "/agencement/amenagement" },
+    { label: "Aménagement des véhicules", path: "/agencement/amenagement-vehicules" },
     { label: "Cloisons", path: "/agencement/cloisons" },
   ],
   extension: [
