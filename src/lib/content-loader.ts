@@ -108,13 +108,43 @@ export async function loadTestimonials(): Promise<TestimonialContent[]> {
 
 /**
  * Charge toutes les réalisations depuis le CMS
- * L'API scanne automatiquement les fichiers - pas besoin de maintenir un index
+ * Essaie d'abord l'API (production), puis fallback sur scannage direct des fichiers (dev)
  */
 export async function loadRealisations(): Promise<RealisationContent[]> {
   try {
-    const response = await fetch('/api/realisations');
-    if (!response.ok) throw new Error('Failed to load realisations');
-    return await response.json();
+    // Essayer d'abord l'API (Vercel en production)
+    try {
+      const apiResponse = await fetch('/api/realisations');
+      if (apiResponse.ok) {
+        return await apiResponse.json();
+      }
+    } catch (e) {
+      // API non disponible, continuer avec la méthode alternative
+    }
+
+    // Fallback: charger depuis le manifest (plus fiable en dev)
+    try {
+      const manifestResponse = await fetch('/content/realisations/index.json');
+      if (manifestResponse.ok) {
+        const fileList: string[] = await manifestResponse.json();
+        const realisations = await Promise.all(
+          fileList.map(async (file) => {
+            try {
+              const response = await fetch(`/content/realisations/${file}.json`);
+              if (!response.ok) return null;
+              return await response.json();
+            } catch {
+              return null;
+            }
+          })
+        );
+        return realisations.filter((r): r is RealisationContent => r !== null);
+      }
+    } catch (e) {
+      // Manifest non disponible aussi
+    }
+
+    return [];
   } catch (error) {
     console.error('Error loading realisations:', error);
     return [];
