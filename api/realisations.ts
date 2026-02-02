@@ -8,21 +8,21 @@ export default async function handler(req: any, res: any) {
   }
 
   try {
-    // Read the index file to get list of realisations
-    const indexPath = path.join(process.cwd(), 'public', 'content', 'realisations', 'index.json');
-    const indexContent = fs.readFileSync(indexPath, 'utf-8');
-    const fileList: string[] = JSON.parse(indexContent);
+    const contentDir = path.join(process.cwd(), 'public', 'content', 'realisations');
+
+    // Auto-detect all JSON files (except index.json)
+    const files = fs.readdirSync(contentDir)
+      .filter(file => file.endsWith('.json') && file !== 'index.json');
 
     // Load and parse each realisation file
-    const contentDir = path.join(process.cwd(), 'public', 'content', 'realisations');
-    const realisations = fileList
-      .map(filename => {
+    const realisations = files
+      .map(file => {
         try {
-          const filePath = path.join(contentDir, `${filename}.json`);
+          const filePath = path.join(contentDir, file);
           const content = fs.readFileSync(filePath, 'utf-8');
           return JSON.parse(content);
         } catch (error) {
-          console.error(`Error reading file ${filename}:`, error);
+          console.error(`Error reading file ${file}:`, error);
           return null;
         }
       })
