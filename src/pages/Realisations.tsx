@@ -1,100 +1,35 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Card, CardContent } from "@/components/ui/card";
 import { Dialog, DialogContent, DialogHeader, DialogTitle } from "@/components/ui/dialog";
-import charpenteImage from "@/assets/charpente.jpg";
-import menuiserieImage from "@/assets/menuiserie.jpg";
-import agencementImage from "@/assets/agencement.jpg";
-import extensionImage from "@/assets/extension.jpg";
+import { loadRealisations, type RealisationContent } from "@/lib/content-loader";
 
 const Realisations = () => {
-  const [selectedProject, setSelectedProject] = useState<any>(null);
+  const [selectedProject, setSelectedProject] = useState<RealisationContent | null>(null);
+  const [projects, setProjects] = useState<RealisationContent[]>([]);
+  const [loading, setLoading] = useState(true);
+  const [activeCategory, setActiveCategory] = useState("Tous");
 
-  const projects = [
-    {
-      title: "Charpente traditionnelle",
-      category: "Structure",
-      location: "Sansac de Marmiesse",
-      description: "Réalisation d'une charpente traditionnelle en chêne pour une maison de caractère. Taille et assemblage à l'ancienne.",
-      image: charpenteImage,
-    },
-    {
-      title: "Cuisine sur mesure",
-      category: "Agencement",
-      location: "Aurillac",
-      description: "Conception et installation d'une cuisine complète en bois massif avec plan de travail en chêne.",
-      image: agencementImage,
-    },
-    {
-      title: "Extension ossature bois",
-      category: "Extension",
-      location: "Polminhac",
-      description: "Extension de 30m² en ossature bois, isolation haute performance et bardage douglas.",
-      image: extensionImage,
-    },
-    {
-      title: "Menuiserie extérieure",
-      category: "Menuiserie Extérieure",
-      location: "Vic-sur-Cère",
-      description: "Fenêtres et volets en bois sur mesure pour une rénovation complète.",
-      image: menuiserieImage,
-    },
-    {
-      title: "Terrasse en bois",
-      category: "Structure",
-      location: "Arpajon-sur-Cère",
-      description: "Terrasse en bois exotique de 50m² avec garde-corps intégré.",
-      image: charpenteImage,
-    },
-    {
-      title: "Dressing sur mesure",
-      category: "Agencement",
-      location: "Ytrac",
-      description: "Dressing modulable optimisant l'espace sous combles avec finitions soignées.",
-      image: agencementImage,
-    },
-    {
-      title: "Pergola bioclimatique",
-      category: "Structure",
-      location: "Crandelles",
-      description: "Pergola en bois avec lames orientables pour profiter du jardin toute l'année.",
-      image: charpenteImage,
-    },
-    {
-      title: "Escalier intérieur",
-      category: "Menuiserie Intérieure",
-      location: "Aurillac",
-      description: "Escalier quart tournant en chêne massif avec contremarches intégrées.",
-      image: menuiserieImage,
-    },
-    {
-      title: "Carport double",
-      category: "Structure",
-      location: "Sansac de Marmiesse",
-      description: "Carport double en ossature bois et toiture bac acier anthracite.",
-      image: charpenteImage,
-    },
-    {
-      title: "Mobilier sur mesure",
-      category: "Agencement",
-      location: "Naucelles",
-      description: "Bibliothèque murale et bureau intégrés en noyer massif.",
-      image: agencementImage,
-    },
-    {
-      title: "Surélévation",
-      category: "Extension",
-      location: "Saint-Paul-des-Landes",
-      description: "Surélévation ossature bois pour création de deux chambres et salle de bains.",
-      image: extensionImage,
-    },
-    {
-      title: "Bardage bois",
-      category: "Menuiserie Extérieure",
-      location: "Laroquebrou",
-      description: "Pose de bardage en mélèze pour isolation extérieure et ravalement de façade.",
-      image: menuiserieImage,
-    },
-  ];
+  useEffect(() => {
+    const loadContent = async () => {
+      try {
+        const data = await loadRealisations();
+        setProjects(data);
+      } catch (error) {
+        console.error('Failed to load realisations:', error);
+      } finally {
+        setLoading(false);
+      }
+    };
+    loadContent();
+  }, []);
+
+  if (loading) {
+    return (
+      <div className="min-h-screen flex items-center justify-center">
+        <p className="text-lg">Chargement...</p>
+      </div>
+    );
+  }
 
   const categories = ["Tous", "Structure", "Menuiserie Intérieure", "Menuiserie Extérieure", "Agencement", "Extension"];
   const [activeCategory, setActiveCategory] = useState("Tous");
