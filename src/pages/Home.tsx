@@ -215,7 +215,7 @@ const Home = () => {
                   <Link to="/structure/isolation-exterieur" className="block">
                     <Card className="hover:shadow-md transition-shadow">
                       <div className="h-20 overflow-hidden">
-                        <img src={charpenteImage} alt="Isolation par l'extérieur" className="w-full h-full object-cover" />
+                        <img src={serviceImagesMap.structure["isolation-exterieur"]} alt="Isolation par l'extérieur" className="w-full h-full object-cover" />
                       </div>
                       <CardContent className="p-2">
                         <p className="text-xs font-medium text-center">Isolation par l'extérieur</p>
