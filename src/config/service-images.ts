@@ -23,6 +23,7 @@ import bardageImg from "@/assets/Bardage.jpg";
 import dressingImg from "@/assets/Dressing.jpg";
 import cuisineImg from "@/assets/Cuisine.jpg";
 import amenagementImg from "@/assets/Aménagement sur mesure.jpg";
+import amenagementVehiculesImg from "@/assets/Aménagement véhicules.jpg";
 import cloisonsImg from "@/assets/Cloisons.jpg";
 import extensionImg from "@/assets/Extension.jpg";
 import garageImg from "@/assets/Extension garage.jpg";
