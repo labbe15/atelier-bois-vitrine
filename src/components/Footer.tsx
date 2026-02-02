@@ -30,8 +30,8 @@ const Footer = () => {
           <div>
             <h4 className="font-semibold mb-4">Services</h4>
             <ul className="space-y-2 text-sm">
-              <li><Link to="/structure/charpente" className="hover:text-primary transition-colors">Charpente</Link></li>
-              <li><Link to="/menuiserie/interieur" className="hover:text-primary transition-colors">Menuiserie</Link></li>
+              <li><Link to="/structure/ossature-bois" className="hover:text-primary transition-colors">Ossature bois</Link></li>
+              <li><Link to="/menuiserie-interieur/escaliers" className="hover:text-primary transition-colors">Menuiserie</Link></li>
               <li><Link to="/agencement/cuisines" className="hover:text-primary transition-colors">Agencement</Link></li>
               <li><Link to="/extension/ossature-bois" className="hover:text-primary transition-colors">Extension bois</Link></li>
             </ul>
