@@ -73,6 +73,7 @@ export const serviceImagesMap = {
     dressing: dressingImg,
     cuisines: cuisineImg,
     amenagement: amenagementImg,
+    "amenagement-vehicules": amenagementVehiculesImg,
     cloisons: cloisonsImg,
   },
   extension: {
