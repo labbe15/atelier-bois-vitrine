@@ -8,18 +8,14 @@ const Realisations = () => {
   const [projects, setProjects] = useState<RealisationContent[]>([]);
   const [loading, setLoading] = useState(true);
   const [activeCategory, setActiveCategory] = useState("Tous");
-  const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
     const loadContent = async () => {
-      console.log("Starting to load realisations...");
       try {
         const data = await loadRealisations();
-        console.log("Loaded realisations:", data);
         setProjects(data);
-      } catch (error: any) {
+      } catch (error) {
         console.error('Failed to load realisations:', error);
-        setError(error.message);
       } finally {
         setLoading(false);
       }
@@ -29,19 +25,8 @@ const Realisations = () => {
 
   if (loading) {
     return (
-      <div className="min-h-screen flex items-center justify-center bg-white">
-        <p className="text-lg text-black">Chargement des réalisations...</p>
-      </div>
-    );
-  }
-
-  if (error) {
-    return (
-      <div className="min-h-screen flex items-center justify-center bg-red-50">
-        <div className="text-center">
-          <p className="text-lg text-red-600 font-semibold">Erreur:</p>
-          <p className="text-red-500">{error}</p>
-        </div>
+      <div className="min-h-screen flex items-center justify-center">
+        <p className="text-lg">Chargement...</p>
       </div>
     );
   }
@@ -50,8 +35,8 @@ const Realisations = () => {
   const uniqueCategories = Array.from(new Set(projects.map(p => p.category)));
   const categories = ["Tous", ...uniqueCategories];
 
-  const filteredProjects = activeCategory === "Tous"
-    ? projects
+  const filteredProjects = activeCategory === "Tous" 
+    ? projects 
     : projects.filter(p => p.category === activeCategory);
 
   return (
