@@ -110,6 +110,7 @@ const AppContent = () => {
           <Route path="/agencement/dressing" element={<Dressing />} />
           <Route path="/agencement/cuisines" element={<Cuisines />} />
           <Route path="/agencement/amenagement" element={<AmenagementSurMesure />} />
+          <Route path="/agencement/amenagement-vehicules" element={<AmenagementVehicules />} />
           <Route path="/agencement/cloisons" element={<Cloisons />} />
 
           {/* Extension */}
