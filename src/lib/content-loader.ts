@@ -107,27 +107,14 @@ export async function loadTestimonials(): Promise<TestimonialContent[]> {
 }
 
 /**
- * Charge toutes les réalisations
+ * Charge toutes les réalisations depuis le CMS
+ * Utilise l'endpoint API qui détecte dynamiquement tous les fichiers
  */
 export async function loadRealisations(): Promise<RealisationContent[]> {
   try {
-    const realisationFiles = [
-      'terrasse-bois-aurillac',
-      'extension-ossature-bois',
-      'cuisine-sur-mesure'
-    ];
-    const realisations = await Promise.all(
-      realisationFiles.map(async (file) => {
-        try {
-          const response = await fetch(`/content/realisations/${file}.json`);
-          if (!response.ok) return null;
-          return await response.json();
-        } catch {
-          return null;
-        }
-      })
-    );
-    return realisations.filter((r): r is RealisationContent => r !== null);
+    const response = await fetch('/api/realisations');
+    if (!response.ok) throw new Error('Failed to load realisations');
+    return await response.json();
   } catch (error) {
     console.error('Error loading realisations:', error);
     return [];
