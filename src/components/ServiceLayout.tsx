@@ -11,6 +11,7 @@ interface ServiceLayoutProps {
   image: string;
   features: string[];
   children?: ReactNode;
+  backgroundPosition?: string;
 }
 
 const ServiceLayout = ({ title, subtitle, description, image, features, children }: ServiceLayoutProps) => {
