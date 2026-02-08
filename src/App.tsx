@@ -69,6 +69,19 @@ const AppContent = () => {
   const location = useLocation();
   const isHomePage = location.pathname === "/";
 
+  // Initialize Google Analytics
+  useGoogleAnalytics();
+
+  // Track page views when location changes
+  useEffect(() => {
+    const gaId = import.meta.env.VITE_GOOGLE_ANALYTICS_ID;
+    if (gaId && (window as any).gtag) {
+      (window as any).gtag('config', gaId, {
+        page_path: location.pathname
+      });
+    }
+  }, [location]);
+
   return (
     <>
       {!isHomePage && <Navigation />}
