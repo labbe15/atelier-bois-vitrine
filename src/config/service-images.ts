@@ -35,7 +35,7 @@ import studioJardinImg from "@/assets/Studio de jardin.jpg";
 export const heroImageCustom = presentationImg;
 
 export const categoryImagesCustom = {
-  structure: charpenteImg,
+  structure: maisonOssatureImg,
   menuiserieInterieur: escalierImg,
   menuiserieExterieur: menuiserieImg,
   agencement: dressingImg,
