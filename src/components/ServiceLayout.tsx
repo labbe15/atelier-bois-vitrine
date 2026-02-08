@@ -22,8 +22,9 @@ const ServiceLayout = ({ title, subtitle, description, image, features, children
         className="relative h-[600px] flex items-center justify-center text-center"
         style={{
           backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(${image})`,
-          backgroundSize: "cover",
+          backgroundSize: "contain",
           backgroundPosition: backgroundPosition,
+          backgroundRepeat: "no-repeat",
         }}
       >
         <div className="container mx-auto px-4">
