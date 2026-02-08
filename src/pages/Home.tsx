@@ -205,7 +205,7 @@ const Home = () => {
                   <Link to="/structure/terrasse" className="block">
                     <Card className="hover:shadow-md transition-shadow">
                       <div className="h-20 overflow-hidden">
-                        <img src={charpenteImage} alt="Terrasse" className="w-full h-full object-cover" />
+                        <img src={serviceImagesMap.structure.terrasses} alt="Terrasse" className="w-full h-full object-cover" />
                       </div>
                       <CardContent className="p-2">
                         <p className="text-xs font-medium text-center">Terrasse</p>
