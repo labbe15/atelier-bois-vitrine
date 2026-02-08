@@ -13,7 +13,7 @@ const PortesCommunication = () => {
           src={porteInterieurImg}
           alt="Portes intérieures"
           className="absolute inset-0 w-full h-full object-cover"
-          style={{ transform: "rotate(180deg)" }}
+          style={{ transform: "rotate(-90deg)" }}
         />
         <div className="absolute inset-0 bg-black/50" />
         <div className="container mx-auto px-4 relative z-10">
