@@ -323,7 +323,7 @@ const Home = () => {
             <Card className="overflow-hidden group relative cursor-pointer h-56">
               <div className="h-full overflow-hidden relative">
                 <img
-                  src={menuiserieImage}
+                  src={menuiserieExtImage}
                   alt="Menuiserie Extérieure"
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                 />
