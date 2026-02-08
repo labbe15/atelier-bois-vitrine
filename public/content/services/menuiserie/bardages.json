@@ -1,0 +1,14 @@
+{
+  "title": "Bardages",
+  "subtitle": "Bardages en bois pour rénover ou protéger votre façade",
+  "description": "Réalisation de bardages en bois de qualité pour une rénovation thermique et esthétique. Différentes essences et finitions disponibles pour s'adapter à votre architecture et vos souhaits.",
+  "image": "/src/assets/Bardage.jpg",
+  "features": [
+    "Essences locales ou exotiques",
+    "Finition lasure ou peinture",
+    "Pose directe ou ventilée",
+    "Amélioration thermique",
+    "Protection façade",
+    "Durabilité 25-40 ans"
+  ]
+}
