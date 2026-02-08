@@ -13,7 +13,7 @@ interface ServiceLayoutProps {
   children?: ReactNode;
 }
 
-const ServiceLayout = ({ title, subtitle, description, image, features, children, backgroundPosition = "center" }: ServiceLayoutProps) => {
+const ServiceLayout = ({ title, subtitle, description, image, features, children }: ServiceLayoutProps) => {
   return (
     <div className="min-h-screen">
       {/* Hero */}
