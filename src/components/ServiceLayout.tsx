@@ -14,7 +14,7 @@ interface ServiceLayoutProps {
   backgroundPosition?: string;
 }
 
-const ServiceLayout = ({ title, subtitle, description, image, features, children }: ServiceLayoutProps) => {
+const ServiceLayout = ({ title, subtitle, description, image, features, children, backgroundPosition = "center" }: ServiceLayoutProps) => {
   return (
     <div className="min-h-screen">
       {/* Hero */}
@@ -23,7 +23,7 @@ const ServiceLayout = ({ title, subtitle, description, image, features, children
         style={{
           backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(${image})`,
           backgroundSize: "cover",
-          backgroundPosition: "center",
+          backgroundPosition: backgroundPosition,
         }}
       >
         <div className="container mx-auto px-4">
