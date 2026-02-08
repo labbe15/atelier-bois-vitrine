@@ -14,10 +14,10 @@ const PortesCommunication = () => {
           backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(${porteInterieurImg})`,
           backgroundSize: "cover",
           backgroundPosition: "center",
-          transform: "scaleX(-1)",
+          transform: "rotate(180deg)",
         }}
       >
-        <div className="container mx-auto px-4" style={{ transform: "scaleX(-1)" }}>
+        <div className="container mx-auto px-4" style={{ transform: "rotate(180deg)" }}>
           <h1 className="text-4xl md:text-6xl font-heading text-white mb-4">Portes intérieures</h1>
           <p className="text-xl text-white/90 max-w-2xl mx-auto">Sublimez votre intérieur avec des portes élégantes et durables</p>
         </div>
