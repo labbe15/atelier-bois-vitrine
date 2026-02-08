@@ -30,7 +30,7 @@ const MentionsLegales = () => {
                 15130 Sansac-de-Marmiesse<br />
                 France
               </p>
-              <p><strong>Téléphone :</strong> 07 50 44 50 55</p>
+              <p><strong>Téléphone :</strong> 07 50 44 50 55 / 06 08 95 61 40</p>
               <p><strong>Email :</strong> contact@atelier-du-volcan.com</p>
               <p><strong>Directeur de la publication :</strong> [À compléter : Nom du gérant/responsable]</p>
             </CardContent>
