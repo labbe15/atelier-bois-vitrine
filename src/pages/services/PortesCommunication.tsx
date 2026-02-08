@@ -8,16 +8,15 @@ const PortesCommunication = () => {
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
-      <section
-        className="relative h-[600px] flex items-center justify-center text-center overflow-hidden"
-        style={{
-          backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(${porteInterieurImg})`,
-          backgroundSize: "cover",
-          backgroundPosition: "center",
-          transform: "rotate(180deg)",
-        }}
-      >
-        <div className="container mx-auto px-4" style={{ transform: "rotate(180deg)" }}>
+      <section className="relative h-[600px] flex items-center justify-center text-center overflow-hidden">
+        <img
+          src={porteInterieurImg}
+          alt="Portes intérieures"
+          className="absolute inset-0 w-full h-full object-cover"
+          style={{ transform: "rotate(180deg)" }}
+        />
+        <div className="absolute inset-0 bg-black/50" />
+        <div className="container mx-auto px-4 relative z-10">
           <h1 className="text-4xl md:text-6xl font-heading text-white mb-4">Portes intérieures</h1>
           <p className="text-xl text-white/90 max-w-2xl mx-auto">Sublimez votre intérieur avec des portes élégantes et durables</p>
         </div>
