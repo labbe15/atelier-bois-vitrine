@@ -547,7 +547,7 @@ const Home = () => {
                   <Link to="/extension/pool-house" className="block">
                     <Card className="hover:shadow-md transition-shadow">
                       <div className="h-20 overflow-hidden">
-                        <img src={extensionImage} alt="Pool House" className="w-full h-full object-cover" />
+                        <img src={serviceImagesMap.extension["pool-house"]} alt="Pool House" className="w-full h-full object-cover" />
                       </div>
                       <CardContent className="p-2">
                         <p className="text-xs font-medium text-center">Pool House</p>
