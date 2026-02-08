@@ -205,7 +205,7 @@ const Home = () => {
                   <Link to="/structure/terrasse" className="block">
                     <Card className="hover:shadow-md transition-shadow">
                       <div className="h-20 overflow-hidden">
-                        <img src={charpenteImage} alt="Terrasse" className="w-full h-full object-cover" />
+                        <img src={serviceImagesMap.structure.terrasses} alt="Terrasse" className="w-full h-full object-cover" />
                       </div>
                       <CardContent className="p-2">
                         <p className="text-xs font-medium text-center">Terrasse</p>
@@ -323,7 +323,7 @@ const Home = () => {
             <Card className="overflow-hidden group relative cursor-pointer h-56">
               <div className="h-full overflow-hidden relative">
                 <img
-                  src={menuiserieImage}
+                  src={menuiserieExtImage}
                   alt="Menuiserie Extérieure"
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                 />
@@ -547,7 +547,7 @@ const Home = () => {
                   <Link to="/extension/pool-house" className="block">
                     <Card className="hover:shadow-md transition-shadow">
                       <div className="h-20 overflow-hidden">
-                        <img src={extensionImage} alt="Pool House" className="w-full h-full object-cover" />
+                        <img src={serviceImagesMap.extension["pool-house"]} alt="Pool House" className="w-full h-full object-cover" />
                       </div>
                       <CardContent className="p-2">
                         <p className="text-xs font-medium text-center">Pool House</p>
@@ -557,7 +557,7 @@ const Home = () => {
                   <Link to="/extension/abri-jardin" className="block">
                     <Card className="hover:shadow-md transition-shadow">
                       <div className="h-20 overflow-hidden">
-                        <img src={extensionImage} alt="Studio de jardin" className="w-full h-full object-cover" />
+                        <img src={serviceImagesMap.extension["abri-jardin"]} alt="Studio de jardin" className="w-full h-full object-cover" />
                       </div>
                       <CardContent className="p-2">
                         <p className="text-xs font-medium text-center">Studio de jardin</p>

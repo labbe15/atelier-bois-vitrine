@@ -1,4 +1,4 @@
-import { lazy, Suspense } from "react";
+import { lazy, Suspense, useEffect } from "react";
 import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
@@ -7,6 +7,7 @@ import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
 import Navigation from "./components/Navigation";
 import Footer from "./components/Footer";
 import IntroAnimation from "./components/IntroAnimation";
+import { useGoogleAnalytics } from "./hooks/useGoogleAnalytics";
 
 // Eager loading pour les pages principales (accès immédiat)
 import Home from "./pages/Home";
@@ -67,6 +68,19 @@ const queryClient = new QueryClient();
 const AppContent = () => {
   const location = useLocation();
   const isHomePage = location.pathname === "/";
+
+  // Initialize Google Analytics
+  useGoogleAnalytics();
+
+  // Track page views when location changes
+  useEffect(() => {
+    const gaId = import.meta.env.VITE_GOOGLE_ANALYTICS_ID;
+    if (gaId && (window as any).gtag) {
+      (window as any).gtag('config', gaId, {
+        page_path: location.pathname
+      });
+    }
+  }, [location]);
 
   return (
     <>

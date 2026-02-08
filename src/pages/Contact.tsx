@@ -218,12 +218,20 @@ const Contact = () => {
                   </div>
                   <div>
                     <p className="font-semibold text-lg mb-1">Téléphone</p>
-                    <a 
-                      href="tel:0750445055" 
-                      className="text-primary hover:underline text-lg font-medium transition-all hover:translate-x-1 inline-block"
-                    >
-                      07 50 44 50 55
-                    </a>
+                    <div className="flex flex-col gap-1">
+                      <a
+                        href="tel:0750445055"
+                        className="text-primary hover:underline text-lg font-medium transition-all hover:translate-x-1 inline-block"
+                      >
+                        07 50 44 50 55
+                      </a>
+                      <a
+                        href="tel:0608956140"
+                        className="text-primary hover:underline text-lg font-medium transition-all hover:translate-x-1 inline-block"
+                      >
+                        06 08 95 61 40
+                      </a>
+                    </div>
                   </div>
                 </div>
 
