@@ -4,7 +4,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { CheckCircle2, Clock, ThumbsUp, MapPin } from "lucide-react";
 import Navigation from "@/components/Navigation";
-import { loadHomeContent, loadTestimonials, type HomeContent, type TestimonialContent } from "@/lib/content-loader";
+import { loadHomeContent, type HomeContent } from "@/lib/content-loader";
 import { heroImage, categoryImages } from "@/config/images";
 import { serviceImagesMap, categoryImagesCustom, heroImageCustom } from "@/config/service-images";
 
@@ -17,18 +17,13 @@ const extensionImage = categoryImagesCustom.extension;
 
 const Home = () => {
   const [content, setContent] = useState<HomeContent | null>(null);
-  const [testimonials, setTestimonials] = useState<TestimonialContent[]>([]);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     const loadContent = async () => {
       try {
-        const [homeData, testimonialsData] = await Promise.all([
-          loadHomeContent(),
-          loadTestimonials()
-        ]);
+        const homeData = await loadHomeContent();
         setContent(homeData);
-        setTestimonials(testimonialsData);
       } catch (error) {
         console.error('Failed to load content:', error);
       } finally {
@@ -278,7 +273,7 @@ const Home = () => {
                   <Link to="/menuiserie-interieur/portes-communication" className="block">
                     <Card className="hover:shadow-md transition-shadow">
                       <div className="h-20 overflow-hidden">
-                        <img src={menuiserieImage} alt="Portes intérieures" className="w-full h-full object-cover" />
+                        <img src={serviceImagesMap.menuiserieInterieur["portes-communication"]} alt="Portes intérieures" className="w-full h-full object-cover" />
                       </div>
                       <CardContent className="p-2">
                         <p className="text-xs font-medium text-center">Portes intérieures</p>
@@ -567,35 +562,6 @@ const Home = () => {
                 </div>
               </div>
             </Card>
-          </div>
-        </div>
-      </section>
-
-      {/* Testimonials */}
-      <section className="py-20 bg-muted/30">
-        <div className="container mx-auto px-4">
-          <h2 className="text-4xl md:text-5xl font-heading text-center mb-12 text-primary">
-            Ils nous font confiance
-          </h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
-            {testimonials.map((testimonial, index) => (
-              <Card key={index}>
-                <CardContent className="pt-6">
-                  <div className="flex mb-3">
-                    {[...Array(testimonial.rating)].map((_, i) => (
-                      <span key={i} className="text-yellow-500">★</span>
-                    ))}
-                  </div>
-                  <p className="text-sm mb-4 italic">{testimonial.text}</p>
-                  <p className="font-semibold text-sm">— {testimonial.name}</p>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-          <div className="text-center mt-8">
-            <Button variant="outline" asChild>
-              <Link to="/avis">Voir tous les avis</Link>
-            </Button>
           </div>
         </div>
       </section>

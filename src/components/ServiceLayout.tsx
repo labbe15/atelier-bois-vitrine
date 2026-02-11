@@ -17,15 +17,14 @@ const ServiceLayout = ({ title, subtitle, description, image, features, children
   return (
     <div className="min-h-screen">
       {/* Hero */}
-      <section
-        className="relative h-[600px] flex items-center justify-center text-center"
-        style={{
-          backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(${image})`,
-          backgroundSize: "cover",
-          backgroundPosition: "center",
-        }}
-      >
-        <div className="container mx-auto px-4">
+      <section className="relative h-[600px] flex items-center justify-center text-center overflow-hidden">
+        <img
+          src={image}
+          alt={title}
+          className="absolute inset-0 w-full h-full object-cover"
+        />
+        <div className="absolute inset-0 bg-black/50" />
+        <div className="container mx-auto px-4 relative z-10">
           <h1 className="text-4xl md:text-6xl font-heading text-white mb-4">{title}</h1>
           <p className="text-xl text-white/90 max-w-2xl mx-auto">{subtitle}</p>
         </div>

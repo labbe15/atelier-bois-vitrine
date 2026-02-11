@@ -282,13 +282,6 @@ const Navigation = () => {
                 >
                   À propos
                 </Link>
-                <Link
-                  to="/avis"
-                  onClick={closeMobileMenu}
-                  className="hover:translate-x-2 transition-transform duration-200"
-                >
-                  Avis
-                </Link>
 
                 <Button
                   asChild
